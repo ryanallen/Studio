@@ -15,6 +15,37 @@ See `.claude/COORDINATOR_FLOWS.md` for detailed workflow diagrams.
 
 ---
 
+## Setup
+
+### Figma MCP Integration (Optional)
+
+To enable Figma design capabilities:
+
+1. **Copy the environment template:**
+   ```bash
+   cp .env.template .env
+   ```
+
+2. **Get your Figma Personal Access Token:**
+   - Log in to [Figma](https://www.figma.com)
+   - Go to Settings → Security → Personal access tokens
+   - Click "Generate new token"
+   - Set expiration (30-90 days) and scopes
+   - Copy the token (you'll only see it once!)
+
+3. **Add your token to `.env`:**
+   - Open `.env` in your editor
+   - Replace `your_figma_personal_access_token_here` with your actual token
+   - Save the file
+
+4. **Verify connection:**
+   - The Figma MCP server will automatically use your token
+   - Test with a Figma file URL to confirm it's working
+
+Note: The token expires based on your settings. Follow the same steps to regenerate when needed.
+
+---
+
 ## The D.E.S.I.G.N. Process
 
 Every project runs through six phases. Not every task needs all six — the coordinator decides which apply.

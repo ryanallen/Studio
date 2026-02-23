@@ -14,3 +14,7 @@ node_modules/
 # Runtime
 .status/
 .log/
+
+# API keys and secrets
+.env
+.env.local
