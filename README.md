@@ -17,52 +17,103 @@ See `.claude/COORDINATOR_FLOWS.md` for detailed workflow diagrams.
 
 ## Setup
 
-### Figma MCP Integration (Optional)
+### MCP Server Configuration
 
-Two levels of Figma integration are available:
+This system uses MCP (Model Context Protocol) servers to extend Claude's capabilities. Configure them in `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `~/.config/claude/claude_desktop_config.json` (Linux).
 
-#### Read-Only Access (REST API)
+**⚠️ Important:** Only install the MCP servers you need. Having too many can cause conflicts and authentication issues.
 
-For viewing files, exporting assets, and adding comments:
+### Figma MCP (Required for Design Work)
 
-1. **Copy the environment template:**
-   ```bash
-   cp .env.template .env
-   ```
+Enables reading Figma designs, generating code from designs, and creating diagrams.
 
-2. **Get your Figma Personal Access Token:**
-   - Log in to [Figma](https://www.figma.com)
-   - Go to Settings → Security → Personal access tokens
-   - Click "Generate new token"
-   - Set expiration (30-90 days) and scopes
-   - Copy the token (you'll only see it once!)
+**1. Add to your Claude config:**
 
-3. **Add your token to `.env`:**
-   - Replace `your_figma_personal_access_token_here` with your actual token
-   - The token is stored by mcp-figma at `~/.mcp-figma/config.json`
+Edit `~/Library/Application Support/Claude/claude_desktop_config.json`:
 
-#### Full Read/Write Access (Dev Mode)
+```json
+{
+  "mcpServers": {
+    "figma": {
+      "command": "npx",
+      "args": ["-y", "@figma/mcp-figma"]
+    }
+  }
+}
+```
 
-For creating and editing designs programmatically:
+**2. Restart Claude Desktop**
 
-1. **Enable Figma Dev Mode Server:**
-   - Open Figma **desktop app** (browser version won't work)
-   - Press `Shift+D` to enable Dev Mode
-   - In the inspect panel, enable the MCP server
-   - Server runs locally at `http://127.0.0.1:3845/mcp`
+Quit and reopen the Claude app completely.
 
-2. **Configure Claude Code:**
-   - Add to `~/.claude.json` under `mcpServers`:
-   ```json
-   "figma-local": {
-     "url": "http://127.0.0.1:3845/mcp",
-     "type": "http"
-   }
-   ```
+**3. Authenticate (CRITICAL STEP):**
 
-3. **Restart Claude Code** to load the new MCP configuration
+In Claude Code, run:
+```
+/mcp
+```
 
-Note: The REST API token expires based on your settings. The local Dev Mode server must be running in Figma desktop app for write access.
+Then authenticate with Figma when prompted. This stores your credentials securely.
+
+**Common Issues:**
+- **"Permission denied" errors:** You forgot to authenticate. Run `/mcp` and authenticate.
+- **"Multiple Figma servers" errors:** You have both `figma` and `figma-local` configured. Remove the one you're not using.
+- **Changes not working:** Make sure you restarted Claude Desktop, not just closed the window.
+
+### Playwright MCP (Optional - For Web Capture)
+
+Enables capturing external websites into Figma designs (bypasses CSP restrictions).
+
+**1. Add to your Claude config:**
+
+```json
+{
+  "mcpServers": {
+    "figma": {
+      "command": "npx",
+      "args": ["-y", "@figma/mcp-figma"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@executeautomation/playwright-mcp-server"]
+    }
+  }
+}
+```
+
+**2. Restart Claude Desktop**
+
+That's it. Playwright requires no authentication.
+
+### Example Complete Configuration
+
+Here's a working config with both servers:
+
+```json
+{
+  "preferences": {
+    "quickEntryShortcut": "off",
+    "sidebarMode": "chat",
+    "coworkScheduledTasksEnabled": false
+  },
+  "mcpServers": {
+    "figma": {
+      "command": "npx",
+      "args": ["-y", "@figma/mcp-figma"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@executeautomation/playwright-mcp-server"]
+    }
+  }
+}
+```
+
+**Troubleshooting:**
+- Config location: `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
+- Must be valid JSON (check for missing commas, brackets)
+- Restart = Quit Claude completely (Cmd+Q), then reopen
+- Test with `/mcp` command in Claude Code after restart
 
 ---
 
