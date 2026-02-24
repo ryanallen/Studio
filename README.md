@@ -17,115 +17,79 @@ The coordinator agent includes workflow diagrams and interaction patterns.
 
 ## Setup
 
-### MCP Server Configuration
+### MCP Servers
 
-This system uses MCP (Model Context Protocol) servers to extend Claude's capabilities. Configure them in `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `~/.config/claude/claude_desktop_config.json` (Linux).
+**Install only what you need:**
 
-**⚠️ Important:** Only install the MCP servers you need. Having too many can cause conflicts and authentication issues.
+```bash
+# Figma (design-to-code, diagrams)
+claude mcp add figma -- npx -y @figma/mcp-figma
 
-### Figma MCP (Required for Design Work)
+# Playwright (web capture for Figma)
+claude mcp add playwright -- npx -y @executeautomation/playwright-mcp-server
 
-Enables reading Figma designs, generating code from designs, and creating diagrams.
-
-**1. Add to your Claude config:**
-
-Edit `~/Library/Application Support/Claude/claude_desktop_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "figma": {
-      "command": "npx",
-      "args": ["-y", "@figma/mcp-figma"]
-    }
-  }
-}
+# Slack (team communication)
+claude mcp add slack -- npx -y slack-mcp-server@latest --transport stdio
 ```
 
-**2. Restart Claude Desktop**
-
-Quit and reopen the Claude app completely.
-
-**3. Authenticate (CRITICAL STEP):**
-
-Run:
-```
+**Verify:**
+```bash
 /mcp
 ```
 
-Then authenticate with Figma when prompted. This stores your credentials securely.
+### Figma MCP
 
-**Common Issues:**
-- **"Permission denied" errors:** You forgot to authenticate. Run `/mcp` and authenticate.
-- **"Multiple Figma servers" errors:** You have both `figma` and `figma-local` configured. Remove the one you're not using.
-- **Changes not working:** Make sure you restarted Claude Desktop, not just closed the window.
+After adding, authenticate:
+```bash
+/mcp
+```
+Follow the Figma OAuth flow when prompted.
 
-### Atlassian MCP (Optional - For Jira & Confluence)
+### Slack MCP
 
-Enables reading Jira tickets, Confluence pages, and searching across Atlassian tools.
+**Get tokens from browser (easiest):**
 
-**Prerequisites:**
-- Atlassian Cloud account (Jira, Compass, or Confluence)
-- Node.js v18+ installed
+1. Open Slack in browser, press F12 → Console tab
+2. Type `allow pasting`, press Enter
+3. Run:
+   ```javascript
+   JSON.parse(localStorage.localConfig_v2).teams[document.location.pathname.match(/^\/client\/([A-Z0-9]+)/)[1]].token
+   ```
+4. Copy the `xoxc-...` token
+5. Switch to Application tab → Cookies → copy the `d` cookie value (starts with `xoxd-`)
 
-**Setup:**
+**Set environment variables:**
 
-### Playwright MCP (Optional - For Web Capture)
+Add to `~/.zshrc` or `~/.bashrc`:
+```bash
+export SLACK_MCP_XOXC_TOKEN="xoxc-your-token"
+export SLACK_MCP_XOXD_TOKEN="xoxd-your-cookie"
 
-Enables capturing external websites into Figma designs (bypasses CSP restrictions).
-
-**1. Add to your Claude config:**
-
-```json
-{
-  "mcpServers": {
-    "figma": {
-      "command": "npx",
-      "args": ["-y", "@figma/mcp-figma"]
-    },
-    "playwright": {
-      "command": "npx",
-      "args": ["-y", "@executeautomation/playwright-mcp-server"]
-    }
-  }
-}
+# Optional: Enable message posting
+export SLACK_MCP_ADD_MESSAGE_TOOL="true"
 ```
 
-**2. Restart Claude Desktop**
-
-That's it. Playwright requires no authentication.
-
-### Example Complete Configuration
-
-Here's a working config with all local servers:
-
-```json
-{
-  "preferences": {
-    "quickEntryShortcut": "off",
-    "sidebarMode": "chat",
-    "coworkScheduledTasksEnabled": false
-  },
-  "mcpServers": {
-    "figma": {
-      "command": "npx",
-      "args": ["-y", "@figma/mcp-figma"]
-    },
-    "playwright": {
-      "command": "npx",
-      "args": ["-y", "@executeautomation/playwright-mcp-server"]
-    }
-  }
-}
+**Reload:**
+```bash
+source ~/.zshrc
+/mcp
 ```
 
-**Note:** Atlassian MCP for desktop requires additional proxy setup (not documented yet). Use Claude.ai web interface for Atlassian integration.
+### Atlassian MCP
 
-**Troubleshooting:**
-- Config location: `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
-- Must be valid JSON (check for missing commas, brackets)
-- Restart = Quit completely (Cmd+Q), then reopen
-- Test with `/mcp` command after restart
+Use the web interface at claude.ai - the desktop/CLI version requires proxy setup that isn't documented yet.
+
+---
+
+**List installed servers:**
+```bash
+claude mcp list
+```
+
+**Remove a server:**
+```bash
+claude mcp remove <name>
+```
 
 ---
 
