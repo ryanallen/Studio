@@ -60,6 +60,16 @@ Then authenticate with Figma when prompted. This stores your credentials securel
 - **"Multiple Figma servers" errors:** You have both `figma` and `figma-local` configured. Remove the one you're not using.
 - **Changes not working:** Make sure you restarted Claude Desktop, not just closed the window.
 
+### Atlassian MCP (Optional - For Jira & Confluence)
+
+Enables reading Jira tickets, Confluence pages, and searching across Atlassian tools.
+
+**Prerequisites:**
+- Atlassian Cloud account (Jira, Compass, or Confluence)
+- Node.js v18+ installed
+
+**Setup:**
+
 ### Playwright MCP (Optional - For Web Capture)
 
 Enables capturing external websites into Figma designs (bypasses CSP restrictions).
@@ -87,7 +97,7 @@ That's it. Playwright requires no authentication.
 
 ### Example Complete Configuration
 
-Here's a working config with both servers:
+Here's a working config with all local servers:
 
 ```json
 {
@@ -108,6 +118,8 @@ Here's a working config with both servers:
   }
 }
 ```
+
+**Note:** Atlassian MCP for desktop requires additional proxy setup (not documented yet). Use Claude.ai web interface for Atlassian integration.
 
 **Troubleshooting:**
 - Config location: `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
