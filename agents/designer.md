@@ -48,7 +48,7 @@ When user requests to capture a webpage to Figma, you need **both** Figma MCP an
 - **Figma MCP** generates capture IDs and creates the Figma file
 - **Playwright** opens browser, bypasses CSP on external sites, and injects the capture script
 
-#### For External Sites (like godaddy.com, example.com, etc)
+#### For External Sites (like ryanallen.com, example.com, etc)
 
 1. **Generate Capture ID**
    - Call `mcp__figma__generate_figma_design` with target file details
