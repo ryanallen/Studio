@@ -19,7 +19,11 @@ See `.claude/COORDINATOR_FLOWS.md` for detailed workflow diagrams.
 
 ### Figma MCP Integration (Optional)
 
-To enable Figma design capabilities:
+Two levels of Figma integration are available:
+
+#### Read-Only Access (REST API)
+
+For viewing files, exporting assets, and adding comments:
 
 1. **Copy the environment template:**
    ```bash
@@ -34,15 +38,31 @@ To enable Figma design capabilities:
    - Copy the token (you'll only see it once!)
 
 3. **Add your token to `.env`:**
-   - Open `.env` in your editor
    - Replace `your_figma_personal_access_token_here` with your actual token
-   - Save the file
+   - The token is stored by mcp-figma at `~/.mcp-figma/config.json`
 
-4. **Verify connection:**
-   - The Figma MCP server will automatically use your token
-   - Test with a Figma file URL to confirm it's working
+#### Full Read/Write Access (Dev Mode)
 
-Note: The token expires based on your settings. Follow the same steps to regenerate when needed.
+For creating and editing designs programmatically:
+
+1. **Enable Figma Dev Mode Server:**
+   - Open Figma **desktop app** (browser version won't work)
+   - Press `Shift+D` to enable Dev Mode
+   - In the inspect panel, enable the MCP server
+   - Server runs locally at `http://127.0.0.1:3845/mcp`
+
+2. **Configure Claude Code:**
+   - Add to `~/.claude.json` under `mcpServers`:
+   ```json
+   "figma-local": {
+     "url": "http://127.0.0.1:3845/mcp",
+     "type": "http"
+   }
+   ```
+
+3. **Restart Claude Code** to load the new MCP configuration
+
+Note: The REST API token expires based on your settings. The local Dev Mode server must be running in Figma desktop app for write access.
 
 ---
 
