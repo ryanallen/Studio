@@ -11,7 +11,7 @@ An operations system for teams built around specialized AI agents. Each agent ha
 3. Agents do the work: research and documentation
 4. Results come back organized and documented
 
-See `.claude/COORDINATOR_FLOWS.md` for detailed workflow diagrams.
+The coordinator agent includes workflow diagrams and interaction patterns.
 
 ---
 
@@ -48,7 +48,7 @@ Quit and reopen the Claude app completely.
 
 **3. Authenticate (CRITICAL STEP):**
 
-In Claude Code, run:
+Run:
 ```
 /mcp
 ```
@@ -112,8 +112,8 @@ Here's a working config with both servers:
 **Troubleshooting:**
 - Config location: `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
 - Must be valid JSON (check for missing commas, brackets)
-- Restart = Quit Claude completely (Cmd+Q), then reopen
-- Test with `/mcp` command in Claude Code after restart
+- Restart = Quit completely (Cmd+Q), then reopen
+- Test with `/mcp` command after restart
 
 ---
 
@@ -134,7 +134,7 @@ Every project runs through six phases. Not every task needs all six — the coor
 
 ## Agents
 
-Agents live in `.claude/agents/`. Each has a YAML frontmatter header (name, description, tools) and focused instructions with error recovery protocols. Invoke with `claude --agent name`.
+Agents live in `agents/`. Each has a YAML frontmatter header (name, description, tools) and focused instructions with error recovery protocols.
 
 | Agent | Role |
 |-------|------|
@@ -146,7 +146,7 @@ Agents live in `.claude/agents/`. Each has a YAML frontmatter header (name, desc
 
 ## Skills
 
-Reusable automation commands in `.claude/skills/`. Invoke with `/name`. Coming in Phase 3.
+Reusable automation scripts in `skills/scripts/`. Currently includes `capture.js` for webpage-to-Figma capture.
 
 ---
 
@@ -154,15 +154,17 @@ Reusable automation commands in `.claude/skills/`. Invoke with `/name`. Coming i
 
 ```
 Studio/
-├── CLAUDE.md                    # Project instructions (auto-loaded by Claude Code)
-├── .claude/
-│   ├── agents/                  # Specialized AI agents
-│   │   ├── coordinator.md       # claude --agent coordinator
-│   │   ├── documenter.md        # claude --agent documenter
-│   │   └── researcher.md        # claude --agent researcher
-│   ├── skills/                  # Reusable automation (Phase 3)
-│   └── COORDINATOR_FLOWS.md     # Workflow diagrams
+├── CLAUDE.md                    # Project instructions
+├── agents/                      # Specialized AI agents
+│   ├── coordinator.md
+│   ├── designer.md
+│   ├── documenter.md
+│   └── researcher.md
+├── skills/
+│   └── scripts/                 # Automation scripts
+│       └── capture.js           # Webpage-to-Figma capture
 ├── work/                        # Projects, research, specs, deliverables
+├── package.json                 # Playwright dependency
 └── README.md                    # This file
 ```
 
@@ -180,6 +182,6 @@ No agent gives up after one attempt.
 
 ## Using This System
 
-Open Claude Code in this directory. It automatically loads `CLAUDE.md` with project instructions. Run `claude --agent coordinator` to start the coordinator, or just describe what you need and the system handles routing.
+The system loads `CLAUDE.md` with project instructions. Start the coordinator agent to orchestrate multi-step workflows, or work with agents directly.
 
 This system uses the [designDoc template](https://github.com/ryanallen/designDoc) for project documentation structure.
