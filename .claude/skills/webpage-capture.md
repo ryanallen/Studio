@@ -13,7 +13,7 @@ If either is missing, ask the user before proceeding.
 
 ## External Sites
 
-For sites you don't control (e.g., ryanallen.com, competitor.com). Uses `skills/scripts/capture.js` to bypass CSP and inject Figma's capture script.
+For sites you don't control (e.g., ryanallen.com, competitor.com). Uses `.claude/skills/scripts/capture.js` to bypass CSP and inject Figma's capture script.
 
 ### 1. Generate Capture ID
 
@@ -22,7 +22,7 @@ Call Figma MCP's `generate_figma_design` with the target Figma file details. You
 ### 2. Run Capture Script
 
 ```bash
-node skills/scripts/capture.js "https://example.com" "CAPTURE_ID" 1920 1080
+node .claude/skills/scripts/capture.js "https://example.com" "CAPTURE_ID" 1920 1080
 ```
 
 The script handles:

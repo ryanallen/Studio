@@ -45,10 +45,10 @@ Follow the Atlassian OAuth 2.1 flow when prompted.
 ## Workflows
 
 ### Webpage to Figma
-Give the designer a webpage URL and a Figma file URL. See [webpage capture](skills/webpage-capture.md).
+Give the designer a webpage URL and a Figma file URL. See [webpage capture](.claude/skills/webpage-capture.md).
 
 ### Research, Define, Strategize
-Ticket to root cause to solution. See [coordinator](agents/coordinator.md).
+Ticket to root cause to solution. See [coordinator](.claude/agents/coordinator.md).
 
 ---
 
@@ -57,20 +57,21 @@ Ticket to root cause to solution. See [coordinator](agents/coordinator.md).
 ```
 Studio/
 ├── CLAUDE.md
-├── agents/
-│   ├── coordinator.md
-│   ├── designer.md
-│   ├── researcher.md
-│   ├── documentor.md
-│   └── strategist.md
-├── skills/
-│   ├── webpage-capture.md
-│   ├── deep-research.md
-│   ├── document-findings.md
-│   ├── root-cause-analysis.md
-│   ├── update-ticket.md
-│   └── scripts/
-│       └── capture.js
+├── .claude/
+│   ├── agents/
+│   │   ├── coordinator.md
+│   │   ├── designer.md
+│   │   ├── researcher.md
+│   │   ├── documentor.md
+│   │   └── strategist.md
+│   └── skills/
+│       ├── webpage-capture.md
+│       ├── deep-research.md
+│       ├── document-findings.md
+│       ├── root-cause-analysis.md
+│       ├── update-ticket.md
+│       └── scripts/
+│           └── capture.js
 ├── work/
 │   └── {team}/{space}/{project}/
 │       ├── README.md

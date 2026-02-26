@@ -4,18 +4,3 @@
 # Windows
 Thumbs.db
 desktop.ini
-
-# Node
-node_modules/
-package-lock.json
-
-# Claude Code personal settings
-.claude/settings.local.json
-
-# Runtime
-.status/
-.log/
-
-# API keys and secrets
-.env
-.env.local
