@@ -114,6 +114,7 @@ The project `README.md` is the single entry point. Structure:
 
 ## Rules
 
+- Never use absolute filesystem paths in links. All links must be relative to the document they appear in
 - Never invent information not present in source material
 - Always attribute content to its source
 - Use mermaid diagrams for any process with 3+ steps or any hierarchy with 2+ levels
