@@ -1,17 +1,6 @@
 # Studio
 
-An operations system for teams built around specialized AI agents. Each agent has a focused role, and the coordinator orchestrates them into workflows.
-
----
-
-## How It Works
-
-1. Describe what you need
-2. The **coordinator** analyzes the request and picks the right agents
-3. Agents do the work: research and documentation
-4. Results come back organized and documented
-
-The coordinator agent includes workflow diagrams and interaction patterns.
+Captures webpages and recreates them as Figma designs.
 
 ---
 
@@ -19,16 +8,14 @@ The coordinator agent includes workflow diagrams and interaction patterns.
 
 ### MCP Servers
 
-**Install only what you need:**
-
 ```bash
-# Figma (design-to-code, diagrams)
+# Figma (design creation)
 claude mcp add figma -- npx -y @figma/mcp-figma
 
-# Playwright (web capture for Figma)
+# Playwright (browser automation)
 claude mcp add playwright -- npx -y @executeautomation/playwright-mcp-server
 
-# Slack (team communication)
+# Slack (notifications)
 claude mcp add slack -- npx -y slack-mcp-server@latest --transport stdio
 ```
 
@@ -75,67 +62,15 @@ source ~/.zshrc
 /mcp
 ```
 
-### Atlassian MCP
-
-Use the web interface at claude.ai - the desktop/CLI version requires proxy setup that isn't documented yet.
-
 ---
 
-**List installed servers:**
-```bash
-claude mcp list
-```
+## How It Works
 
-**Remove a server:**
-```bash
-claude mcp remove <name>
-```
+1. Give the designer a webpage URL and a Figma file URL
+2. It captures the page and recreates it in Figma
+3. You get a Slack notification when it's done
 
----
-
-## The D.E.S.I.G.N. Process
-
-Every project runs through six phases. Not every task needs all six — the coordinator decides which apply.
-
-| Phase | Stands For | What Happens |
-|-------|-----------|--------------|
-| **D** | Discovery | Understand users, competitors, requirements, current state |
-| **E** | Exploration | Define design direction, validate against system standards |
-| **S** | See What Works | Research, experiment, test divergent concepts |
-| **I** | Iterate | Refine based on findings, validate accessibility |
-| **G** | Go to Market | Polish, finalize, prep for handoff |
-| **N** | Next Steps | Measure, capture learnings |
-
----
-
-## Agents
-
-Agents live in `agents/`. Each has a YAML frontmatter header (name, description, tools) and focused instructions with error recovery protocols.
-
-| Agent | Role |
-|-------|------|
-| **coordinator** | Orchestrates workflows, delegates to specialists |
-| **researcher** | Competitive analysis, user research, pattern research |
-| **documenter** | Specs, requirements, handoff documentation |
-
----
-
-## Skills
-
-Reusable procedures and automation in `skills/`. Agents reference these instead of embedding procedural knowledge.
-
-| Skill | Used By |
-|-------|---------|
-| [Webpage capture](skills/webpage-capture.md) | designer |
-| [Competitive analysis](skills/competitive-analysis.md) | researcher |
-| [Current state audit](skills/current-state-audit.md) | researcher |
-| [Pattern research](skills/pattern-research.md) | researcher |
-| [User research synthesis](skills/user-research-synthesis.md) | researcher |
-| [Design spec](skills/design-spec.md) | documenter |
-| [Component documentation](skills/component-documentation.md) | documenter |
-| [Research summary](skills/research-summary.md) | researcher, documenter |
-
-Automation scripts live in `skills/scripts/` (e.g., `capture.js` for webpage-to-Figma).
+See [webpage capture](skills/webpage-capture.md) for the full flow.
 
 ---
 
@@ -143,42 +78,14 @@ Automation scripts live in `skills/scripts/` (e.g., `capture.js` for webpage-to-
 
 ```
 Studio/
-├── CLAUDE.md                    # Project instructions
-├── agents/                      # Specialized AI agents
-│   ├── coordinator.md
-│   ├── designer.md
-│   ├── documenter.md
-│   └── researcher.md
-├── skills/                      # Reusable procedures and templates
+├── CLAUDE.md
+├── agents/
+│   └── designer.md
+├── skills/
 │   ├── webpage-capture.md
-│   ├── competitive-analysis.md
-│   ├── current-state-audit.md
-│   ├── pattern-research.md
-│   ├── user-research-synthesis.md
-│   ├── design-spec.md
-│   ├── component-documentation.md
-│   ├── research-summary.md
-│   └── scripts/                 # Automation scripts
+│   └── scripts/
 │       └── capture.js
-├── work/                        # Projects, research, specs, deliverables
-├── package.json                 # Playwright dependency
-└── README.md                    # This file
+├── work/
+├── package.json
+└── README.md
 ```
-
----
-
-## Retry & Escalation
-
-No agent gives up after one attempt.
-
-1. **Attempt 1** — Execute with current context
-2. **Attempt 2** — Clean up failed work, try alternative approach
-3. **Attempt 3** — Escalate to coordinator or ask user for help
-
----
-
-## Using This System
-
-The system loads `CLAUDE.md` with project instructions. Start the coordinator agent to orchestrate multi-step workflows, or work with agents directly.
-
-This system uses the [designDoc template](https://github.com/ryanallen/designDoc) for project documentation structure.
