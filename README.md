@@ -122,7 +122,20 @@ Agents live in `agents/`. Each has a YAML frontmatter header (name, description,
 
 ## Skills
 
-Reusable automation scripts in `skills/scripts/`. Currently includes `capture.js` for webpage-to-Figma capture.
+Reusable procedures and automation in `skills/`. Agents reference these instead of embedding procedural knowledge.
+
+| Skill | Used By |
+|-------|---------|
+| [Webpage capture](skills/webpage-capture.md) | designer |
+| [Competitive analysis](skills/competitive-analysis.md) | researcher |
+| [Current state audit](skills/current-state-audit.md) | researcher |
+| [Pattern research](skills/pattern-research.md) | researcher |
+| [User research synthesis](skills/user-research-synthesis.md) | researcher |
+| [Design spec](skills/design-spec.md) | documenter |
+| [Component documentation](skills/component-documentation.md) | documenter |
+| [Research summary](skills/research-summary.md) | researcher, documenter |
+
+Automation scripts live in `skills/scripts/` (e.g., `capture.js` for webpage-to-Figma).
 
 ---
 
@@ -136,9 +149,17 @@ Studio/
 │   ├── designer.md
 │   ├── documenter.md
 │   └── researcher.md
-├── skills/
+├── skills/                      # Reusable procedures and templates
+│   ├── webpage-capture.md
+│   ├── competitive-analysis.md
+│   ├── current-state-audit.md
+│   ├── pattern-research.md
+│   ├── user-research-synthesis.md
+│   ├── design-spec.md
+│   ├── component-documentation.md
+│   ├── research-summary.md
 │   └── scripts/                 # Automation scripts
-│       └── capture.js           # Webpage-to-Figma capture
+│       └── capture.js
 ├── work/                        # Projects, research, specs, deliverables
 ├── package.json                 # Playwright dependency
 └── README.md                    # This file
