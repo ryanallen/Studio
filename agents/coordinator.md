@@ -69,4 +69,6 @@ Input: {project-path}/analysis/problems.md + {project-path}/analysis/current-sta
 7. strategist -> skills/root-cause-analysis.md (propose new solutions from root causes + current state)
          |
 8. documentor -> skills/document-findings.md (final pass, ensure consistency)
+         |
+9. documentor -> skills/update-ticket.md (comment on ticket with link to project)
 ```

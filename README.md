@@ -68,6 +68,7 @@ Studio/
 │   ├── deep-research.md
 │   ├── document-findings.md
 │   ├── root-cause-analysis.md
+│   ├── update-ticket.md
 │   └── scripts/
 │       └── capture.js
 ├── work/
