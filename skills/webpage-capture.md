@@ -38,10 +38,6 @@ The script handles:
 - Call `generate_figma_design` with the captureId to check status
 - Repeat until status is `completed` (max 10 polls)
 
-### 4. Notify via Slack
-
-Send a Slack message with the Figma file link letting the user know the capture is ready.
-
 ## Local Sites
 
 For localhost or dev servers where you can modify the HTML.
@@ -66,12 +62,7 @@ open "http://localhost:3000#figmacapture=ID&figmaendpoint=ENDPOINT&figmadelay=10
 
 Same polling process as external sites.
 
-### 5. Notify via Slack
-
-Same as external sites — send Slack message with the Figma link.
-
 ## Requirements
 
 - Playwright installed (`npm install playwright`) — for capture.js script
 - Figma MCP server configured and authenticated
-- Slack MCP server configured for notifications

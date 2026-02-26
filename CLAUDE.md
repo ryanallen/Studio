@@ -6,7 +6,6 @@
 
 - **Playwright MCP** — Browser automation for navigating webpages
 - **Figma MCP** — Design creation via `generate_figma_design`
-- **Slack MCP** — User notifications
 
 ## What This Does
 
