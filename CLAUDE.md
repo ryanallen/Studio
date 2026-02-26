@@ -11,3 +11,21 @@
 7. **No Sycophancy** - Never flatter, over-agree, or pad responses to seem helpful.
 
 Start with `agents/coordinator.md`. Store deliverables in `work/`.
+
+## Work Folder Structure
+
+All deliverables live in `work/{team}/{space}/{project}/`:
+
+```
+work/{team}/{space}/{project}/
+├── README.md              # Entry point. Problems at top, then overview, then doc links.
+├── research/
+│   ├── sources.md         # URL index with depth, title, parent
+│   ├── findings.md        # Content organized by topic, sources cited
+│   └── link-tree.md       # Traversal map of links followed
+├── analysis/
+│   ├── problems.md        # Five Whys root cause analysis per problem
+│   └── current-state.md   # Existing solutions (internal + external audit)
+└── solutions/
+    └── proposals.md       # New solution proposals from strategist
+```

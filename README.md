@@ -1,6 +1,6 @@
 # Studio
 
-Captures webpages and recreates them as Figma designs.
+Agent workflows for design capture, research, and strategic analysis.
 
 ---
 
@@ -42,12 +42,13 @@ Follow the Atlassian OAuth 2.1 flow when prompted.
 
 ---
 
-## How It Works
+## Workflows
 
-1. Give the designer a webpage URL and a Figma file URL
-2. It captures the page and recreates it in Figma
+### Webpage to Figma
+Give the designer a webpage URL and a Figma file URL. See [webpage capture](skills/webpage-capture.md).
 
-See [webpage capture](skills/webpage-capture.md) for the full flow.
+### Research, Define, Strategize
+Ticket to root cause to solution. See [coordinator](agents/coordinator.md).
 
 ---
 
@@ -58,12 +59,23 @@ Studio/
 ├── CLAUDE.md
 ├── agents/
 │   ├── coordinator.md
-│   └── designer.md
+│   ├── designer.md
+│   ├── researcher.md
+│   ├── documentor.md
+│   └── strategist.md
 ├── skills/
 │   ├── webpage-capture.md
+│   ├── deep-research.md
+│   ├── document-findings.md
+│   ├── root-cause-analysis.md
 │   └── scripts/
 │       └── capture.js
 ├── work/
+│   └── {team}/{space}/{project}/
+│       ├── README.md
+│       ├── research/
+│       ├── analysis/
+│       └── solutions/
 ├── package.json
 └── README.md
 ```
