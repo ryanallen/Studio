@@ -14,6 +14,9 @@ claude mcp add figma -- npx -y @figma/mcp-figma
 
 # Playwright (browser automation)
 claude mcp add playwright -- npx -y @executeautomation/playwright-mcp-server
+
+# Atlassian Jira/Confluence (ticket management)
+claude mcp add --transport sse atlassian-rovo https://mcp.atlassian.com/v1/sse
 ```
 
 **Verify:**
@@ -28,6 +31,14 @@ After adding, authenticate:
 /mcp
 ```
 Follow the Figma OAuth flow when prompted.
+
+### Atlassian MCP
+
+After adding, authenticate:
+```bash
+/mcp
+```
+Follow the Atlassian OAuth 2.1 flow when prompted.
 
 ---
 

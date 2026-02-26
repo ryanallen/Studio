@@ -15,3 +15,8 @@ model: opus
 ```
 designer → Follow skills/webpage-capture.md
 ```
+
+### Fetch Jira Tickets
+```
+coordinator → Use atlassian-rovo MCP to search/fetch Jira tickets → Store results in work/
+```
