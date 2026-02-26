@@ -46,6 +46,7 @@ See [webpage capture](skills/webpage-capture.md) for the full flow.
 Studio/
 ├── CLAUDE.md
 ├── agents/
+│   ├── coordinator.md
 │   └── designer.md
 ├── skills/
 │   ├── webpage-capture.md
