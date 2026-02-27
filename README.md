@@ -39,6 +39,14 @@ Follow the OAuth flow when prompted for Figma and Atlassian.
 
 Add your teams and spaces to `work/config.md`.
 
+If this repo uses Studio as upstream and you change `work/config.md` locally, prevent it from being overwritten on pull:
+
+```bash
+git update-index --skip-worktree work/config.md
+```
+
+To allow upstream to update the file again: `git update-index --no-skip-worktree work/config.md`.
+
 ---
 
 ## Agents
