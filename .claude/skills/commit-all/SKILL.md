@@ -9,10 +9,7 @@ Stage everything since the last commit and create a single commit with a title a
 
 ## Inputs
 
-1. **Title** - Short commit subject line
-2. **Description** - Optional body paragraph
-
-If either is missing, ask the user before proceeding.
+**Title and description:** You must derive these from the work done (files changed, what was added or fixed). Do not ask the user for a title or description unless they have already given one or the changes are too ambiguous to summarize. Inspect the diff or changed files to write a concise subject line and an optional body.
 
 ## Command
 
@@ -22,7 +19,7 @@ git add -A && git commit -m "Title" -m "Description"
 
 ## Steps
 
-1. Get title and description from the user (or use what they provided).
+1. Run `git status` and inspect what changed. Derive a short title and optional description from the changes.
 2. Run `git add -A` to stage all changes.
 3. Run `git commit -m "<title>" -m "<description>"`.
 4. Report the result. Do not run `git push`.
@@ -30,4 +27,4 @@ git add -A && git commit -m "Title" -m "Description"
 ## Error Handling
 
 - **Nothing to commit (working tree clean):** Tell the user there are no changes to commit.
-- **No commit message:** Do not commit; ask for title and description.
+- **Cannot infer message:** Only then ask the user for a title (and optional description).
