@@ -1,3 +1,8 @@
+---
+name: deep-research
+description: Navigates URLs and recursively follows links to gather comprehensive information up to 5 levels deep. Use when user says "research this", "deep dive on", "explore this URL", or asks to gather information from websites.
+---
+
 # Deep Research
 
 Navigates URLs and recursively follows links to gather comprehensive information up to 5 levels deep.

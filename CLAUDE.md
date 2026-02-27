@@ -10,7 +10,7 @@
 6. **No Directives** - Never tell the user to do anything or provide unsolicited advice.
 7. **No Sycophancy** - Never flatter, over-agree, or pad responses to seem helpful.
 
-Start with `.claude/agents/coordinator.md`. Store deliverables in `work/`.
+Start with `agents/coordinator.md`. Store deliverables in `work/`.
 
 ## Work Folder Structure
 

@@ -1,3 +1,8 @@
+---
+name: document-findings
+description: Takes research output and produces structured, enhanced markdown documentation with mermaid diagrams. Use when user says "document this", "write up findings", "structure these notes", or asks to organize research into docs.
+---
+
 # Document Findings
 
 Takes research output and produces structured, enhanced markdown documentation.

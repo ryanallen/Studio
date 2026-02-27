@@ -1,3 +1,8 @@
+---
+name: webpage-capture
+description: Recreates a live webpage as a Figma design using Playwright and Figma MCP. Use when user says "capture this page", "webpage to Figma", "convert site to Figma", or asks to recreate a webpage in Figma.
+---
+
 # Webpage-to-Figma Capture
 
 Recreates a live webpage as a Figma design using Playwright and Figma MCP.
@@ -6,14 +11,14 @@ Recreates a live webpage as a Figma design using Playwright and Figma MCP.
 
 You need two things from the user before starting:
 
-1. **Webpage URL** — The page to capture (e.g., `https://example.com`)
-2. **Figma file URL** — Where to put the generated design (e.g., `https://www.figma.com/file/abc123/...`)
+1. **Webpage URL** - The page to capture (e.g., `https://example.com`)
+2. **Figma file URL** - Where to put the generated design (e.g., `https://www.figma.com/file/abc123/...`)
 
 If either is missing, ask the user before proceeding.
 
 ## External Sites
 
-For sites you don't control (e.g., ryanallen.com, competitor.com). Uses `.claude/skills/scripts/capture.js` to bypass CSP and inject Figma's capture script.
+For sites you don't control (e.g., ryanallen.com, competitor.com). Uses `skills/webpage-capture/scripts/capture.js` to bypass CSP and inject Figma's capture script.
 
 ### 1. Generate Capture ID
 
@@ -22,7 +27,7 @@ Call Figma MCP's `generate_figma_design` with the target Figma file details. You
 ### 2. Run Capture Script
 
 ```bash
-node .claude/skills/scripts/capture.js "https://example.com" "CAPTURE_ID" 1920 1080
+node skills/webpage-capture/scripts/capture.js "https://example.com" "CAPTURE_ID" 1920 1080
 ```
 
 The script handles:
@@ -44,7 +49,7 @@ For localhost or dev servers where you can modify the HTML.
 
 ### 1. Generate Capture ID
 
-Same as external sites — call `generate_figma_design` to get a capture ID and endpoint.
+Same as external sites - call `generate_figma_design` to get a capture ID and endpoint.
 
 ### 2. Add Capture Script to HTML
 
@@ -64,5 +69,5 @@ Same polling process as external sites.
 
 ## Requirements
 
-- Playwright installed (`npm install playwright`) — for capture.js script
+- Playwright installed (`npm install playwright`) - for capture.js script
 - Figma MCP server configured and authenticated

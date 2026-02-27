@@ -1,3 +1,8 @@
+---
+name: root-cause-analysis
+description: Analyzes documented findings to identify problems and trace them to root causes using the Five Whys technique. Use when user says "analyze problems", "find root cause", "Five Whys", or asks to identify why something is broken.
+---
+
 # Root Cause Analysis
 
 Analyzes documented findings to identify problems and trace them to root causes using the Five Whys technique.
