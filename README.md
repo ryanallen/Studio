@@ -36,7 +36,7 @@ Follow the OAuth flow when prompted for Figma and Atlassian.
 Give the designer a webpage URL and a Figma file URL. See [webpage capture](.claude/skills/webpage-capture/SKILL.md).
 
 ### Research, Define, Strategize
-Ticket to root cause to solution. See [coordinator](agents/coordinator.md).
+Ticket to root cause to solution. See [coordinator](.claude/agents/coordinator.md).
 
 ---
 
@@ -44,9 +44,16 @@ Ticket to root cause to solution. See [coordinator](agents/coordinator.md).
 
 ```
 Studio/
-├── CLAUDE.md
+├── AGENTS.md
+├── CLAUDE.md -> AGENTS.md
 ├── .claude/
 │   ├── settings.json
+│   ├── agents/
+│   │   ├── coordinator.md
+│   │   ├── designer.md
+│   │   ├── researcher.md
+│   │   ├── documentor.md
+│   │   └── strategist.md
 │   └── skills/
 │       ├── deep-research/SKILL.md
 │       ├── document-findings/SKILL.md
@@ -55,12 +62,6 @@ Studio/
 │       └── webpage-capture/
 │           ├── SKILL.md
 │           └── scripts/capture.js
-├── agents/
-│   ├── coordinator.md
-│   ├── designer.md
-│   ├── researcher.md
-│   ├── documentor.md
-│   └── strategist.md
 ├── work/
 │   └── {team}/{space}/{project}/
 │       ├── README.md
