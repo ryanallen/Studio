@@ -15,7 +15,7 @@ Start with `.claude/agents/coordinator.md`. Store deliverables in `work/`.
 
 ## Work Folder Structure
 
-All deliverables live in `work/{team}/{space}/{project}/README.md`. Single file per project containing all sections: problems, research findings, sources, link tree, current state, and solution proposals.
+All deliverables live in `work/{team}/{space}/{project}/README.md`. Single file per project containing all sections: problems, research findings, sources, link tree, current state, and solution proposals. Do not create notes, drafts, or content in any other files; everything for a project goes in that one README.
 
 ---
 `CLAUDE.md` is a symlink to this file so Claude Code resolves the same config.

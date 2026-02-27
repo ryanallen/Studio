@@ -121,3 +121,4 @@ The problems summary goes at the **top** of the project's `README.md` under a `#
 - Root causes must be actionable (a broken process or alterable behavior, not "that's just how it is")
 - Always produce a one-sentence problem definition for each root cause
 - Use mermaid mindmaps to visualize every Five Whys chain
+- Do not create other files; all output goes in the project README only

@@ -10,7 +10,7 @@ Navigates URLs and recursively follows links to gather comprehensive information
 ## Inputs
 
 1. **Starting URL(s)** - One or more URLs to begin research from
-2. **Output path** - `work/{team}/{space}/{project}/README.md`
+2. **Output path** - `work/{team}/{space}/{project}/README.md` (single file for all findings; do not create other note or output files)
 3. **Focus area** (optional) - Keywords or topics to prioritize when deciding which links to follow
 
 If the starting URL or output path is missing, ask the user before proceeding.

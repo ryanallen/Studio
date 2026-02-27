@@ -19,7 +19,7 @@ Valid team and space values are defined in `work/config.md`.
 
 ## Output
 
-All project documentation lives in a single file: `work/{team}/{space}/{project}/README.md`
+All project documentation lives in a single file: `work/{team}/{space}/{project}/README.md`. Do not create other files (notes, drafts, separate docs) for the project; write everything into this README.
 
 ## Markdown Standards
 
