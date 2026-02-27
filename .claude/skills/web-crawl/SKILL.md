@@ -10,7 +10,7 @@ Navigates URLs and recursively follows links to gather comprehensive information
 ## Inputs
 
 1. **Starting URL(s)** - One or more URLs to begin research from
-2. **Output path** - `work/{team}/{space}/{project}/research/`
+2. **Output path** - `work/{team}/{space}/{project}/README.md`
 3. **Focus area** (optional) - Keywords or topics to prioritize when deciding which links to follow
 
 If the starting URL or output path is missing, ask the user before proceeding.
@@ -57,9 +57,9 @@ For each page visited, capture:
 
 ### 4. Output
 
-Write all findings to the output path:
+Write all findings as sections in the project README.md:
 
-**sources.md** - Link index with depth levels:
+**## Sources** - Link index with depth levels:
 ```markdown
 ## Sources
 
@@ -69,17 +69,21 @@ Write all findings to the output path:
 | ... | 1     | ...   | ...    |
 ```
 
-**findings.md** - Extracted content organized by topic:
+**## Findings** - Extracted content organized by topic:
 ```markdown
-## {Topic Heading}
+## Findings
+
+### {Topic Heading}
 
 {Summarized content}
 
 > Source: {URL} (depth {N})
 ```
 
-**link-tree.md** - Visual map of traversal:
+**## Link Tree** - Visual map of traversal:
 ```markdown
+## Link Tree
+
 - [Starting Page](url)
   - [Child Page](url)
     - [Grandchild Page](url)
