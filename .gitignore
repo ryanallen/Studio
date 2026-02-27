@@ -4,3 +4,7 @@
 # Windows
 Thumbs.db
 desktop.ini
+
+# npm
+node_modules/
+package-lock.json
