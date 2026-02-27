@@ -6,6 +6,15 @@ Agent workflows for design capture, research, and strategic analysis.
 
 ## Setup
 
+An LLM can perform all setup steps below (show hidden files, add MCP servers, copy config). Stop when the user must quit the terminal and relaunch; they then run `/mcp` in the chat to authenticate. Do not proceed past that until they have completed OAuth for Figma and Atlassian.
+
+### Show Hidden Files
+
+macOS:
+```bash
+defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder
+```
+
 ### MCP Servers
 
 ```bash
