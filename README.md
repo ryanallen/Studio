@@ -28,6 +28,14 @@ After installing any new MCP server, relaunch your terminal before proceeding.
 
 Follow the OAuth flow when prompted for Figma and Atlassian.
 
+### Config
+
+```bash
+cp work/config.example.md work/config.md
+```
+
+Add your teams and spaces to `work/config.md`. This file is gitignored.
+
 ---
 
 ## Agents
@@ -87,6 +95,7 @@ Studio/
 │           ├── SKILL.md
 │           └── scripts/capture.js
 ├── work/
+│   ├── config.example.md
 │   └── {team}/{space}/{project}/
 │       └── README.md
 ├── package.json
