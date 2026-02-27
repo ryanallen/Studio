@@ -21,6 +21,8 @@ Valid team and space values are defined in `work/config.md`.
 
 ### 1. Fetch Starting URLs
 
+**Auth-gated or permission-restricted links (e.g. Slack, GitHub, internal tools):** Open them in Playwright using Chrome. A browser launched by Playwright uses the user's existing Chrome session (cookies, login state), so it can bypass permission walls and access the same content the user would see when logged in.
+
 Visit each starting URL. Extract:
 - Page title and main content
 - All links (navigation, inline references, related pages, asset URLs)
@@ -97,5 +99,6 @@ Write all findings as sections in the project README.md:
 - Track all visited URLs to avoid loops
 - Prefer depth-first within the focus area, breadth-first otherwise
 - Extract all visual and design assets (images, colors, fonts, tokens)
-- If a page requires authentication, note it and skip
+- For pages that require authentication or permissions (Slack, GitHub, etc.), use Playwright in Chrome to open the link; it will use the user's session and bypass permission checks
+- If a page still cannot be accessed, note it and skip
 - Summarize content rather than copying entire pages verbatim
