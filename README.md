@@ -6,38 +6,9 @@ Agent workflows for design capture, research, and strategic analysis.
 
 ## Setup
 
-An LLM can perform all setup steps below (show hidden files, add MCP servers). Stop when the user must quit the terminal and relaunch; they then run `/mcp` in the chat to authenticate. Do not proceed past that until they have completed OAuth for Figma and Atlassian.
+Ask AI to install stuff. It will use the [setup agent](.claude/agents/setup.md), which runs the standard steps (show hidden files, MCP servers, config). After that, quit the terminal and relaunch, then run `/mcp` in the chat and complete OAuth for Figma and Atlassian.
 
-### Show Hidden Files
-
-macOS:
-```bash
-defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder
-```
-
-### MCP Servers
-
-```bash
-# Figma (design creation)
-claude mcp add figma -- npx -y @figma/mcp-figma
-
-# Playwright (browser automation)
-claude mcp add playwright -- npx -y @executeautomation/playwright-mcp-server
-
-# Atlassian Jira/Confluence (ticket management)
-claude mcp add --transport sse atlassian-rovo https://mcp.atlassian.com/v1/sse
-```
-
-After installing any new MCP server, relaunch your terminal before proceeding.
-
-**Verify and authenticate:**
-```bash
-/mcp
-```
-
-Follow the OAuth flow when prompted for Figma and Atlassian.
-
-Add your teams and spaces to `work/config.md`.
+Optional: add custom setup steps in `.claude/setup/custom.md` (gitignored). The setup agent runs the [setup-custom](.claude/agents/setup-custom.md) agent, which runs that file if present so custom steps do not sync.
 
 ---
 
@@ -49,6 +20,7 @@ Add your teams and spaces to `work/config.md`.
 | **researcher** | Navigates URLs and gathers information up to 5 levels deep |
 | **documentor** | Structures findings into enhanced markdown with mermaid diagrams |
 | **strategist** | Identifies problems and performs Five Whys root cause analysis |
+| **setup** | Runs install steps (MCP servers, config); supports optional custom setup via setup-custom agent |
 
 ## Workflows
 
@@ -88,11 +60,16 @@ Studio/
 │   │   ├── designer.md
 │   │   ├── researcher.md
 │   │   ├── documentor.md
-│   │   └── strategist.md
+│   │   ├── strategist.md
+│   │   ├── setup.md
+│   │   └── setup-custom.md (runs .claude/setup/custom.md if present; that file is gitignored)
+│   ├── setup/
+│   │   └── custom.md (optional, gitignored)
 │   └── skills/
 │       ├── web-crawl/SKILL.md
 │       ├── document-findings/SKILL.md
 │       ├── root-cause-analysis/SKILL.md
+│       ├── setup/SKILL.md
 │       ├── commit-all/SKILL.md
 │       ├── sync-upstream/SKILL.md
 │       ├── update-ticket/SKILL.md
