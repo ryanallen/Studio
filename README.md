@@ -19,36 +19,24 @@ claude mcp add playwright -- npx -y @executeautomation/playwright-mcp-server
 claude mcp add --transport sse atlassian-rovo https://mcp.atlassian.com/v1/sse
 ```
 
-**Verify:**
+After installing any new MCP server, relaunch your terminal before proceeding.
+
+**Verify and authenticate:**
 ```bash
 /mcp
 ```
 
-### Figma MCP
-
-After adding, authenticate:
-```bash
-/mcp
-```
-Follow the Figma OAuth flow when prompted.
-
-### Atlassian MCP
-
-After adding, authenticate:
-```bash
-/mcp
-```
-Follow the Atlassian OAuth 2.1 flow when prompted.
+Follow the OAuth flow when prompted for Figma and Atlassian.
 
 ---
 
 ## Workflows
 
 ### Webpage to Figma
-Give the designer a webpage URL and a Figma file URL. See [webpage capture](.claude/skills/webpage-capture.md).
+Give the designer a webpage URL and a Figma file URL. See [webpage capture](skills/webpage-capture/SKILL.md).
 
 ### Research, Define, Strategize
-Ticket to root cause to solution. See [coordinator](.claude/agents/coordinator.md).
+Ticket to root cause to solution. See [coordinator](agents/coordinator.md).
 
 ---
 
@@ -57,21 +45,20 @@ Ticket to root cause to solution. See [coordinator](.claude/agents/coordinator.m
 ```
 Studio/
 ├── CLAUDE.md
-├── .claude/
-│   ├── agents/
-│   │   ├── coordinator.md
-│   │   ├── designer.md
-│   │   ├── researcher.md
-│   │   ├── documentor.md
-│   │   └── strategist.md
-│   └── skills/
-│       ├── webpage-capture.md
-│       ├── deep-research.md
-│       ├── document-findings.md
-│       ├── root-cause-analysis.md
-│       ├── update-ticket.md
-│       └── scripts/
-│           └── capture.js
+├── agents/
+│   ├── coordinator.md
+│   ├── designer.md
+│   ├── researcher.md
+│   ├── documentor.md
+│   └── strategist.md
+├── skills/
+│   ├── deep-research/SKILL.md
+│   ├── document-findings/SKILL.md
+│   ├── root-cause-analysis/SKILL.md
+│   ├── update-ticket/SKILL.md
+│   └── webpage-capture/
+│       ├── SKILL.md
+│       └── scripts/capture.js
 ├── work/
 │   └── {team}/{space}/{project}/
 │       ├── README.md
