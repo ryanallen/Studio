@@ -11,31 +11,6 @@ designer, researcher, documentor, strategist
 
 ## Workflows
 
-### Webpage to Figma
-```
-designer -> ../skills/webpage-capture/SKILL.md
-```
-
-### Fetch Ticket
-```
-researcher -> ../skills/deep-research/SKILL.md (atlassian-rovo MCP)
-```
-
-### Deep Research
-```
-researcher -> ../skills/deep-research/SKILL.md
-```
-
-### Document
-```
-documentor -> ../skills/document-findings/SKILL.md
-```
-
-### Analyze Problems
-```
-strategist -> ../skills/root-cause-analysis/SKILL.md
-```
-
 ### Audit Solutions
 Input: {project-path}/analysis/problems.md
 ```

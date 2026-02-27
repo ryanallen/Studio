@@ -30,13 +30,37 @@ Follow the OAuth flow when prompted for Figma and Atlassian.
 
 ---
 
+## Agents
+
+| Agent | Capability |
+|-------|-----------|
+| **designer** | Captures a webpage and recreates it in Figma |
+| **researcher** | Navigates URLs and gathers information up to 5 levels deep |
+| **documentor** | Structures findings into enhanced markdown with mermaid diagrams |
+| **strategist** | Identifies problems and performs Five Whys root cause analysis |
+
 ## Workflows
 
 ### Webpage to Figma
-Give the designer a webpage URL and a Figma file URL. See [webpage capture](.claude/skills/webpage-capture/SKILL.md).
+Give the designer a webpage URL and a Figma file URL.
+
+### Deep Research
+Give the researcher a URL or topic to investigate.
+
+### Document
+Give the documentor research findings to structure into a project folder.
+
+### Analyze Problems
+Give the strategist findings to perform Five Whys root cause analysis.
+
+### Audit Solutions
+The researcher finds existing solutions for each root cause, then the documentor writes them up.
+
+### Propose Solutions
+The strategist proposes new solutions from root causes and current state, then the documentor writes them up.
 
 ### Research, Define, Strategize
-Ticket to root cause to solution. See [coordinator](.claude/agents/coordinator.md).
+Full pipeline: fetch ticket, research, document, analyze, audit, propose, update ticket. See [coordinator](.claude/agents/coordinator.md).
 
 ---
 
