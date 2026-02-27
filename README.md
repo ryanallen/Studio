@@ -39,23 +39,6 @@ Follow the OAuth flow when prompted for Figma and Atlassian.
 
 Add your teams and spaces to `work/config.md`.
 
-To pull from the upstream (ryanallen/Studio) into your working repo: in the working repo run:
-
-```bash
-git remote add upstream https://github.com/ryanallen/Studio.git
-git fetch upstream
-```
-
-Pull from upstream with `git pull upstream main` (or merge/rebase as you prefer).
-
-If your working repo uses ryanallen/Studio as upstream and you change `work/config.md` locally, prevent it from being overwritten on pull:
-
-```bash
-git update-index --skip-worktree work/config.md
-```
-
-To allow upstream to update the file again: `git update-index --no-skip-worktree work/config.md`.
-
 ---
 
 ## Agents
@@ -110,6 +93,7 @@ Studio/
 │       ├── web-crawl/SKILL.md
 │       ├── document-findings/SKILL.md
 │       ├── root-cause-analysis/SKILL.md
+│       ├── commit-all/SKILL.md
 │       ├── sync-upstream/SKILL.md
 │       ├── update-ticket/SKILL.md
 │       └── webpage-capture/
@@ -122,3 +106,27 @@ Studio/
 ├── package.json
 └── README.md
 ```
+
+<details>
+<summary>Using a working repo with this as upstream</summary>
+
+For a working repo that pulls from this repo (ryanallen/Studio) as upstream.
+
+**Add upstream.** In the working repo:
+
+```bash
+git remote add upstream https://github.com/ryanallen/Studio.git
+git fetch upstream
+```
+
+Pull with `git pull upstream main` (or use the sync-upstream skill: "sync upstream").
+
+**Keep local config from being overwritten.** If you change `work/config.md` in the working repo and don't want pull to overwrite it:
+
+```bash
+git update-index --skip-worktree work/config.md
+```
+
+To allow upstream to update it again: `git update-index --no-skip-worktree work/config.md`.
+
+</details>
