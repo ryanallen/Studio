@@ -79,7 +79,7 @@ Studio/
 │   │   ├── documentor.md
 │   │   └── strategist.md
 │   └── skills/
-│       ├── deep-research/SKILL.md
+│       ├── web-crawl/SKILL.md
 │       ├── document-findings/SKILL.md
 │       ├── root-cause-analysis/SKILL.md
 │       ├── update-ticket/SKILL.md
