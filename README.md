@@ -88,10 +88,7 @@ Studio/
 │           └── scripts/capture.js
 ├── work/
 │   └── {team}/{space}/{project}/
-│       ├── README.md
-│       ├── research/
-│       ├── analysis/
-│       └── solutions/
+│       └── README.md
 ├── package.json
 └── README.md
 ```

@@ -14,21 +14,7 @@ Start with `.claude/agents/coordinator.md`. Store deliverables in `work/`.
 
 ## Work Folder Structure
 
-All deliverables live in `work/{team}/{space}/{project}/`:
-
-```
-work/{team}/{space}/{project}/
-├── README.md              # Entry point. Problems at top, then overview, then doc links.
-├── research/
-│   ├── sources.md         # URL index with depth, title, parent
-│   ├── findings.md        # Content organized by topic, sources cited
-│   └── link-tree.md       # Traversal map of links followed
-├── analysis/
-│   ├── problems.md        # Five Whys root cause analysis per problem
-│   └── current-state.md   # Existing solutions (internal + external audit)
-└── solutions/
-    └── proposals.md       # New solution proposals from strategist
-```
+All deliverables live in `work/{team}/{space}/{project}/README.md`. Single file per project containing all sections: problems, research findings, sources, link tree, current state, and solution proposals.
 
 ---
 `CLAUDE.md` is a symlink to this file so Claude Code resolves the same config.
