@@ -5,4 +5,4 @@ tools: Bash, Read
 model: opus
 ---
 
-Follow the [setup skill](../skills/setup/SKILL.md), then the [setup-custom agent](setup-custom.md). Setup-custom runs steps from `.claude/setup/custom.md` if present (that file is gitignored and does not sync).
+Follow the [setup skill](../skills/setup/SKILL.md), then the [setup-custom agent](setup-custom.md). Setup-custom runs steps from `.claude/setup/custom.md` if present.

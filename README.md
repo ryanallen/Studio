@@ -8,7 +8,7 @@ Agent workflows for design capture, research, and strategic analysis.
 
 Ask AI to install stuff. It will use the [setup agent](.claude/agents/setup.md), which runs the standard steps (show hidden files, MCP servers, config). After that, quit the terminal and relaunch, then run `/mcp` in the chat and complete OAuth for Figma and Atlassian.
 
-Optional: add custom setup steps in `.claude/setup/custom.md` (gitignored). The setup agent runs the [setup-custom](.claude/agents/setup-custom.md) agent, which runs that file if present so custom steps do not sync.
+Optional: add custom setup steps in `.claude/setup/custom.md`. The setup agent runs the [setup-custom](.claude/agents/setup-custom.md) agent, which runs that file if present. Omit custom.md from commits to keep those steps local.
 
 ---
 
@@ -62,9 +62,9 @@ Studio/
 │   │   ├── documentor.md
 │   │   ├── strategist.md
 │   │   ├── setup.md
-│   │   └── setup-custom.md (runs .claude/setup/custom.md if present; that file is gitignored)
+│   │   └── setup-custom.md (runs .claude/setup/custom.md if present)
 │   ├── setup/
-│   │   └── custom.md (optional, gitignored)
+│   │   └── custom.md (optional; omit from commits to keep local)
 │   └── skills/
 │       ├── web-crawl/SKILL.md
 │       ├── document-findings/SKILL.md
