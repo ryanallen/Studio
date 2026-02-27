@@ -6,7 +6,7 @@ Agent workflows for design capture, research, and strategic analysis.
 
 ## Setup
 
-An LLM can perform all setup steps below (show hidden files, add MCP servers, copy config). Stop when the user must quit the terminal and relaunch; they then run `/mcp` in the chat to authenticate. Do not proceed past that until they have completed OAuth for Figma and Atlassian.
+An LLM can perform all setup steps below (show hidden files, add MCP servers). Stop when the user must quit the terminal and relaunch; they then run `/mcp` in the chat to authenticate. Do not proceed past that until they have completed OAuth for Figma and Atlassian.
 
 ### Show Hidden Files
 
@@ -37,13 +37,7 @@ After installing any new MCP server, relaunch your terminal before proceeding.
 
 Follow the OAuth flow when prompted for Figma and Atlassian.
 
-### Config
-
-```bash
-cp work/config.example.md work/config.md
-```
-
-Add your teams and spaces to `work/config.md`. This file is gitignored.
+Add your teams and spaces to `work/config.md`.
 
 ---
 
@@ -104,7 +98,7 @@ Studio/
 │           ├── SKILL.md
 │           └── scripts/capture.js
 ├── work/
-│   ├── config.example.md
+│   ├── config.md
 │   └── {team}/{space}/{project}/
 │       └── README.md
 ├── package.json
