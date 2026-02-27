@@ -39,7 +39,16 @@ Follow the OAuth flow when prompted for Figma and Atlassian.
 
 Add your teams and spaces to `work/config.md`.
 
-If this repo uses Studio as upstream and you change `work/config.md` locally, prevent it from being overwritten on pull:
+To pull from the upstream (ryanallen/Studio) into your working repo: in the working repo run:
+
+```bash
+git remote add upstream https://github.com/ryanallen/Studio.git
+git fetch upstream
+```
+
+Pull from upstream with `git pull upstream main` (or merge/rebase as you prefer).
+
+If your working repo uses ryanallen/Studio as upstream and you change `work/config.md` locally, prevent it from being overwritten on pull:
 
 ```bash
 git update-index --skip-worktree work/config.md
@@ -101,6 +110,7 @@ Studio/
 │       ├── web-crawl/SKILL.md
 │       ├── document-findings/SKILL.md
 │       ├── root-cause-analysis/SKILL.md
+│       ├── sync-upstream/SKILL.md
 │       ├── update-ticket/SKILL.md
 │       └── webpage-capture/
 │           ├── SKILL.md
