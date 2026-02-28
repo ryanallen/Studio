@@ -1,6 +1,6 @@
 ---
 name: figma-analyze
-description: Analyzes a Figma design link and produces a structured report. Use when user says "analyze Figma", "Figma audit", "analyze this Figma link", or /figma-analyze. In Claude Code and Cursor, /skills lists all.
+description: Research/audit skill. Analyzes a Figma design link and produces a structured report. Use when user says "analyze Figma", "Figma audit", "analyze this Figma link", or /figma-analyze. In Claude Code and Cursor, /skills lists all.
 ---
 
 # Figma Analyze

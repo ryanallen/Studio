@@ -9,6 +9,8 @@ model: opus, sonnet
 
 Researcher, Documentor, Strategist
 
+Researcher runs [learn](../skills/learn/SKILL.md) and [figma-analyze](../skills/figma-analyze/SKILL.md) (Figma link to structured report) when the user requests them.
+
 Valid team and space values are defined in `work/config.md`.
 
 ## Workflows

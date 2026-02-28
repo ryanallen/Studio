@@ -18,10 +18,10 @@ Call a skill by saying its trigger phrase or typing /skill-name. In Claude Code 
 
 ### Designer
 - **webpage-capture**: Recreates a live webpage as a Figma design. "capture page", "to Figma", /webpage-capture. Give webpage URL and Figma file URL.
-- **figma-analyze**: Analyzes a Figma link and produces a structured report. General link = full file (pages, sections, frames, groups, components, images, fonts, colors, tokens, content). Specific link (with node-id) = deep analysis from that node only. "analyze Figma", "Figma audit", "analyze this Figma link", /figma-analyze. Give Figma design URL.
 
 ### Researcher
 - **learn**: Gather from any input (ticket, URL(s), text, file(s), image(s)) and follow links up to 5 levels deep; Documentor then structures the output. "learn about this", "look at this", /learn.
+- **figma-analyze**: Analyzes a Figma link and produces a structured report. General link = full file (pages, sections, frames, groups, components, images, fonts, colors, tokens, content). Specific link (with node-id) = deep analysis from that node only. "analyze Figma", "Figma audit", "analyze this Figma link", /figma-analyze. Give Figma design URL.
 
 ### Documentor
 - **document-findings**: Structure findings into enhanced markdown with mermaid diagrams. "write up", "document", /document-findings.
