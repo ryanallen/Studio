@@ -43,8 +43,6 @@ Level 4: Links found on level 3 pages
 ```
 
 At each level:
-- Prioritize links matching the focus area
-- Follow cross-domain links when relevant to the research
 - Skip duplicate URLs already visited
 - Track the link tree (parent -> child relationships)
 
