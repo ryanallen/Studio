@@ -14,7 +14,7 @@ Optional: add custom setup steps in `.claude/skills/setup/custom.md`. The Instal
 
 ## Agents and their skills
 
-Call a skill by saying its trigger phrase or typing /skill-name. In Claude Code and Cursor, /skills lists all.
+Call a skill by saying its trigger phrase or typing /skill-name. In Claude Code and Cursor, /skills lists all. In both Claude Code and Cursor, skills are discovered from `.claude/skills/`: each skill must live in a kebab-case folder with a file named `SKILL.md` (e.g. `.claude/skills/commit-all/SKILL.md`).
 
 ### Designer
 - **webpage-capture**: Recreates a live webpage as a Figma design. "capture page", "to Figma", /webpage-capture. Give webpage URL and Figma file URL.
