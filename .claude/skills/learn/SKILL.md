@@ -81,7 +81,7 @@ If level-0 content exists, include it first:
 {Content or summary of user-provided input}
 ```
 
-**## Sources** – Link index with depth levels:
+**## Sources** – Link index with depth levels. Use markdown links so URLs are clickable (e.g. put `[Title](URL)` in the Title column):
 ```markdown
 ## Sources
 
@@ -99,10 +99,10 @@ If level-0 content exists, include it first:
 
 {Summarized content}
 
-> Source: {URL} (depth {N})
+> Source: [page title or URL](url) (depth {N})
 ```
 
-**## Link Tree** – Visual map of traversal:
+**## Link Tree** – Visual map of traversal (every item must be a markdown link so it is clickable):
 ```markdown
 ## Link Tree
 
@@ -119,3 +119,4 @@ If level-0 content exists, include it first:
 - For pages that require authentication or permissions (Slack, GitHub, etc.), use Playwright in Chrome to open the link; it will use the user's session and bypass permission checks
 - If a page still cannot be accessed, note it and skip
 - Summarize content when appropriate and if data is important copy it verbatim
+- **Clickable links:** Every URL in the output (Sources table, Link Tree, Findings source lines) must be written as a markdown link `[title](url)`. Never output a bare URL or title-only line; always use `[title](url)` so links are clickable in the README.

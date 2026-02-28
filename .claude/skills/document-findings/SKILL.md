@@ -70,6 +70,8 @@ Use blockquotes with bold labels for callouts:
 ### Links and Sources
 Always cite sources inline with markdown links. Group full source lists in tables.
 
+**Clickable links:** Every reference to a source or URL must use markdown link syntax `[title](url)` so it renders as a clickable link in the README. Never write the link title and URL as separate plain text or as a bare URL.
+
 ## Process
 
 ### 1. Read Source Material
@@ -133,6 +135,7 @@ Learnings. Recommendations. Links to new docs.
 ## Rules
 
 - Never use absolute filesystem paths in links. All links must be relative to the document they appear in
+- Every source or URL reference must be a markdown link `[title](url)` so it is clickable; never plain text title with URL elsewhere or bare URL
 - Never invent information not present in source material
 - Always attribute content to its source
 - Use mermaid diagrams for any process with 3+ steps or any hierarchy with 2+ levels
