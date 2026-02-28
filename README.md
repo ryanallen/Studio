@@ -17,7 +17,7 @@ Optional: add custom setup steps in `.claude/setup/custom.md`. The setup agent r
 | Agent | Capability |
 |-------|-----------|
 | **designer** | Captures a webpage and recreates it in Figma |
-| **researcher** | Navigates URLs and gathers information up to 5 levels deep |
+| **researcher** | Learn: gather from any input (ticket, URL(s), text, file(s), image(s)) and follow links up to 5 levels deep |
 | **documentor** | Structures findings into enhanced markdown with mermaid diagrams |
 | **strategist** | Identifies problems and performs Five Whys root cause analysis |
 | **setup** | Runs install steps (MCP servers, config); supports optional custom setup via setup-custom agent |
@@ -27,8 +27,8 @@ Optional: add custom setup steps in `.claude/setup/custom.md`. The setup agent r
 ### Webpage to Figma
 Give the designer a webpage URL and a Figma file URL.
 
-### Deep Research
-Give the researcher a URL or topic to investigate.
+### Learn
+Give the researcher any input (ticket ID, URL(s), pasted text, file path(s), or image(s)); they gather from it and follow links up to 5 levels deep, then documentor structures the output.
 
 ### Document
 Give the documentor research findings to structure into a project folder.
@@ -36,14 +36,11 @@ Give the documentor research findings to structure into a project folder.
 ### Analyze Problems
 Give the strategist findings to perform Five Whys root cause analysis.
 
-### Audit Solutions
-The researcher finds existing solutions for each root cause, then the documentor writes them up.
-
 ### Propose Solutions
 The strategist proposes new solutions from root causes and current state, then the documentor writes them up.
 
 ### Research, Define, Strategize
-Full pipeline: fetch ticket, research, document, analyze, audit, propose, update ticket. See [coordinator](.claude/agents/coordinator.md).
+Full pipeline: learn (any input), document, analyze, audit, propose, update ticket. See [coordinator](.claude/agents/coordinator.md).
 
 ---
 
@@ -66,7 +63,7 @@ Studio/
 │   ├── setup/
 │   │   └── custom.md (optional; omit from commits to keep local)
 │   └── skills/
-│       ├── web-crawl/SKILL.md
+│       ├── learn/SKILL.md
 │       ├── document-findings/SKILL.md
 │       ├── root-cause-analysis/SKILL.md
 │       ├── setup/SKILL.md
