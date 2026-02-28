@@ -8,3 +8,6 @@ desktop.ini
 # npm
 node_modules/
 package-lock.json
+
+# Custom setup (sync won't overwrite)
+.claude/skills/setup/custom.md
