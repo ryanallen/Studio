@@ -6,7 +6,7 @@ Agent workflows for design capture, research, and strategic analysis.
 
 ## Setup
 
-Ask AI to install stuff. It will use the [setup agent](.claude/agents/setup.md), which runs the standard steps (show hidden files, MCP servers, config). After that, quit the terminal and relaunch, then run `/mcp` in the chat and complete OAuth for Figma and Atlassian.
+Say "setup", "install", or type `/setup`. The [setup skill](.claude/skills/setup/SKILL.md) runs the standard steps (show hidden files, MCP servers, config). After that, quit the terminal and relaunch, then run `/mcp` in the chat and complete OAuth for Figma and Atlassian.
 
 Optional: add custom setup steps in `.claude/setup/custom.md`. The setup agent runs the [setup-custom](.claude/agents/setup-custom.md) agent, which runs that file if present. Omit custom.md from commits to keep those steps local.
 
@@ -24,7 +24,7 @@ Optional: add custom setup steps in `.claude/setup/custom.md`. The setup agent r
 
 ## Workflows
 
-Call a skill with /skill-name (e.g. /learn). In Claude Code and Cursor, /skills lists all.
+Call a skill by saying its trigger phrase or typing /skill-name (e.g. "learn about this" or /learn). In Claude Code and Cursor, /skills lists all.
 
 ### Webpage to Figma
 Give the designer a webpage URL and a Figma file URL.
@@ -95,7 +95,7 @@ git remote add upstream https://github.com/ryanallen/Studio.git
 git fetch upstream
 ```
 
-Pull with `git pull upstream main` (or use the sync-upstream skill: "sync upstream").
+Pull with `git pull upstream main` (or say "sync", "pull", or /sync-upstream).
 
 **Keep local config from being overwritten.** If you change `work/config.md` in the working repo and don't want pull to overwrite it:
 
