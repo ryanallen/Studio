@@ -93,10 +93,9 @@ Write all findings as sections in the project README.md:
 
 ## Rules
 
-- Never exceed 5 levels of depth
 - Track all visited URLs to avoid loops
 - Prefer depth-first within the focus area, breadth-first otherwise
 - Extract all visual and design assets (images, colors, fonts, tokens)
 - For pages that require authentication or permissions (Slack, GitHub, etc.), use Playwright in Chrome to open the link; it will use the user's session and bypass permission checks
 - If a page still cannot be accessed, note it and skip
-- Summarize content rather than copying entire pages verbatim
+- Summarize content when appropriate and if data is important copy it verbatim
