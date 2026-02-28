@@ -1,11 +1,11 @@
 ---
-name: webpage-capture
-description: Recreates a live webpage as a Figma design using Playwright and Figma MCP. Use when user says "capture page", "to Figma", or /webpage-capture. In Claude Code and Cursor, /skills lists all.
+name: capture-webpage
+description: Capture a live webpage as a Figma design using Playwright and the configured Figma design MCP (for this repo, Figma Console MCP). Use when user says "capture page", "to Figma", or /capture-webpage. In Claude Code and Cursor, /skills lists all.
 ---
 
-# Webpage-to-Figma Capture
+# Capture Webpage
 
-Recreates a live webpage as a Figma design using Playwright and Figma MCP.
+Capture a live webpage as a Figma design using Playwright and the configured Figma design MCP.
 
 ## Inputs
 
@@ -14,20 +14,18 @@ You need two things from the user before starting:
 1. **Webpage URL** - The page to capture (e.g., `https://example.com`)
 2. **Figma file URL** - Where to put the generated design (e.g., `https://www.figma.com/file/abc123/...`)
 
-If either is missing, ask the user before proceeding.
-
 ## External Sites
 
-For sites you don't control (e.g., ryanallen.com, competitor.com). Uses `.claude/skills/webpage-capture/scripts/capture.js` to bypass CSP and inject Figma's capture script.
+For sites you don't control (e.g., example.com, competitor.com). Uses `.claude/skills/capture-webpage/scripts/capture.js` to bypass CSP and inject Figma's capture script.
 
 ### 1. Generate Capture ID
 
-Call Figma MCP's `generate_figma_design` with the target Figma file details. You'll receive a capture ID and endpoint URL.
+Use the Figma Console MCP (or other configured Figma design MCP) with the target Figma file details to get a capture ID and endpoint URL.
 
 ### 2. Run Capture Script
 
 ```bash
-node .claude/skills/webpage-capture/scripts/capture.js "https://example.com" "CAPTURE_ID" 1920 1080
+node .claude/skills/capture-webpage/scripts/capture.js "https://example.com" "CAPTURE_ID" 1920 1080
 ```
 
 The script handles:
@@ -70,4 +68,4 @@ Same polling process as external sites.
 ## Requirements
 
 - Playwright installed (`npm install playwright`) - for capture.js script
-- Figma MCP server configured and authenticated
+- Figma Console MCP (`figma-console-mcp`) or another Figma design MCP configured and authenticated for this project

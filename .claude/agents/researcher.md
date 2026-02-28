@@ -7,4 +7,4 @@ model: opus, sonnet
 
 Follow the [learn](../skills/learn/SKILL.md) skill for all research work.
 
-Follow the [figma-analyze](../skills/figma-analyze/SKILL.md) skill for Figma link analysis (Figma URL to structured report).
+Follow the [analyze-figma](../skills/analyze-figma/SKILL.md) skill for Figma link analysis (Figma URL to structured report).
