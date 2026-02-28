@@ -1,11 +1,11 @@
 ---
-name: webpage-capture
-description: Recreates a live webpage as a Figma design using Playwright and Figma MCP. Use when user says "capture page", "to Figma", or /webpage-capture. In Claude Code and Cursor, /skills lists all.
+name: capture-webpage
+description: Capture a live webpage as a Figma design using Playwright and Figma MCP. Use when user says "capture page", "to Figma", or /capture-webpage. In Claude Code and Cursor, /skills lists all.
 ---
 
-# Webpage-to-Figma Capture
+# Capture Webpage
 
-Recreates a live webpage as a Figma design using Playwright and Figma MCP.
+Capture a live webpage as a Figma design using Playwright and Figma MCP.
 
 ## Inputs
 
@@ -18,7 +18,7 @@ If either is missing, ask the user before proceeding.
 
 ## External Sites
 
-For sites you don't control (e.g., ryanallen.com, competitor.com). Uses `.claude/skills/webpage-capture/scripts/capture.js` to bypass CSP and inject Figma's capture script.
+For sites you don't control (e.g., ryanallen.com, competitor.com). Uses `.claude/skills/capture-webpage/scripts/capture.js` to bypass CSP and inject Figma's capture script.
 
 ### 1. Generate Capture ID
 
@@ -27,7 +27,7 @@ Call Figma MCP's `generate_figma_design` with the target Figma file details. You
 ### 2. Run Capture Script
 
 ```bash
-node .claude/skills/webpage-capture/scripts/capture.js "https://example.com" "CAPTURE_ID" 1920 1080
+node .claude/skills/capture-webpage/scripts/capture.js "https://example.com" "CAPTURE_ID" 1920 1080
 ```
 
 The script handles:

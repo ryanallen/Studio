@@ -1,11 +1,11 @@
 ---
 name: sync-upstream
-description: Syncs from upstream remote's main branch and pushes to origin's main branch. Use when user says "sync", "pull", or /sync-upstream. In Claude Code and Cursor, /skills lists all.
+description: Sync from upstream remote's main branch and push to origin's main branch. Use when user says "sync", "pull", or /sync-upstream. In Claude Code and Cursor, /skills lists all.
 ---
 
 # Sync Upstream
 
-Pull from the upstream remote's main branch, then push to origin's main branch.
+Sync from the upstream remote's main branch, then push to origin's main branch.
 
 ## Command
 

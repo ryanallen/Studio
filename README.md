@@ -17,28 +17,29 @@ Optional: add custom setup steps in `.claude/skills/setup/custom.md`. The Instal
 Call a skill by saying its trigger phrase or typing /skill-name. In Claude Code and Cursor, /skills lists all. In both Claude Code and Cursor, skills are discovered from `.claude/skills/`: each skill must live in a kebab-case folder with a file named `SKILL.md` (e.g. `.claude/skills/commit-all/SKILL.md`).
 
 ### Designer
-- **webpage-capture**: Recreates a live webpage as a Figma design. "capture page", "to Figma", /webpage-capture. Give webpage URL and Figma file URL.
+- **capture-webpage**: Capture a live webpage as a Figma design. "capture page", "to Figma", /capture-webpage. Give webpage URL and Figma file URL.
+- **generate-figma**: Generate a Figma design by calling Figma MCP's generate_figma_design with target file details. "generate Figma", "generate design", /generate-figma.
 
 ### Researcher
 - **learn**: Gather from any input (ticket, URL(s), text, file(s), image(s)) and follow links up to 5 levels deep; Documentor then structures the output. "learn about this", "look at this", /learn.
-- **figma-analyze**: Analyzes a Figma link and produces a structured report. General link = full file (pages, sections, frames, groups, components, images, fonts, colors, tokens, content). Specific link (with node-id) = deep analysis from that node only. "analyze Figma", "Figma audit", "analyze this Figma link", /figma-analyze. Give Figma design URL.
+- **analyze-figma**: Analyze a Figma link and produce a structured report. General link = full file; specific link (with node-id) = deep analysis from that node. "analyze Figma", "Figma audit", /analyze-figma. Give Figma design URL.
 
 ### Documentor
-- **document-findings**: Structure findings into enhanced markdown with mermaid diagrams. "write up", "document", /document-findings.
+- **document-findings**: Take research output and produce structured markdown with mermaid diagrams. "write up", "document", /document-findings.
 - **update-ticket**: Post a comment on a Jira ticket with link to project deliverables. "update ticket", "Jira", /update-ticket.
 
 ### Strategist
-- **root-cause-analysis**: Five Whys on findings, identify root causes and propose solutions. "why broken", "find cause", /root-cause-analysis.
+- **analyze-root-cause**: Analyze findings with Five Whys, identify root causes and propose solutions. "why broken", "find cause", /analyze-root-cause.
 
 ### Installer
-- **setup**: Standard steps (show hidden files, MCP servers, config). "setup", "install", /setup. Then quit terminal, relaunch, run /mcp and complete OAuth for Figma and Atlassian. Optional: `.claude/skills/setup/custom.md` (gitignored; Customizer runs it if present).
+- **setup**: Run the standard Studio setup steps (show hidden files, MCP servers, config). "setup", "install", /setup. Then quit terminal, relaunch, run /mcp and complete OAuth for Figma and Atlassian. Optional: `.claude/skills/setup/custom.md` (gitignored; Customizer runs it if present).
 
 ### Coordinator
 Orchestrates Researcher, Documentor, and Strategist for the full pipeline: learn, document, analyze, audit, propose, update ticket. No skill of its own. See [Coordinator](.claude/agents/Coordinator.md).
 
 ### Syncer
-- **commit-all**: "commit", "commit all", /commit-all. Stage all and commit with derived message. Does not push.
-- **sync-upstream**: "sync", "pull", /sync-upstream. Pull from upstream main, push to origin.
+- **commit-all**: Stage all and create a commit with derived message. "commit", "commit all", /commit-all. Does not push.
+- **sync-upstream**: Sync from upstream main, push to origin. "sync", "pull", /sync-upstream.
 
 ---
 
@@ -62,15 +63,16 @@ Studio/
 │   └── skills/
 │       ├── learn/SKILL.md
 │       ├── document-findings/SKILL.md
-│       ├── root-cause-analysis/SKILL.md
+│       ├── analyze-root-cause/SKILL.md
+│       ├── analyze-figma/SKILL.md
 │       ├── setup/
 │       │   ├── SKILL.md
 │       │   └── custom.md (optional; gitignored, sync won't overwrite)
 │       ├── commit-all/SKILL.md
 │       ├── sync-upstream/SKILL.md
 │       ├── update-ticket/SKILL.md
-│       ├── figma-analyze/SKILL.md
-│       └── webpage-capture/
+│       ├── generate-figma/SKILL.md
+│       └── capture-webpage/
 │           ├── SKILL.md
 │           └── scripts/capture.js
 ├── work/

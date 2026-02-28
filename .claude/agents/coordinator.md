@@ -9,7 +9,7 @@ model: opus, sonnet
 
 Researcher, Documentor, Strategist
 
-Researcher runs [learn](../skills/learn/SKILL.md) and [figma-analyze](../skills/figma-analyze/SKILL.md) (Figma link to structured report) when the user requests them.
+Researcher runs [learn](../skills/learn/SKILL.md) and [analyze-figma](../skills/analyze-figma/SKILL.md) (Figma link to structured report) when the user requests them.
 
 Valid team and space values are defined in `work/config.md`.
 
@@ -31,7 +31,7 @@ Input: User-provided (ticket ID, URL(s), pasted text, file path(s), or image(s))
 ### Propose Solutions
 Input: {project-path}/README.md (problems + current state sections)
 ```
-1. Strategist -> ../skills/root-cause-analysis/SKILL.md
+1. Strategist -> ../skills/analyze-root-cause/SKILL.md
          |
 2. Documentor -> ../skills/document-findings/SKILL.md
 ```
@@ -45,7 +45,7 @@ Document
 2. Documentor -> ../skills/document-findings/SKILL.md (read that README, structure into same file)
          |
 Analyze Problems
-3. Strategist -> ../skills/root-cause-analysis/SKILL.md (Five Whys on {project-path}/README.md)
+3. Strategist -> ../skills/analyze-root-cause/SKILL.md (Five Whys on {project-path}/README.md)
          |
 4. Documentor -> ../skills/document-findings/SKILL.md (add problems to top of {project-path}/README.md)
          |
@@ -55,7 +55,7 @@ Audit Solutions
 6. Documentor -> ../skills/document-findings/SKILL.md (write current state into {project-path}/README.md)
          |
 Propose Solutions
-7. Strategist -> ../skills/root-cause-analysis/SKILL.md (propose new solutions from root causes + current state)
+7. Strategist -> ../skills/analyze-root-cause/SKILL.md (propose new solutions from root causes + current state)
          |
 8. Documentor -> ../skills/document-findings/SKILL.md (final pass, ensure consistency)
          |
