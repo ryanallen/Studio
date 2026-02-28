@@ -37,3 +37,7 @@ Ensure `work/config.md` exists. Add the user's teams and spaces to that file.
 ### 4. Handoff
 
 Tell the user to quit the terminal and relaunch, then run `/mcp` in the chat and follow the OAuth flow for Figma and Atlassian.
+
+### 5. Custom (optional)
+
+If `.claude/skills/setup/custom.md` exists, the Customizer agent runs it after this skill. That file is gitignored so syncing upstream will not overwrite it. Add it locally for machine- or user-specific steps (e.g. extra MCP servers, env vars).

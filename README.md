@@ -8,7 +8,7 @@ Agent workflows for design capture, research, and strategic analysis.
 
 Say "setup", "install", or type `/setup`. The [setup skill](.claude/skills/setup/SKILL.md) runs the standard steps (show hidden files, MCP servers, config). After that, quit the terminal and relaunch, then run `/mcp` in the chat and complete OAuth for Figma and Atlassian.
 
-Optional: add custom setup steps in `.claude/setup/custom.md`. The Installer runs the [Customizer](.claude/agents/Customizer.md) agent, which runs that file if present. Omit custom.md from commits to keep those steps local.
+Optional: add custom setup steps in `.claude/skills/setup/custom.md`. The Installer runs the [Customizer](.claude/agents/Customizer.md) agent, which runs that file if present. The file is gitignored so syncing upstream won't overwrite it.
 
 ---
 
@@ -30,7 +30,7 @@ Call a skill by saying its trigger phrase or typing /skill-name. In Claude Code 
 - **root-cause-analysis**: Five Whys on findings, identify root causes and propose solutions. "why broken", "find cause", /root-cause-analysis.
 
 ### Installer
-- **setup**: Standard steps (show hidden files, MCP servers, config). "setup", "install", /setup. Then quit terminal, relaunch, run /mcp and complete OAuth for Figma and Atlassian. Optional: `.claude/setup/custom.md` (Customizer runs it if present; omit from commits to keep local).
+- **setup**: Standard steps (show hidden files, MCP servers, config). "setup", "install", /setup. Then quit terminal, relaunch, run /mcp and complete OAuth for Figma and Atlassian. Optional: `.claude/skills/setup/custom.md` (gitignored; Customizer runs it if present).
 
 ### Coordinator
 Orchestrates Researcher, Documentor, and Strategist for the full pipeline: learn, document, analyze, audit, propose, update ticket. No skill of its own. See [Coordinator](.claude/agents/Coordinator.md).
@@ -57,14 +57,14 @@ Studio/
 │   │   ├── Strategist.md
 │   │   ├── Syncer.md
 │   │   ├── Installer.md
-│   │   └── Customizer.md (runs .claude/setup/custom.md if present)
-│   ├── setup/
-│   │   └── custom.md (optional; omit from commits to keep local)
+│   │   └── Customizer.md (runs .claude/skills/setup/custom.md if present)
 │   └── skills/
 │       ├── learn/SKILL.md
 │       ├── document-findings/SKILL.md
 │       ├── root-cause-analysis/SKILL.md
-│       ├── setup/SKILL.md
+│       ├── setup/
+│       │   ├── SKILL.md
+│       │   └── custom.md (optional; gitignored, sync won't overwrite)
 │       ├── commit-all/SKILL.md
 │       ├── sync-upstream/SKILL.md
 │       ├── update-ticket/SKILL.md
