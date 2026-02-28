@@ -1,6 +1,6 @@
 ---
 name: commit-all
-description: Stages all changes since last commit and creates one commit with a title and description. Use when user says "commit everything", "commit with title and description", or "git commit". Does not push.
+description: Stages all changes since last commit and creates one commit with a title and description. Use when user says "commit", "commit all", or /commit-all. Does not push. In Claude Code and Cursor, /skills lists all.
 ---
 
 # Commit All

@@ -1,6 +1,6 @@
 ---
 name: root-cause-analysis
-description: Analyzes documented findings to identify problems and trace them to root causes using the Five Whys technique. Use when user says "analyze problems", "find root cause", "Five Whys", or asks to identify why something is broken.
+description: Analyzes documented findings to identify problems and trace them to root causes using the Five Whys technique. Use when user says "why broken", "find cause", or /root-cause-analysis. In Claude Code and Cursor, /skills lists all.
 ---
 
 # Root Cause Analysis

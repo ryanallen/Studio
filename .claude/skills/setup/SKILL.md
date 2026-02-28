@@ -1,6 +1,6 @@
 ---
 name: setup
-description: Runs the standard Studio setup steps. Use when user says "install studio", "set up", "run setup", or "ask AI to install".
+description: Runs the standard Studio setup steps. Use when user says "setup", "install", or /setup. In Claude Code and Cursor, /skills lists all.
 ---
 
 # Setup

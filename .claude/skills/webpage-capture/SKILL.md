@@ -1,6 +1,6 @@
 ---
 name: webpage-capture
-description: Recreates a live webpage as a Figma design using Playwright and Figma MCP. Use when user says "capture this page", "webpage to Figma", "convert site to Figma", or asks to recreate a webpage in Figma.
+description: Recreates a live webpage as a Figma design using Playwright and Figma MCP. Use when user says "capture page", "to Figma", or /webpage-capture. In Claude Code and Cursor, /skills lists all.
 ---
 
 # Webpage-to-Figma Capture

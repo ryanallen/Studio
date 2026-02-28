@@ -1,6 +1,6 @@
 ---
 name: learn
-description: Gather from any source (ticket, URL(s), text, file(s), image(s)) and follow links up to 5 levels deep. Use when user says "research this", "deep dive on", "look at this", or asks to gather information from a link, document, or paste.
+description: Gather from any source (ticket, URL(s), text, file(s), image(s)) and follow links up to 5 levels deep. Use when user says "learn about this", "look at this", or /learn. In Claude Code and Cursor, /skills lists all.
 ---
 
 # Learn

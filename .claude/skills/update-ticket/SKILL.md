@@ -1,6 +1,6 @@
 ---
 name: update-ticket
-description: Posts a comment on a Jira ticket with a link to the project deliverables. Use when user says "update the ticket", "post to Jira", or asks to link deliverables to a ticket.
+description: Posts a comment on a Jira ticket with a link to the project deliverables. Use when user says "update ticket", "Jira", or /update-ticket. In Claude Code and Cursor, /skills lists all.
 ---
 
 # Update Ticket

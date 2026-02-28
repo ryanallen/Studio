@@ -1,6 +1,6 @@
 ---
 name: document-findings
-description: Takes research output and produces structured, enhanced markdown documentation with mermaid diagrams. Use when user says "document this", "write up findings", "structure these notes", or asks to organize research into docs.
+description: Takes research output and produces structured, enhanced markdown documentation with mermaid diagrams. Use when user says "write up", "document", or /document-findings. In Claude Code and Cursor, /skills lists all.
 ---
 
 # Document Findings

@@ -24,6 +24,8 @@ Optional: add custom setup steps in `.claude/setup/custom.md`. The setup agent r
 
 ## Workflows
 
+Call a skill with /skill-name (e.g. /learn). In Claude Code and Cursor, /skills lists all.
+
 ### Webpage to Figma
 Give the designer a webpage URL and a Figma file URL.
 
