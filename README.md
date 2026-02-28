@@ -35,7 +35,7 @@ Call a skill by saying its trigger phrase or typing /skill-name. In Claude Code 
 ### Coordinator
 Orchestrates Researcher, Documentor, and Strategist for the full pipeline: learn, document, analyze, audit, propose, update ticket. No skill of its own. See [Coordinator](.claude/agents/Coordinator.md).
 
-### Other skills
+### Syncer
 - **commit-all**: "commit", "commit all", /commit-all. Stage all and commit with derived message. Does not push.
 - **sync-upstream**: "sync", "pull", /sync-upstream. Pull from upstream main, push to origin.
 
@@ -55,6 +55,7 @@ Studio/
 │   │   ├── Documentor.md
 │   │   ├── Researcher.md
 │   │   ├── Strategist.md
+│   │   ├── Syncer.md
 │   │   ├── Installer.md
 │   │   └── Customizer.md (runs .claude/setup/custom.md if present)
 │   ├── setup/
