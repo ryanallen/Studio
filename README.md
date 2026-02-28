@@ -8,41 +8,36 @@ Agent workflows for design capture, research, and strategic analysis.
 
 Say "setup", "install", or type `/setup`. The [setup skill](.claude/skills/setup/SKILL.md) runs the standard steps (show hidden files, MCP servers, config). After that, quit the terminal and relaunch, then run `/mcp` in the chat and complete OAuth for Figma and Atlassian.
 
-Optional: add custom setup steps in `.claude/setup/custom.md`. The setup agent runs the [setup-custom](.claude/agents/setup-custom.md) agent, which runs that file if present. Omit custom.md from commits to keep those steps local.
+Optional: add custom setup steps in `.claude/setup/custom.md`. The Installer runs the [Customizer](.claude/agents/Customizer.md) agent, which runs that file if present. Omit custom.md from commits to keep those steps local.
 
 ---
 
-## Agents
+## Agents and their skills
 
-| Agent | Capability |
-|-------|-----------|
-| **designer** | Captures a webpage and recreates it in Figma |
-| **researcher** | Learn: gather from any input (ticket, URL(s), text, file(s), image(s)) and follow links up to 5 levels deep |
-| **documentor** | Structures findings into enhanced markdown with mermaid diagrams |
-| **strategist** | Identifies problems and performs Five Whys root cause analysis |
-| **setup** | Runs install steps (MCP servers, config); supports optional custom setup via setup-custom agent |
+Call a skill by saying its trigger phrase or typing /skill-name. In Claude Code and Cursor, /skills lists all.
 
-## Workflows
+### Designer
+- **webpage-capture**: Recreates a live webpage as a Figma design. "capture page", "to Figma", /webpage-capture. Give webpage URL and Figma file URL.
 
-Call a skill by saying its trigger phrase or typing /skill-name (e.g. "learn about this" or /learn). In Claude Code and Cursor, /skills lists all.
+### Researcher
+- **learn**: Gather from any input (ticket, URL(s), text, file(s), image(s)) and follow links up to 5 levels deep; Documentor then structures the output. "learn about this", "look at this", /learn.
 
-### Webpage to Figma
-Give the designer a webpage URL and a Figma file URL.
+### Documentor
+- **document-findings**: Structure findings into enhanced markdown with mermaid diagrams. "write up", "document", /document-findings.
+- **update-ticket**: Post a comment on a Jira ticket with link to project deliverables. "update ticket", "Jira", /update-ticket.
 
-### Learn
-Give the researcher any input (ticket ID, URL(s), pasted text, file path(s), or image(s)); they gather from it and follow links up to 5 levels deep, then documentor structures the output.
+### Strategist
+- **root-cause-analysis**: Five Whys on findings, identify root causes and propose solutions. "why broken", "find cause", /root-cause-analysis.
 
-### Document
-Give the documentor research findings to structure into a project folder.
+### Installer
+- **setup**: Standard steps (show hidden files, MCP servers, config). "setup", "install", /setup. Then quit terminal, relaunch, run /mcp and complete OAuth for Figma and Atlassian. Optional: `.claude/setup/custom.md` (Customizer runs it if present; omit from commits to keep local).
 
-### Analyze Problems
-Give the strategist findings to perform Five Whys root cause analysis.
+### Coordinator
+Orchestrates Researcher, Documentor, and Strategist for the full pipeline: learn, document, analyze, audit, propose, update ticket. No skill of its own. See [Coordinator](.claude/agents/Coordinator.md).
 
-### Propose Solutions
-The strategist proposes new solutions from root causes and current state, then the documentor writes them up.
-
-### Research, Define, Strategize
-Full pipeline: learn (any input), document, analyze, audit, propose, update ticket. See [coordinator](.claude/agents/coordinator.md).
+### Other skills
+- **commit-all**: "commit", "commit all", /commit-all. Stage all and commit with derived message. Does not push.
+- **sync-upstream**: "sync", "pull", /sync-upstream. Pull from upstream main, push to origin.
 
 ---
 
@@ -55,13 +50,13 @@ Studio/
 ├── .claude/
 │   ├── settings.json
 │   ├── agents/
-│   │   ├── coordinator.md
-│   │   ├── designer.md
-│   │   ├── researcher.md
-│   │   ├── documentor.md
-│   │   ├── strategist.md
-│   │   ├── setup.md
-│   │   └── setup-custom.md (runs .claude/setup/custom.md if present)
+│   │   ├── Coordinator.md
+│   │   ├── Designer.md
+│   │   ├── Documentor.md
+│   │   ├── Researcher.md
+│   │   ├── Strategist.md
+│   │   ├── Installer.md
+│   │   └── Customizer.md (runs .claude/setup/custom.md if present)
 │   ├── setup/
 │   │   └── custom.md (optional; omit from commits to keep local)
 │   └── skills/
