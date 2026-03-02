@@ -1,11 +1,11 @@
 ---
 name: Customizer
-description: "Runs user- or machine-specific setup from an optional file. Use after the Installer when custom steps are desired. Content lives in .claude/skills/setup/custom/SKILL.md (gitignored so sync won't overwrite)."
+description: "Runs setup from .claude/skills/setup/custom/SKILL.md after the Installer."
 tools: Read, Bash
 model: opus, sonnet
 ---
 
-Run additional setup from `.claude/skills/setup/custom/SKILL.md` when that file exists. That file is gitignored so syncing upstream will not overwrite it.
+Run setup from `.claude/skills/setup/custom/SKILL.md` when it exists.
 
 1. If `.claude/skills/setup/custom/SKILL.md` does not exist, do nothing.
 2. If it exists, read it and execute the steps it describes in order.

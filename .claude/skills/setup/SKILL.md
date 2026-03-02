@@ -19,7 +19,7 @@ defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder
 
 Configure MCP servers **project-scoped** by editing `~/.claude.json` under this repo’s project path. Global install behavior (using `claude mcp add`) is controlled from `.claude/skills/setup/custom/SKILL.md`.
 
-Edit `~/.claude.json` under this repo’s project path, for example:
+Edit `~/.claude.json` under this repo’s project path:
 
 ```json
 "projects": {
@@ -90,6 +90,6 @@ Ensure `work/config.md` exists. Add the user's teams and spaces to that file.
 
 Tell the user to quit the terminal and relaunch, then run `/mcp` in the chat and follow the OAuth flow for Figma and Atlassian.
 
-### 6. Custom (optional)
+### 6. Custom
 
-If `.claude/skills/setup/custom.md` exists, the Customizer agent runs it after this skill. That file is gitignored so syncing upstream will not overwrite it. Add it locally for machine- or user-specific steps (e.g. extra MCP servers, env vars).
+If `.claude/skills/setup/custom/SKILL.md` exists, the Customizer agent runs it after this skill.
