@@ -25,9 +25,9 @@ Assume the user wants each; offer to skip any.
 defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder
 ```
 
-### 2. MCP servers (local by default)
+### 2. MCP servers
 
-Configure MCP servers **project-scoped** by editing `~/.claude.json` under this repo’s project path. Global install behavior (using `claude mcp add`) is controlled from `.claude/skills/setup/custom/SKILL.md`.
+Install scope (local vs global) is set in `.claude/skills/setup/custom/SKILL.md`.
 
 Edit `~/.claude.json` under this repo’s project path (see Inputs), add:
 
