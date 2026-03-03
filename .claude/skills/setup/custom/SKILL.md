@@ -5,9 +5,7 @@ description: Local overrides for Studio setup. Lives in .claude/skills/setup/cus
 
 # Setup Customization
 
-This file lets you:
-- Choose **local vs global** MCP install behavior for MCP installs in setup.
-- Customize setup behavior.
+This file lets you choose **local vs global** MCP install behavior and customize other setup behavior.
 
 ## Install scope
 

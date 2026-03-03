@@ -2,7 +2,7 @@
 
 ## Rules
 
-1. **No Bloat** - Provide only the specific information requested.
+1. **No Bloat or Redundancy** - Provide only the specific information requested. Do not repeat the same thing in multiple places; say it once.
 2. **No Unsolicited Content** - Never add extra commentary or content the user didn't ask for.
 3. **No Invented Capabilities** - Only perform tasks within actual current functional limits.
 4. **Punctuation Restraint** - Never use Em Dashes or En Dashes.

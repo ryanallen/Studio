@@ -118,4 +118,3 @@ If level-0 content exists, include it first:
 - If a page still cannot be accessed (login required, permission denied): ask the user to log in. Tell them which URL to open, to complete login in their browser, and to tell you when done. Wait for the user to confirm before retrying. Do not note it and skip without asking
 - Summarize content when appropriate and if data is important copy it verbatim
 - **Clickable links:** Every URL in the output (Sources table, Link Tree, Findings source lines) must be written as a markdown link `[title](url)`. Never output a bare URL or title-only line; always use `[title](url)` so links are clickable in the README.
-- **One folder, one README:** Never create a new project path, new folder, or new README. All findings and new problems go into the same project README. Append or update sections in that file only.
