@@ -31,18 +31,9 @@ defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder
 
 ### 2. Get Figma token (if they chose figma-console)
 
-Have the user get their token so you can fill it into step 3. Tell them:
+Paste your Figma token (starts with `figd_`). You use it in step 3 for `FIGMA_ACCESS_TOKEN`.
 
-**Figma Console MCP (Prompt to Figma) – Get Figma token**
-
-1. In Figma (desktop app or website), click profile → Settings → Security.
-2. Scroll down. Under Personal access tokens, create a new token:
-   - Description: "Figma Console MCP" or whatever they want
-   - Check all permission scopes
-   - Set expiration (max 90 days)
-3. Copy the token (starts with `figd_`).
-
-User pastes the token; you use it in step 3 for `FIGMA_ACCESS_TOKEN`.
+**Where to find it:** In Figma (desktop app or website), click profile → Settings → Security. Under Personal access tokens, create a new token (description e.g. "Figma Console MCP", check all scopes, set expiration up to 90 days), then copy the token.
 
 ### 3. MCP servers
 
@@ -58,29 +49,35 @@ claude mcp add playwright -- npx -y @executeautomation/playwright-mcp-server
 claude mcp add --transport sse atlassian-rovo https://mcp.atlassian.com/v1/sse
 ```
 
-**Option B – write or merge this JSON** into the user's global config (under top-level `mcpServers`):
+**Option B – run Python to update config** (avoids jq not installed or Edit tool failing on frequently updated files). Replace `USER_TOKEN` with the token from step 2; include only the `mcpServers` entries for MCPs they chose. Config path uses `expanduser` so it works on macOS, Linux, and Windows.
 
-```json
-{
-  "mcpServers": {
+```bash
+python3 <<'EOF'
+import json
+import os
+path = os.path.expanduser(os.path.join("~", ".claude.json"))
+with open(path, "r") as f:
+    config = json.load(f)
+config.setdefault("mcpServers", {})
+# Add or overwrite only the servers they chose; replace USER_TOKEN for figma-console
+config["mcpServers"].update({
     "figma-console": {
-      "command": "npx",
-      "args": ["-y", "figma-console-mcp@latest"],
-      "env": {
-        "FIGMA_ACCESS_TOKEN": "<TOKEN_USER_GAVE_YOU>",
-        "ENABLE_MCP_APPS": "true"
-      }
+        "command": "npx",
+        "args": ["-y", "figma-console-mcp@latest"],
+        "env": {"FIGMA_ACCESS_TOKEN": "USER_TOKEN", "ENABLE_MCP_APPS": "true"}
     },
     "playwright": {
-      "command": "npx",
-      "args": ["-y", "@executeautomation/playwright-mcp-server"]
+        "command": "npx",
+        "args": ["-y", "@executeautomation/playwright-mcp-server"]
     },
-    "atlassian-rovo": {
-      "url": "https://mcp.atlassian.com/v1/sse"
-    }
-  }
-}
+    "atlassian-rovo": {"url": "https://mcp.atlassian.com/v1/sse"}
+})
+with open(path, "w") as f:
+    json.dump(config, f, indent=2)
+EOF
 ```
+
+Before running: substitute the actual token for `USER_TOKEN` in the figma-console entry, and remove from the `update({...})` dict any server they did not choose.
 
 ### 4. Figma Desktop bridge (if they chose figma-console)
 
