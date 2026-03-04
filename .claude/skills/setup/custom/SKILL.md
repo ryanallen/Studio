@@ -18,8 +18,8 @@ install_scope: local
 # atlassian-rovo: local
 ```
 
-- `local` = Add to this repo’s project entry in `~/.claude.json`.
-- `global` = Use `claude mcp add` (commands below). Relaunch terminal after adding.
+- `local` = Create or update `.mcp.json` at this repo root (project-level; Claude Code uses this).
+- `global` = Use `claude mcp add` (writes to `~/.claude.json`). Relaunch terminal after adding.
 
 For each MCP the user wants, use its per-server line if present, else `install_scope`. When a server’s scope is global, use:
 
