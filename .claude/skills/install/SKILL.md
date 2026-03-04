@@ -9,16 +9,18 @@ Run the standard Studio install.
 
 ## Inputs (get from user when needed)
 
-Ask which from the list below they want installed; skip any they don't want.
+**What to install:** Ask if they want all of these installed, or to pick and choose.
 
-- **FIGMA_ACCESS_TOKEN** – Prompt to Figma. Have the user get their token (step 2) before writing config; they paste it and you put it in `figma-console` env in the user's global `~/.claude.json`. Skip if no Figma.
-- **playwright** – Browser automation (e.g. capture-webpage). Skip if not needed.
-- **atlassian-rovo** – Jira/Confluence (tickets, update-ticket). Skip if not needed.
-- **Teams and spaces** – For `work/config.md`. Ask if missing or empty.
+- **All** – Install figma-console (Figma/Prompt to Figma), playwright (browser automation), atlassian-rovo (Jira/Confluence). For figma-console you will need their Figma token in step 2.
+- **Pick and choose** – Go through the list one at a time; for each, ask if they want it installed. List: figma-console, playwright, atlassian-rovo.
+
+Only run steps for the MCPs they chose. For figma-console, get the Figma token (step 2) before step 3.
 
 ## Steps
 
-### 1. Show hidden files
+### 1. Show hidden files (optional)
+
+Ask if they want to show hidden files. Helpful for changing the system itself (e.g. editing config files); not required for using Studio to do your work. If they decline, skip and continue to step 2. If yes:
 
 **macOS:** Run:
 ```bash
@@ -27,7 +29,7 @@ defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder
 
 **Windows:** File Explorer → View → Show → Hidden items. (Or Folder Options → View → Show hidden files and folders.)
 
-### 2. Get Figma token (if using Figma)
+### 2. Get Figma token (if they chose figma-console)
 
 Have the user get their token so you can fill it into step 3. Tell them:
 
@@ -46,7 +48,7 @@ User pastes the token; you use it in step 3 for `FIGMA_ACCESS_TOKEN`.
 
 MCPs install to the user's **global** config so Claude recognizes them. Config file: `~/.claude.json` (macOS/Linux) or `%USERPROFILE%\\.claude.json` (Windows).
 
-For each MCP they want, add it to the `mcpServers` object in that file (create the file or merge with existing). Use the user's Figma token (from step 2) for `FIGMA_ACCESS_TOKEN` in figma-console. Omit servers they did not want.
+For each MCP they chose (from Inputs), add it to the `mcpServers` object in that file (create the file or merge with existing). For figma-console use the user's Figma token (from step 2) as `FIGMA_ACCESS_TOKEN`. Omit servers they did not choose.
 
 **Option A – run these commands** (then for figma-console, edit the file to add `env` with `FIGMA_ACCESS_TOKEN` and `ENABLE_MCP_APPS` to the figma-console entry):
 
@@ -80,7 +82,7 @@ claude mcp add --transport sse atlassian-rovo https://mcp.atlassian.com/v1/sse
 }
 ```
 
-### 4. Figma Desktop bridge
+### 4. Figma Desktop bridge (if they chose figma-console)
 
 Run from the root of this repo (works on Windows and macOS):
 
@@ -101,7 +103,7 @@ Every 90 days: new Figma PAT, update `FIGMA_ACCESS_TOKEN` in `figma-console` env
 
 ### 5. Config
 
-Ensure `work/config.md` exists. Add the user's teams and spaces to that file.
+Ensure `work/config.md` exists. If it is missing or empty, ask for their teams and spaces and add them to that file.
 
 ### 6. Handoff
 
