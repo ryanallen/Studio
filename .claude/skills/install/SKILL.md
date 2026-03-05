@@ -9,7 +9,7 @@ description: Run the standard Product Studio install steps. Use when user says "
 
 ### 1. Config
 
-Ensure `work/paths.md` exists. If it is missing or empty, copy from `work/paths.md.example`, then ask for their teams and spaces and add them to the tree in that file.
+Ensure `work/paths.md` exists. If it is missing or empty, copy from `work/paths.md.example`.
 
 ### 2. Repo link (deliverables base URL)
 
