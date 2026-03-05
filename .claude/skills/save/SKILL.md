@@ -5,7 +5,7 @@ description: Stage all changes since last commit and create one or more commits 
 
 # Save
 
-Stage everything since the last commit and create one or more commits, each with a title and description. Push later with sync.
+When this skill is invoked, run the coordinator flow **Save** (see [Coordinator](../agents/Coordinator.md)). That flow runs updater (verify-paths), then documenter (work-paths) if paths mismatch, then updater (save). Then perform the commit steps below.
 
 ## Inputs
 

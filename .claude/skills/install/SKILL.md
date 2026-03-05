@@ -86,7 +86,7 @@ Every 90 days: run the [update-figma skill](.claude/skills/update-figma/SKILL.md
 
 ### 5. Config
 
-Ensure `work/config.md` exists. If it is missing or empty, ask for their teams and spaces and add them to that file.
+Ensure `work/paths.md` exists. If it is missing or empty, ask for their teams and spaces and add them to that file.
 
 ### 6. Handoff
 

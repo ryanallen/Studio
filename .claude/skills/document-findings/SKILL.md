@@ -15,7 +15,7 @@ Take research output and produce structured, enhanced markdown documentation.
 
 If the project path or source material is missing, ask the user before proceeding.
 
-Valid team and space values are defined in the [work-config](.claude/skills/work-config/SKILL.md) skill.
+Valid team and space values are in [work/paths.md](../../work/paths.md).
 
 ## Output
 

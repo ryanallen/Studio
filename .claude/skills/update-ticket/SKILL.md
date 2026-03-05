@@ -14,7 +14,7 @@ Post a comment on the Jira ticket with a link to the project deliverables.
 
 If either is missing, ask the user before proceeding.
 
-Valid team and space values are defined in `work/config.md`.
+Valid team and space values are defined in `work/paths.md`.
 
 ## Process
 
