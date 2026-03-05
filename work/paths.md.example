@@ -1,28 +1,46 @@
 # Paths
 
+## Rules
+
+### Path pattern
+
 Only: `work/{team}/{space}/{project-name}/`
 
-Deliverable: one `README.md` per project folder plus asset folders only.
+### Deliverable
+
+One `README.md` per project folder plus asset folders only.
 
 - Do not create other files (notes, drafts, separate doc files).
 - Add new problems, topics, or findings to that README.
 - Never create a new folder or new README for new problems or topics.
 
-**Assets (allowed):** Per project folder only:
+### Assets
+
+Per project folder only:
 
 - `assets/images/` for image evidence; embed in README with `![](assets/images/filename.ext)`.
 - `assets/docs/` for other evidence files; link from README.
 - No other folders or loose files.
 
+### Folder names
+
 Only the team, space, and project-name folder names listed in the tree below are allowed by default. If the system thinks new folders need to be created for work that are not in this tree, ask the user to name them; the system may suggest names.
+
+### Unlisted levels
 
 If a level is not listed, ask before creating the path.
 
-Format: "Only" line unchanged; tree one indent per depth.
+## Editable section
 
-Only the content below the line below can be changed.
+Only the content below can be changed. In the Tree use one indent per depth.
 
 ---
+
+### Deliverables base URL
+
+Deliverables base URL: (set during install)
+
+### Tree
 
 - work
  - team
