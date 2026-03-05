@@ -14,13 +14,13 @@ Post a comment on the Jira ticket with a link to the project deliverables.
 
 ## Process
 
-### 1. Build Link
+### 1. Build link for the comment
 
-Get the base URL from the user (e.g. their deliverables repo: `https://github.com/org/repo/tree/main/`) or from work/paths.md if documented there. Do not hardcode. Append the project path to get the full URL.
+The comment will include a link to the project deliverables. Base URL is on the "Deliverables base URL:" line in work/paths.md. If missing or empty, ask the user for the deliverables URL. Append the project path to get the full URL. Do not hardcode.
 
-### 2. Post Comment
+### 2. Post comment on Jira
 
-Use atlassian-rovo MCP to add a comment on the ticket:
+Use atlassian-rovo MCP to add a comment on the Jira ticket:
 
 ```
 Research, Define, Strategize deliverables: {full URL}

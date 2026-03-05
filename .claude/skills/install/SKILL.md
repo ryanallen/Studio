@@ -7,27 +7,35 @@ description: Run the standard Product Studio install steps. Use when user says "
 
 ## Steps
 
-### 1. Show hidden files
+### 1. Config
 
-Ask if they want to show hidden files. If no, continue to step 2. If yes:
+Ensure `work/paths.md` exists. If it is missing or empty, copy from `work/paths.md.example`, then ask for their teams and spaces and add them to the tree in that file.
 
-**macOS:** Run (if it fails due to permissions, continue to step 2):
+### 2. Repo link (deliverables base URL)
+
+From the repo root, run `git remote get-url origin`. If it succeeds, convert to a deliverables base URL (e.g. `https://example.com/org/repo/tree/main/`). If git fails or there is no origin, ask the user for the deliverables link (the base URL where project folders are visible). Update `work/paths.md`: set the "Deliverables base URL:" line to that URL. Do not hardcode.
+
+### 3. Show hidden files
+
+Ask if they want to show hidden files. If no, continue to step 4. If yes:
+
+**macOS:** Run (if it fails due to permissions, continue to step 4):
 ```bash
 defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder
 ```
 
-**Windows:** File Explorer → View → Show → Hidden items.
+**Windows:** File Explorer → View → Show → Hidden items. (Or Folder Options → View → Show hidden files and folders.)
 
-### 2. What to install
+### 4. What to install
 
 Ask if they want all of these installed, or to pick and choose.
 
-- **All** – figma-console, playwright, atlassian-rovo. Figma token needed in step 3.
+- **All** – figma-console, playwright, atlassian-rovo. Figma token needed in step 5.
 - **Pick and choose** – For each: figma-console, playwright, atlassian-rovo; ask if they want it.
 
 Only run steps for the MCPs they chose.
 
-### 3. Figma token (if they chose figma-console)
+### 5. Figma token (if they chose figma-console)
 
 Give instructions below, then ask them to paste the token. Do not ask whether they have one.
 
@@ -35,7 +43,7 @@ Give instructions below, then ask them to paste the token. Do not ask whether th
 
 **Ask:** Paste your Figma token (starts with `figd_`).
 
-### 4. MCP servers
+### 6. MCP servers
 
 Edit only the user's global Claude config. Do not edit Cursor/VSCode settings or project config.
 
@@ -44,9 +52,9 @@ Edit only the user's global Claude config. Do not edit Cursor/VSCode settings or
 - **Linux:** `$HOME/.claude.json`
 - **Windows:** `%USERPROFILE%\.claude.json`
 
-For each MCP they chose (step 2), add with the CLI below. Do not use Write or Edit tool; use only these commands.
+For each MCP they chose (step 4), add with the CLI below. Do not use Write or Edit tool; use only these commands.
 
-**figma-console** (replace `figd_xxx` with the token from step 3; use quoted `-e` so the token is valid):
+**figma-console** (replace `figd_xxx` with the token from step 5; use quoted `-e` so the token is valid):
 ```bash
 claude mcp add -e "FIGMA_ACCESS_TOKEN=figd_xxx" -e "ENABLE_MCP_APPS=true" figma-console -- npx -y figma-console-mcp@latest
 ```
@@ -61,9 +69,9 @@ claude mcp add playwright -- npx -y @executeautomation/playwright-mcp-server
 claude mcp add --transport sse atlassian-rovo https://mcp.atlassian.com/v1/sse
 ```
 
-After step 7: user must fully restart Claude Code, then run `/mcp` for OAuth.
+After step 8: user must fully restart Claude Code, then run `/mcp` for OAuth.
 
-### 5. Figma Desktop bridge (if they chose figma-console)
+### 7. Figma Desktop bridge (if they chose figma-console)
 
 From repo root:
 
@@ -77,14 +85,10 @@ In Figma Desktop:
 2. Select `.claude/skills/generate-figma/scripts/figma-desktop-bridge/manifest.json`.
 3. Plugins → Development → Figma Desktop Bridge. Keep it running for Prompt to Figma.
 
-#### 5.1 Token renewal
+#### 7.1 Token renewal
 
 Every 90 days: [update-figma](.claude/skills/update-figma/SKILL.md) to set new token, then user restarts Claude.
 
-### 6. Config
-
-Ensure `work/paths.md` exists. If it is missing or empty, copy from `work/paths.md.example`, then ask for their teams and spaces and add them to the tree in that file.
-
-### 7. Handoff
+### 8. Handoff
 
 Tell the user: fully restart Claude Code (not terminal), open project, run `/mcp` and complete OAuth for Figma and Atlassian. Create `.claude/skills/install/install-handoff.marker`.
