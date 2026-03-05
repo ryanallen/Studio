@@ -1,6 +1,6 @@
 ---
 name: verifier
-description: "Compares work/paths.md to actual paths under work/. Hands off to documenter for document-paths if mismatch."
+description: "Runs verify-paths skill."
 tools: Read, Bash, Glob, Grep
 model: opus, sonnet
 ---
