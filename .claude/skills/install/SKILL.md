@@ -5,6 +5,6 @@ description: Run the standard Product Studio install steps. Use when user says "
 
 # Install
 
-Run the **Install** workflow in [Coordinator](../agents/coordinator.md) (steps 1–5).
+Run the **Install** workflow in [Coordinator](../agents/coordinator.md) (installer runs the full flow).
 
 **Convention:** Skill artifacts (scripts, binaries) go in that skill's `scripts/` folder (e.g. `.claude/skills/skill-name/scripts/`).
