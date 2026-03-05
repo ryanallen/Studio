@@ -4,7 +4,7 @@
 
 ### Path pattern
 
-Only: `work/{team}/{space}/{project-name}/`
+Only: `work/{team}/{space}/{ticket-id}/{project-name}/`
 
 ### Deliverable
 
@@ -24,7 +24,7 @@ Per project folder only:
 
 ### Folder names
 
-Only the team, space, and project-name folder names listed in the tree below are allowed by default. If the system thinks new folders need to be created for work that are not in this tree, ask the user to name them; the system may suggest names.
+Only the team, space, ticket-id, and project-name folder names listed in the tree below are allowed by default. If the system thinks new folders need to be created for work that are not in this tree, ask the user to name them; the system may suggest names.
 
 ### Unlisted levels
 
@@ -46,9 +46,10 @@ Deliverables base URL: (set during install)
 work/
 └── team/
     └── space/
-        └── project-name/
-            ├── README.md
-            └── assets/
-                ├── images/
-                └── docs/
+        └── {ticket-id}/
+            └── project-name/
+                ├── README.md
+                └── assets/
+                    ├── images/
+                    └── docs/
 ```
