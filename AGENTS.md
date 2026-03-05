@@ -1,4 +1,4 @@
-# Studio
+# Product Studio
 
 ## Rules
 

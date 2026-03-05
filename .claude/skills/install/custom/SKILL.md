@@ -1,6 +1,6 @@
 ---
 name: install-custom
-description: Local overrides for Studio install. Lives in .claude/skills/install/custom/SKILL.md.
+description: Local overrides for Product Studio install. Lives in .claude/skills/install/custom/SKILL.md.
 ---
 
 # Install Customization

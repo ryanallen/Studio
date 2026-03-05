@@ -1,6 +1,6 @@
 ---
 name: install
-description: Run the standard Studio install steps. Use when user says "setup", "install", or /install. In Claude Code and Cursor, /skills lists all.
+description: Run the standard Product Studio install steps. Use when user says "setup", "install", or /install. In Claude Code and Cursor, /skills lists all.
 ---
 
 # Install
