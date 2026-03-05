@@ -1,6 +1,6 @@
 ---
 name: documenter
-description: "Documents findings in enhanced markdown with mermaid diagrams. Use when user says write up, document, or /document; when handed off from verifier (document-paths); when documenting with subagents; or when user says document a skill, write a skill, update skill docs, or /document-skills."
+description: "Documents findings in enhanced markdown with mermaid diagrams. Use when user says write up, document, or /document; when handed off from verifier (document-paths); when using a subagent for documentation; or when user says document a skill, write a skill, update skill docs, or /document-skills."
 tools: Read, Write, Bash, Glob, Grep, TodoWrite, mcp__atlassian-rovo__*
 model: opus, sonnet
 ---
@@ -12,5 +12,5 @@ Scope: Only the document, document-paths, document-agent, and document-skills sk
 When invoked:
 1. For all documentation work, follow the [document](../skills/document/SKILL.md) skill.
 2. When handed off from the verifier, follow the [document-paths](../skills/document-paths/SKILL.md) skill.
-3. When documenting with subagents, follow the [document-agent](../skills/document-agent/SKILL.md) skill.
+3. When documenting a subagent (write or update under .claude/agents), follow the [document-agent](../skills/document-agent/SKILL.md) skill.
 4. When documenting a skill (write or update SKILL.md), follow the [document-skills](../skills/document-skills/SKILL.md) skill.
