@@ -1,5 +1,7 @@
 # Paths
 
+Deliverables base URL: (set during install)
+
 Only: `work/{team}/{space}/{project-name}/`
 
 Deliverable: one `README.md` per project folder. Single file per project; do not create other files (notes, drafts, separate docs). Add new problems, topics, or findings to that README. Never create a new folder or new README for new problems or topics.
