@@ -17,7 +17,7 @@ When invoked:
 
 ## Team
 
-researcher, documenter, strategist, verifier, verification-documentor, cleaner, updater, installer.
+researcher, documenter, strategist, verifier, cleaner, updater, installer.
 
 ## Workflows
 
@@ -50,6 +50,5 @@ researcher, documenter, strategist, verifier, verification-documentor, cleaner, 
 
 **Clean up studio**
 1. Ask user: clean everything (all docs in paths.md + system files) or pick and choose which paths to verify.
-2. verifier → [verify-docs](../skills/verify-docs/SKILL.md) (heading hierarchy, top nav, emojis in headlines)
-3. verification-documentor → [document-verification](../skills/document-verification/SKILL.md) (track files, compare to README and paths.md, write `.tmp/verification-report.md`)
-4. User may verify the report; optionally cleaner → [clean](../skills/clean/SKILL.md) to delete `.tmp/` contents.
+2. verifier → [verify-docs](../skills/verify-docs/SKILL.md) then [document-verification](../skills/document-verification/SKILL.md) (run both in order; report to `.tmp/verification-report.md`).
+3. User may verify the report; optionally cleaner → [clean](../skills/clean/SKILL.md) to delete `.tmp/` contents.
