@@ -20,7 +20,7 @@ Accepts flexible input, derives starting URLs and level-0 content when provided,
 
 If input or output path is missing, ask the user before proceeding.
 
-Valid team and space values are defined in `work/config.md`.
+Valid team and space values are defined in `work/paths.md`.
 
 ## Process
 

@@ -7,7 +7,7 @@ model: opus, sonnet
 
 ## Team
 
-researcher, documenter, strategist. Use the [work-config](../skills/work-config/SKILL.md) skill for team and space values.
+researcher, documenter, strategist. Use work/paths.md for team and space values.
 
 ## Workflows
 
@@ -18,6 +18,11 @@ researcher, documenter, strategist. Use the [work-config](../skills/work-config/
 **Propose solutions**
 - strategist → [analyze-root-cause](../skills/analyze-root-cause/SKILL.md)
 - documenter → [document-findings](../skills/document-findings/SKILL.md)
+
+**Save**
+1. updater → [verify-paths](../skills/verify-paths/SKILL.md) (compare work/paths.md to actual work/ paths)
+2. If mismatch: documenter → [work-paths](../skills/work-paths/SKILL.md) (update paths.md; then hand off to updater)
+3. updater → [save](../skills/save/SKILL.md)
 
 **Full pipeline**
 1. researcher → [learn](../skills/learn/SKILL.md) (gather from ticket/URLs/text/files, crawl up to 5 levels)
