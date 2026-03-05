@@ -8,7 +8,7 @@ Product Studio: agent workflows for design capture, research, and strategic anal
 
 Say "setup", "install", or type `/install`. The [install skill](.claude/skills/install/SKILL.md) runs the standard steps (config, repo link, show hidden files, MCPs, handoff). After that, quit the terminal and relaunch, then run `/mcp` in the chat and complete OAuth for Figma and Atlassian.
 
-Custom setup: `.claude/skills/install-custom/SKILL.md`. The installer runs the [customizer](.claude/agents/customizer.md) agent, which runs that file.
+Custom setup: Add your own steps or notes to the bottom of `.claude/skills/install-custom/SKILL.md.template`. During install that template is copied to `SKILL.md` (gitignored); the [customizer](.claude/agents/customizer.md) then runs that file.
 
 ---
 
@@ -20,7 +20,7 @@ Call a skill by saying its trigger phrase or typing /skill-name. In Claude Code 
 Orchestrates researcher, documenter, strategist, verifier, verification-documentor, cleaner, updater. Discover: research, document, strategize, audit, propose, update ticket. Clean up studio: say "clean up studio" or "verify docs"; verifier checks heading hierarchy, nav, emojis; report saved to .tmp; optionally run cleaner to wipe .tmp. No skill of its own. See [coordinator](.claude/agents/coordinator.md).
 
 ### 🔧 Customizer
-Runs `.claude/skills/install-custom/SKILL.md` after the installer (local overrides). See [customizer](.claude/agents/customizer.md).
+Runs `.claude/skills/install-custom/SKILL.md` after the installer (local overrides; that file is created from `SKILL.md.template` during install and is gitignored). See [customizer](.claude/agents/customizer.md).
 
 ### 🎨 Designer
 - **capture-webpage**: Capture a live webpage as a Figma design. "capture page", "to Figma", /capture-webpage. Give webpage URL and Figma file URL.
@@ -99,7 +99,7 @@ Product Studio/
 │   │   ├── installer.md
 │   │   ├── uninstaller.md
 │   │   ├── updater.md
-│   │   └── customizer.md (runs .claude/skills/install-custom/SKILL.md)
+│   │   └── customizer.md
 │   └── skills/
 │       ├── research/SKILL.md
 │       ├── document/SKILL.md
@@ -108,7 +108,7 @@ Product Studio/
 │       ├── install/
 │       │   └── SKILL.md
 │       ├── install-custom/
-│       │   └── SKILL.md
+│       │   └── SKILL.md.template
 │       ├── save/
 │       │   ├── SKILL.md
 │       │   └── scripts/
@@ -126,14 +126,14 @@ Product Studio/
 │       │   ├── SKILL.md
 │       │   └── scripts/
 │       │       ├── setup-figma-bridge.mjs
-│       │       └── figma-desktop-bridge/   (created by npm run setup:figma-bridge)
+│       │       └── figma-desktop-bridge/
 │       └── capture-webpage/
 │           ├── SKILL.md
 │           └── scripts/capture.js
-├── .tmp/   (gitignored; verification reports)
+├── .tmp/
 ├── work/
-│   ├── paths.md
-│   └── (see paths.md for pattern)
+│   ├── paths.md.template
+│   └── {team}/{space}/{ticket-id}/{project}/
 │       └── README.md
 ├── package.json
 └── README.md

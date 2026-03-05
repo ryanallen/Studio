@@ -12,6 +12,9 @@ package-lock.json
 # Local paths config (copy from work/paths.md.template)
 work/paths.md
 
+# Local install custom (copy from .claude/skills/install-custom/SKILL.md.template)
+.claude/skills/install-custom/SKILL.md
+
 # Install handoff (agent-created, do not commit)
 .claude/skills/install/install-handoff.marker
 
