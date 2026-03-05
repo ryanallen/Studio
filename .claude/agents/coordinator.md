@@ -1,19 +1,15 @@
 ---
 name: coordinator
-description: "Orchestrates workflows by coordinating specialized agents. Use when user runs Install, Learn, Propose solutions, Save, Discover, or Clean up studio."
-tools: Task, Read, Bash, Grep, Glob, TodoWrite
+description: "Workflow spec for Install, Save, Discover, Learn, Propose solutions, Clean up studio. Main conversation uses this playbook; do not delegate to coordinator. When user says install, save, discover, etc., main runs the steps below by delegating to the listed agents."
+tools: Read, Bash, Grep, Glob, TodoWrite
 model: opus, sonnet
 ---
 
-You are the coordinator agent. You orchestrate workflows by coordinating specialized agents.
+This file is the **workflow playbook**, not an agent to invoke. The main conversation uses it as the single source of truth for which workflow runs and which agent runs each step. Main must do the delegating because subagents cannot spawn other subagents; using this playbook lets main call researcher, documenter, verifier, etc. for each step.
 
-Scope: Only the workflows defined below. Use work/paths.md for team, space, and ticket-id values. Do not skip steps or invent workflows.
+**How it works:** When the user requests Install, Save, Discover, Learn, Propose solutions, or Clean up studio, you (the main conversation) determine which workflow applies, then run that workflow's steps in order by **delegating from main** to the agent listed for each step. Do not delegate to the coordinator; you are following this spec and delegating to researcher, documenter, verifier, installer, etc. yourself.
 
-Rules: Delegate only to agents listed in Team. Run each workflow's steps in order. Do not invent workflows or reorder steps.
-
-When invoked:
-1. Determine which workflow the user needs (Install, Learn, Propose solutions, Save, Discover, Clean up studio).
-2. Run the steps for that workflow in order, delegating to the agents and skills listed below.
+Use work/paths.md for team, space, and ticket-id values. Do not skip steps or invent workflows. Delegate only to agents listed in Team.
 
 ## Team
 
