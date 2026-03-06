@@ -6,12 +6,12 @@ disable-model-invocation: true
 
 # Document Verification
 
-Receive verifier output, compare to repo structure, and write a single report to `.tmp/` for user verification.
+Receive verifier output, compare to repo structure, and write one report under `.tmp/` for user verification.
 
 ## Inputs
 
-- **From verifier** – List of all files that were checked and any issues found (heading hierarchy, nav, emojis). Passed when verifier runs verify-docs then this skill in the same flow.
-- **Repo structure** – Read `README.md` (Repo Structure section) and `work/paths.md` if it exists.
+- **From verifier** – List of files checked and any issues (heading hierarchy, nav, emojis). Passed when verifier runs verify-docs then this skill in the same flow.
+- **Repo structure** – Read `README.md` (Repo Structure section) and `work/paths.md` if present.
 
 ## Output
 
@@ -29,4 +29,4 @@ A single report file (e.g. `.tmp/verification-report.md`). Do not commit; `.tmp/
 
 ## Reference
 
-[verify-docs](../verify-docs/SKILL.md) – Produces the input. [clean](../clean/SKILL.md) – Deletes `.tmp/` after verification.
+[verify-docs](../verify-docs/SKILL.md) produces the input. [clean](../clean/SKILL.md) deletes `.tmp/` after verification.
