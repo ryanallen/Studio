@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Save
 
-**Only run when the user explicitly requests it.** Do not run this skill at the end of a task, do not assume they want a commit, and do not run it because they asked in a previous turn. Only when they explicitly say save, stage, commit, or /save in this turn.
+**Never run `git add` (stage) or `git commit` unless the user has explicitly asked to save** (e.g. save, stage, commit, /save). That applies in every context: do not run this skill at the end of a task, do not assume they want a commit, do not run it because they asked in a previous turn, and do not run `git add` or `git commit` in a terminal or elsewhere (e.g. "I'll commit that for you") unless they explicitly said save, stage, commit, or /save in this turn. When they do ask, use this skill.
 
 When this skill is invoked, run the **Save** workflow in [Coordinator](../../agents/coordinator.md) (steps 1–3). Then perform the commit steps below.
 
