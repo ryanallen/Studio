@@ -1,16 +1,17 @@
-<p align="center">
-  <strong>Product Studio</strong><br/>
-  Agent workflows for design capture, research, and strategic analysis.
-</p>
+<h1 align="center">Product Studio</h1>
+<p align="center">Agent workflows for design capture, research, and strategic analysis.</p>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg?style=flat" alt="License"/></a>
-  <a href="https://github.com/[OWNER]/[REPO]/actions"><img src="https://img.shields.io/github/actions/workflow/status/[OWNER]/[REPO]/[WORKFLOW].yml?branch=main&style=flat" alt="Build"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Product%20Studio-Agent%20workflows-6366f1?style=flat" alt="Product Studio"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Skills-Custom-0ea5e9?style=flat" alt="Custom skills"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=flat" alt="License"/></a>
+  <a href="https://github.com/ryanallen/product-studio"><img src="https://img.shields.io/badge/Star-GitHub-ffd700?style=flat" alt="Star on GitHub"/></a>
+  <a href="https://github.com/ryanallen/product-studio/generate"><img src="https://img.shields.io/badge/Use-this%20template-10b981?style=flat" alt="Use this template"/></a>
 </p>
 
 ---
 
-**Source**: [https://github.com/[OWNER]/[REPO]](https://github.com/[OWNER]/[REPO])
+**Source**: [https://github.com/ryanallen/product-studio](https://github.com/ryanallen/product-studio)
 
 ---
 
@@ -109,12 +110,12 @@ Documenter skills use the `document` prefix: **document**, **document-paths**, *
 <details>
 <summary>Using a working repo with this as upstream</summary>
 
-For a working repo that pulls from Product Studio as upstream (e.g. [OWNER]/[REPO]).
+For a working repo that pulls from Product Studio as upstream (e.g. ryanallen/product-studio).
 
 **Add upstream.** In the working repo:
 
 ```bash
-git remote add upstream https://github.com/[OWNER]/[REPO].git
+git remote add upstream https://github.com/ryanallen/product-studio.git
 git fetch upstream
 ```
 
@@ -193,5 +194,5 @@ Product Studio/
 [MIT](LICENSE)
 
 <p align="center">
-  <sub>If this helped you, consider <a href="https://github.com/[OWNER]/[REPO]">giving it a star</a>.</sub>
+  <sub>If this helped you, consider <a href="https://github.com/ryanallen/product-studio">giving it a star</a>.</sub>
 </p>
