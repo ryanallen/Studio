@@ -1,6 +1,6 @@
 # 📄 Product Studio
 
-[⚙️ Setup](#setup) | [🤖 Agents and their skills](#agents-and-their-skills) | [🧭 Coordinator](#coordinator) | [🔧 Customizer](#customizer) | [🎨 Designer](#designer) | [📝 Documenter](#documenter) | [📦 Installer](#installer) | [🗑️ Uninstaller](#uninstaller) | [✅ Verifier](#verifier) | [📋 Verification-documentor](#verification-documentor) | [🧹 Cleaner](#cleaner) | [🔄 Updater](#updater) | [🔍 Researcher](#researcher) | [🎯 Strategist](#strategist) | [📁 Repo Structure](#repo-structure) | [🗂️ .tmp and cleanup](#tmp-and-cleanup)
+[⚙️ Setup](#⚙️-setup) | [🤖 Agents and their skills](#🤖-agents-and-their-skills) | [🧭 Coordinator](#🧭-coordinator) | [🔧 Customizer](#🔧-customizer) | [🎨 Designer](#🎨-designer) | [📝 Documenter](#📝-documenter) | [📦 Installer](#📦-installer) | [🗑️ Uninstaller](#🗑️-uninstaller) | [✅ Verifier](#✅-verifier) | [📋 Verification-documentor](#📋-verification-documentor) | [🧹 Cleaner](#🧹-cleaner) | [🔄 Updater](#🔄-updater) | [🔍 Researcher](#🔍-researcher) | [🎯 Strategist](#🎯-strategist) | [📁 Repo Structure](#📁-repo-structure) | [🗂️ .tmp and cleanup](#🗂️-tmp-and-cleanup)
 
 Product Studio: agent workflows for design capture, research, and strategic analysis.
 

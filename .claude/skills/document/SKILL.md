@@ -21,7 +21,7 @@ Write to the project README at the path from work/paths.md.
 
 ### Required on every README
 
-1. **Top navigation** – After the H1 title, add one line linking to every H2 and H3. Horizontal, compact: `[🔍 Discovery](#discovery) | [📋 Project tracking](#project-tracking) | …` Include only sections that exist. Anchor targets: lowercase, hyphens for spaces (e.g. `#discovery`, `#project-tracking`).
+1. **Top navigation** – After the H1 title, add one line linking to every H2 and H3. Horizontal, compact. Include only sections that exist. Anchor targets must include the heading's leading emoji so links resolve: use `#<emoji>-<slug>` (e.g. `#🔍-discovery`, `#📋-project-tracking`). Slug: lowercase, hyphens for spaces.
 2. **Emoji on headings** – Every H1, H2, and H3 must start with an emoji.
 
 ### Markdown standards
@@ -72,13 +72,13 @@ Cite sources inline with markdown links. Every reference to a source or URL must
 
 Single README with this top nav after the H1 (link only sections that exist):
 
-`[🔍 Discovery](#discovery) | [📋 Project tracking](#project-tracking) | [📑 Audits](#audits) | [👥 Users + Needs](#users--needs) | [🔎 Exploration](#exploration) | [💡 Ideation](#ideation) | [📎 Artifacts](#artifacts) | [✅ Validation](#validation) | [🚀 Go to market](#go-to-market) | [📦 Deliverables](#deliverables) | [📈 Performance](#performance) | [🔜 Next version](#next-version)`
+`[🔍 Discovery](#🔍-discovery) | [📋 Project tracking](#📋-project-tracking) | [📑 Audits](#📑-audits) | [👥 Users + Needs](#👥-users--needs) | [🔎 Exploration](#🔎-exploration) | [💡 Ideation](#💡-ideation) | [📎 Artifacts](#📎-artifacts) | [✅ Validation](#✅-validation) | [🚀 Go to market](#🚀-go-to-market) | [📦 Deliverables](#📦-deliverables) | [📈 Performance](#📈-performance) | [🔜 Next version](#🔜-next-version)`
 
 Only populate sections/tables when source material provides real data; otherwise leave empty or omit. Always link to source data to prove it.
 
 ```markdown
 # 📄 {Project Name}
-[🔍 Discovery](#discovery) | [📋 Project tracking](#project-tracking) | [📑 Audits](#audits) | [👥 Users + Needs](#users--needs) | [🔎 Exploration](#exploration) | [💡 Ideation](#ideation) | [📎 Artifacts](#artifacts) | [✅ Validation](#validation) | [🚀 Go to market](#go-to-market) | [📦 Deliverables](#deliverables) | [📈 Performance](#performance) | [🔜 Next version](#next-version)
+[🔍 Discovery](#🔍-discovery) | [📋 Project tracking](#📋-project-tracking) | [📑 Audits](#📑-audits) | [👥 Users + Needs](#👥-users--needs) | [🔎 Exploration](#🔎-exploration) | [💡 Ideation](#💡-ideation) | [📎 Artifacts](#📎-artifacts) | [✅ Validation](#✅-validation) | [🚀 Go to market](#🚀-go-to-market) | [📦 Deliverables](#📦-deliverables) | [📈 Performance](#📈-performance) | [🔜 Next version](#🔜-next-version)
 
 ---
 ## 🔍 Discovery
@@ -121,7 +121,7 @@ Learnings. Recommendations. Links to new docs.
 
 ## Rules
 
-- H1, H2, H3 start with an emoji. Top nav after H1: horizontal, compact, link every H2 and H3.
+- H1, H2, H3 start with an emoji. Top nav after H1: horizontal, compact, link every H2 and H3. Nav fragment for each heading must include that heading's emoji: `#<emoji>-<slug>`.
 - No absolute filesystem paths in links; relative to the document only.
 - No invented content. Only real data from source; no placeholder rows, TBD, or made-up names/dates/artifacts. Empty or omit when no data.
 - Project tracking > Team: Name = individual person (full name). Responsibility = Driver | Approver | Contributor | Informed only.
