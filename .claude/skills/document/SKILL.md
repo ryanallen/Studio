@@ -70,7 +70,11 @@ Cite sources inline with markdown links. Every reference to a source or URL must
 
 ### README structure (three phases)
 
-Single README with Discovery, Exploration, Go to market. Notes, current-state review, competitor audit go in **Audits** (under Discovery). Only populate sections/tables when source material provides real data; otherwise leave empty or omit.
+Single README with this top nav after the H1 (link only sections that exist):
+
+`[🔍 Discovery](#discovery) | [📋 Project tracking](#project-tracking) | [📑 Audits](#audits) | [👥 Users + Needs](#users--needs) | [🔎 Exploration](#exploration) | [💡 Ideation](#ideation) | [📎 Artifacts](#artifacts) | [✅ Validation](#validation) | [🚀 Go to market](#go-to-market) | [📦 Deliverables](#deliverables) | [📈 Performance](#performance) | [🔜 Next version](#next-version)`
+
+Only populate sections/tables when source material provides real data; otherwise leave empty or omit. Always link to source data to prove it.
 
 ```markdown
 # 📄 {Project Name}
