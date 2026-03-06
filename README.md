@@ -1,4 +1,6 @@
-# Product Studio
+# 📄 Product Studio
+
+[⚙️ Setup](#setup) | [🤖 Agents and their skills](#agents-and-their-skills) | [🧭 Coordinator](#coordinator) | [🔧 Customizer](#customizer) | [🎨 Designer](#designer) | [📝 Documenter](#documenter) | [📦 Installer](#installer) | [🗑️ Uninstaller](#uninstaller) | [✅ Verifier](#verifier) | [📋 Verification-documentor](#verification-documentor) | [🧹 Cleaner](#cleaner) | [🔄 Updater](#updater) | [🔍 Researcher](#researcher) | [🎯 Strategist](#strategist) | [📁 Repo Structure](#repo-structure) | [🗂️ .tmp and cleanup](#tmp-and-cleanup)
 
 Product Studio: agent workflows for design capture, research, and strategic analysis.
 
@@ -135,6 +137,6 @@ Product Studio/
 └── README.md
 ```
 
-### .tmp and cleanup
+### 🗂️ .tmp and cleanup
 
 **`.tmp/`** holds agent-generated reports and temp files. It is gitignored and never committed. The **Clean up studio** flow writes a verification report to `.tmp/verification-report.md` (after verify-docs and document-verification). After you verify the report, optionally run the **clean** skill ("clean", "wipe .tmp", /clean) to delete all contents of `.tmp/`. The clean skill only removes files inside `.tmp/`; it does not touch the rest of the repo.
