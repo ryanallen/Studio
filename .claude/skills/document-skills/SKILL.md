@@ -18,16 +18,18 @@ Produce or update a skill so it follows Claude Code best practices. Apply the fo
 
 SKILL.md and optional supporting files updated per structure and checklist below.
 
-## Skill structure
+## Process
+
+### Skill structure
 
 - One directory per skill; required file: `SKILL.md`.
 - **Where**: Project = `.claude/skills/<name>/`; personal = `~/.claude/skills/<name>/`. Nested `.claude/skills/` (e.g. in a package) are discovered automatically.
 - Optional: `template.md`, `examples/`, `scripts/`. Reference them from `SKILL.md` so Claude knows when to load them.
 - **Length**: Keep `SKILL.md` under 500 lines; move long reference to supporting files (e.g. `reference.md`, `examples.md`).
 
-## SKILL.md format
+### SKILL.md format
 
-### Frontmatter (YAML between `---`)
+#### Frontmatter (YAML between `---`)
 
 | Field | Use |
 |-------|-----|
@@ -44,12 +46,12 @@ SKILL.md and optional supporting files updated per structure and checklist below
 
 **YAML:** Avoid colons inside frontmatter values. Use a different phrase (e.g. "Scope is" or "Scope includes" instead of "Scope:") so parsers (e.g. GitHub) do not treat them as new keys.
 
-### Content type
+#### Content type
 
 - **Reference** – Conventions, patterns, style guides. Stays inline; Claude uses it in conversation.
 - **Task** – Step-by-step; often add `disable-model-invocation: true` and invoke with `/name`.
 
-### Substitutions (in body)
+#### Substitutions (in body)
 
 - `$ARGUMENTS` – All arguments; if absent, arguments are appended as `ARGUMENTS: `.
 - `$ARGUMENTS[N]` or `$N` – Argument by 0-based index.
@@ -58,15 +60,13 @@ SKILL.md and optional supporting files updated per structure and checklist below
 
 For pre-run shell output injection, see [Inject dynamic context](https://code.claude.com/docs/en/skills.md#inject-dynamic-context).
 
-## Checklist when writing or updating a skill
+### Checklist when writing or updating a skill
 
 1. **Frontmatter and discovery**: `description` present and specific, with natural keywords and when-to-use; `name` matches intent; `disable-model-invocation: true` for task-only or side-effect skills.
 2. **Length**: Keep `SKILL.md` under 500 lines; long reference in separate files, linked from `SKILL.md`.
 3. **Supporting files**: Mention in `SKILL.md` with clear when-to-load guidance.
 4. **Arguments**: If the skill takes inputs, use `$ARGUMENTS` or `$N` and optionally `argument-hint`.
 5. **Invocation**: Set `disable-model-invocation` and/or `user-invocable` per desired (user-only, Claude-only, or both).
-
-## Process
 
 1. Read the target skill path and any provided source material.
 2. Apply the checklist and the structure above; preserve existing behavior unless the user asks to change it.

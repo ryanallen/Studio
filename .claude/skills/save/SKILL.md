@@ -23,14 +23,16 @@ If the user asks to commit only specific file(s) or path(s), stage only those th
 
 One or more commits; result reported. No push.
 
-## Command
+## Process
+
+### Command
 
 One commit: `git add -A && git commit -m "Title" -m "Description"`.
 
 For multiple commits, repeat with different staging and messages
 (e.g. `git add path1 && git commit -m "Title1" -m "Desc1"` then `git add path2 && git commit -m "Title2" -m "Desc2"`).
 
-## Steps
+### Steps
 
 1. Run `git status` and inspect what changed. Decide one commit or multiple (e.g. one per logical change). Stage per Inputs (all or specific paths).
 2. For each commit: stage the relevant changes, run `git commit -m "<title>" -m "<description>"` (derive from staged changes).

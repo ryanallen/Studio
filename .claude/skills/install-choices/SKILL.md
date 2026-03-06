@@ -16,7 +16,9 @@ None. User answers the prompt.
 
 Choice recorded. If express, run [install-express](../install-express/SKILL.md) then installer continues at install-mcp. If custom, continue with the steps below.
 
-## Process (custom path)
+## Process
+
+Custom path (when user did not choose express).
 
 1. **Show hidden files** – Ask if they want to show hidden files. If no, continue. If yes:
    - **macOS** – Run (if it fails due to permissions, continue): `defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder`

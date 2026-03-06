@@ -17,17 +17,19 @@ Take research output and produce structured, enhanced markdown documentation.
 
 Write to the project README at the path from work/paths.md.
 
-## Required on every README
+## Process
+
+### Required on every README
 
 1. **Top navigation** – After the H1 title, add one line linking to every H2 and H3. Horizontal, compact: `[🔍 Discovery](#discovery) | [📋 Project tracking](#project-tracking) | …` Include only sections that exist. Anchor targets: lowercase, hyphens for spaces (e.g. `#discovery`, `#project-tracking`).
 2. **Emoji on headings** – Every H1, H2, and H3 must start with an emoji.
 
-## Markdown standards
+### Markdown standards
 
-### Headings
+#### Headings
 H1, H2, and H3 start with an emoji.
 
-### Mermaid
+#### Mermaid
 Use mermaid for flowcharts (processes, workflows, decision trees), sequence diagrams (multi-step interactions), mind maps (problem breakdowns, topic relationships), and Gantt charts (timelines, phases). Use for any process with 3+ steps or any hierarchy with 2+ levels.
 
 Example workflow:
@@ -52,16 +54,14 @@ mindmap
 ```
 ````
 
-### Tables
+#### Tables
 Structured comparisons, source indexes, feature matrices. Only add rows when source material provides real data. No placeholder rows, TBD, example data, or made-up names/dates/artifacts.
 
-### Callouts
+#### Callouts
 Blockquotes with bold labels: `> **Note:** ...` and `> **Warning:** ...`
 
-### Links
+#### Links
 Cite sources inline with markdown links. Every reference to a source or URL must use `[title](url)`. Link everything that can be linked: sections (via top nav), URLs, people (anchor per person in Team, link name to that anchor elsewhere), tickets, artifacts/docs with URLs. Never use absolute filesystem paths; links relative to the document.
-
-## Process
 
 1. **Read source material** – All files from source path; understand scope and topics.
 2. **Organize by sections** – Map content into README sections by document type.
