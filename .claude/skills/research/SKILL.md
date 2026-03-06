@@ -28,7 +28,56 @@ Accepts flexible input, derives starting URLs and level-0 content when provided,
 
 ## Output
 
-Project README at path from [work/paths.md](../../work/paths.md) with Level-0 (input), Sources, Findings, and Link Tree. Handoff to documenter.
+Project README at path from [work/paths.md](../../work/paths.md). Handoff to documenter. Structure:
+
+### Level-0 (input)
+
+Content from ticket, paste, file, or image:
+
+```markdown
+## Level-0 (input)
+
+{Content or summary of user-provided input}
+```
+
+### Sources
+
+Link index with depth levels. Use markdown links so URLs are clickable (put `[Title](URL)` in the Title column):
+
+```markdown
+## Sources
+
+| URL | Depth | Title | Parent |
+|-----|-------|-------|--------|
+| ... | 0     | ...   | (root) |
+| ... | 1     | ...   | ...    |
+```
+
+### Findings
+
+Extracted content organized by topic:
+
+```markdown
+## Findings
+
+### {Topic Heading}
+
+{Summarized content}
+
+> Source: [page title or URL](url) (depth {N})
+```
+
+### Link Tree
+
+Visual map of traversal (every item must be a markdown link so it is clickable):
+
+```markdown
+## Link Tree
+
+- [Starting Page](url)
+  - [Child Page](url)
+    - [Grandchild Page](url)
+```
 
 ## Process
 
@@ -76,46 +125,7 @@ For each page visited, capture:
 
 ### 5. Output
 
-Write to the project README.md. This file is the handoff to the documenter (documenter reads from this path and restructures it).
-
-If level-0 content exists, include it first:
-
-**## Level-0 (input)** – Content from ticket, paste, file, or image:
-```markdown
-## Level-0 (input)
-
-{Content or summary of user-provided input}
-```
-
-**## Sources** – Link index with depth levels. Use markdown links so URLs are clickable (put `[Title](URL)` in the Title column):
-```markdown
-## Sources
-
-| URL | Depth | Title | Parent |
-|-----|-------|-------|--------|
-| ... | 0     | ...   | (root) |
-| ... | 1     | ...   | ...    |
-```
-
-**## Findings** – Extracted content organized by topic:
-```markdown
-## Findings
-
-### {Topic Heading}
-
-{Summarized content}
-
-> Source: [page title or URL](url) (depth {N})
-```
-
-**## Link Tree** – Visual map of traversal (every item must be a markdown link so it is clickable):
-```markdown
-## Link Tree
-
-- [Starting Page](url)
-  - [Child Page](url)
-    - [Grandchild Page](url)
-```
+Write to the project README at the path from work/paths.md using the structure in Output (Level-0 if present, then Sources, Findings, Link Tree). Documenter reads from this path and restructures it.
 
 ## Rules
 
