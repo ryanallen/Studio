@@ -51,6 +51,18 @@ SKILL.md and optional supporting files updated per structure and checklist below
 - **Reference** – Conventions, patterns, style guides. Stays inline; Claude uses it in conversation.
 - **Task** – Step-by-step; often add `disable-model-invocation: true` and invoke with `/name`.
 
+#### SKILL.md body structure (match existing skills)
+
+Every skill must use the same section layout so skills stay consistent and easy to scan:
+
+1. **# Title** – Skill name as H1, then one short intro paragraph (what the skill does).
+2. **## Inputs** – What the skill needs (user input, paths, options). List numbered items. Use "None" or "Optional" if there are no required inputs.
+3. **## Output** – What the skill produces or delivers (file, behavior, handoff). One short block.
+4. **## Process** – How to do it. Numbered steps or subsections (e.g. "### 1. Step name"). Put all how-to and rules here.
+5. **## Reference** – Optional. Links to related skills, docs, or paths (e.g. `[other-skill](../other-skill/SKILL.md)`).
+
+Omit a section only if it truly does not apply (e.g. a pure reference skill might have no Process steps). When in doubt, include all five. Align new or updated skills with this structure and with other skills in the same repo.
+
 #### Substitutions (in body)
 
 - `$ARGUMENTS` – All arguments; if absent, arguments are appended as `ARGUMENTS: `.
@@ -63,10 +75,11 @@ For pre-run shell output injection, see [Inject dynamic context](https://code.cl
 ### Checklist when writing or updating a skill
 
 1. **Frontmatter and discovery**: `description` present and specific, with natural keywords and when-to-use; `name` matches intent; `disable-model-invocation: true` for task-only or side-effect skills.
-2. **Length**: Keep `SKILL.md` under 500 lines; long reference in separate files, linked from `SKILL.md`.
-3. **Supporting files**: Mention in `SKILL.md` with clear when-to-load guidance.
-4. **Arguments**: If the skill takes inputs, use `$ARGUMENTS` or `$N` and optionally `argument-hint`.
-5. **Invocation**: Set `disable-model-invocation` and/or `user-invocable` per desired (user-only, Claude-only, or both).
+2. **Body structure**: SKILL.md includes (as applicable) Inputs, Output, Process, Reference in that order; matches the same layout as other skills in the repo.
+3. **Length**: Keep `SKILL.md` under 500 lines; long reference in separate files, linked from `SKILL.md`.
+4. **Supporting files**: Mention in `SKILL.md` with clear when-to-load guidance.
+5. **Arguments**: If the skill takes inputs, use `$ARGUMENTS` or `$N` and optionally `argument-hint`.
+6. **Invocation**: Set `disable-model-invocation` and/or `user-invocable` per desired (user-only, Claude-only, or both).
 
 1. Read the target skill path and any provided source material.
 2. Apply the checklist and the structure above; preserve existing behavior unless the user asks to change it.
