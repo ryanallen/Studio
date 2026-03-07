@@ -72,6 +72,7 @@ Call a skill by saying its trigger phrase or typing `/skill-name`. Skills live i
 | [![coordinator](https://img.shields.io/badge/coordinator-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/coordinator.md) |
 |:--:|
 | ![skills](https://img.shields.io/badge/skills-%E2%80%94-0ea5e9?style=flat&labelColor=4b5563) |
+|:--|
 | Orchestrates researcher, documenter, strategist, verifier, cleaner, updater. Discover: research, document, strategize, audit, propose, update ticket. Clean up studio: say "clean up studio" or "verify docs"; verifier checks heading hierarchy, nav, emojis and writes report to .tmp; optionally run cleaner to wipe .tmp. No skill of its own. |
 
 | [![installer](https://img.shields.io/badge/installer-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/installer.md) |
