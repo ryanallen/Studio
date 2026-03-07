@@ -1,6 +1,7 @@
 ---
 name: designer
-description: "Generates Figma designs via the Figma Console MCP. Use when user says generate Figma, generate design, or /generate-figma."
+description: Generates Figma designs via the Figma Console MCP.
+triggers: "generate Figma, generate design, /generate-figma"
 tools: mcp__figma-console__*, Bash, Read, TodoWrite
 model: opus, sonnet
 ---

@@ -1,6 +1,7 @@
 ---
 name: coordinator
-description: "Workflow spec for Install, Save, Discover, Learn, Propose solutions, Clean up studio, and single flows. Main conversation uses this playbook; do not delegate to coordinator. When user says install, save, discover, refine, write, etc., main runs the matching workflow or delegates to the matching subagent."
+description: Workflow spec for Install, Save, Discover, Learn, Propose solutions, Clean up studio, and single flows. Main uses this playbook; do not delegate to coordinator.
+triggers: []
 tools: Read, Bash, Grep, Glob, TodoWrite
 model: opus, sonnet
 ---
@@ -23,7 +24,7 @@ Depends on the flow: install completes setup; save produces commits; documenter 
 1. Match the user's request to one **Single flow** or **Workflow** by checking trigger phrases. If unclear, prefer the flow that best fits the request.
 2. **Single flow:** Delegate once to the subagent listed for that flow. Pass the request (and any optional input) as context.
 3. **Workflow:** Run the steps in order. For each step, delegate to the listed subagent. Do not skip steps.
-4. Do not delegate to the coordinator. Delegate only to subagents listed in Team. Check a subagent's description in `.claude/agents/` for its trigger phrases when matching.
+4. Do not delegate to the coordinator. Delegate only to subagents listed in Team. Check a subagent's `triggers` (or description) in `.claude/agents/` when matching.
 
 ## Team
 
@@ -103,4 +104,4 @@ Multi-step flows. Run steps in order; delegate each step to the listed subagent.
 
 ## Reference
 
-[work/paths.md](../../work/paths.md) for team, space, ticket-id. Subagent trigger phrases in [.claude/agents/](.claude/agents/) description fields.
+[work/paths.md](../../work/paths.md) for team, space, ticket-id. Subagent trigger phrases in [.claude/agents/](.claude/agents/) `triggers` field (or description when triggers not set).

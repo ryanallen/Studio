@@ -1,6 +1,7 @@
 ---
 name: installer
-description: "Runs Product Studio install: paths, choices, MCP, Figma bridge, handoff, then customizer. Use when user says setup, install, or /install."
+description: Runs Product Studio install: paths, choices, MCP, Figma bridge, handoff, then customizer.
+triggers: "setup, install, /install"
 tools: Read, Write, Bash, Grep
 model: opus, sonnet
 ---

@@ -1,6 +1,7 @@
 ---
 name: customizer
-description: "Runs the project's custom install steps after the main installer. Use when Install workflow runs the custom step, when handed off from installer, or when .claude/skills/install-custom/SKILL.md exists."
+description: Runs the project's custom install steps after the main installer. Invoked by installer when .claude/skills/install-custom/SKILL.md exists.
+triggers: []
 tools: Read, Bash
 model: opus, sonnet
 ---
