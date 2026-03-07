@@ -24,7 +24,7 @@
 
 <p align="center">
   <a href=".claude/agents"><img src="https://img.shields.io/badge/Product%20Studio-Agent%20workflows-6366f1?style=flat" alt="Product Studio"/></a>
-  <a href=".claude/skills"><img src="https://img.shields.io/badge/Skills-Custom-0ea5e9?style=flat" alt="Custom skills"/></a>
+  <a href=".claude/agents"><img src="https://img.shields.io/badge/Agents-SKILLS-0ea5e9?style=flat&labelColor=4b5563" alt="Agents SKILLS"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=flat" alt="License"/></a>
   <a href="https://github.com/ryanallen/product-studio/generate"><img src="https://img.shields.io/badge/Use-this%20template-10b981?style=flat" alt="Use this template"/></a>
 </p>
@@ -39,24 +39,17 @@
 
 Product Studio wires researcher, documenter, strategist, verifier, and other agents to workflows: install, discover, clean up studio, save. Skills live under `.claude/skills/`; call them by trigger phrase or `/skill-name`. In Claude Code and Cursor, `/skills` lists all.
 
-## Table of contents
+## Contents
+
+<details>
+<summary>On this page</summary>
 
 - [Setup](#-setup)
 - [Agents and skills](#-agents-and-their-skills)
-- [Coordinator](#-coordinator)
-- [Customizer](#-customizer)
-- [Designer](#-designer)
-- [Documenter](#-documenter)
-- [Installer](#-installer)
-- [Uninstaller](#-uninstaller)
-- [Verifier](#-verifier)
-- [Verification-documentor](#-verification-documentor)
-- [Cleaner](#-cleaner)
-- [Updater](#-updater)
-- [Researcher](#-researcher)
-- [Strategist](#-strategist)
 - [Repo structure](#-repo-structure)
 - [.tmp and cleanup](#-tmp-and-cleanup)
+
+</details>
 
 ---
 
@@ -68,70 +61,26 @@ Custom setup: Add your own steps or notes to the bottom of `.claude/skills/insta
 
 ---
 
-<details>
-<summary><strong>Agents and their skills</strong></summary>
-
 ## Agents and their skills
 
-Call a skill by saying its trigger phrase or typing `/skill-name`. Skills live in `.claude/skills/` in a kebab-case folder with `SKILL.md` (e.g. `.claude/skills/save/SKILL.md`).
+Call a skill by saying its trigger phrase or typing `/skill-name`. Skills live in `.claude/skills/` in a kebab-case folder with `SKILL.md`.
 
-### Coordinator
+| Agent | Description |
+|-------|--------------|
+| **Coordinator** | Orchestrates researcher, documenter, strategist, verifier, verification-documentor, cleaner, updater. Discover: research, document, strategize, audit, propose, update ticket. Clean up studio: say "clean up studio" or "verify docs"; verifier checks heading hierarchy, nav, emojis; report saved to .tmp; optionally run cleaner to wipe .tmp. No skill of its own. See [coordinator](.claude/agents/coordinator.md). |
+| **Customizer** [![install-custom](https://img.shields.io/badge/install--custom-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/install-custom/) | Runs `.claude/skills/install-custom/SKILL.md` after the installer (local overrides; that file is created from `SKILL.md.template` during install and is gitignored). See [customizer](.claude/agents/customizer.md). |
+| **Designer** [![generate-figma](https://img.shields.io/badge/generate--figma-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/generate-figma/SKILL.md) | Generate or update a Figma design by calling the Figma Console MCP with target file details. "generate Figma", "generate design", /generate-figma. |
+| **Documenter** [![document](https://img.shields.io/badge/document-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document/SKILL.md) [![document-paths](https://img.shields.io/badge/document--paths-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document-paths/SKILL.md) [![document-ticket](https://img.shields.io/badge/document--ticket-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document-ticket/SKILL.md) | **document**: Take research output and produce structured markdown with mermaid diagrams. "write up", "document", /document. **document-paths**: Sync work/paths.md tree with actual paths under work/. Handoff from verifier (verify-paths). **document-ticket**: Post a comment on a Jira ticket with link to project deliverables. "update ticket", "Jira", /document-ticket. |
+| **Installer** [![install](https://img.shields.io/badge/install-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/install/SKILL.md) | Run the standard Product Studio install steps: config (paths.md), repo link (from git or ask), show hidden files, MCPs, Figma bridge if chosen, handoff. "setup", "install", /install. Then quit terminal, relaunch, run /mcp and complete OAuth for Figma and Atlassian. |
+| **Uninstaller** [![uninstall](https://img.shields.io/badge/uninstall-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/uninstall/SKILL.md) | Remove Product Studio MCP entries from the user's global config. "uninstall", "remove MCP", /uninstall. Then restart terminal. |
+| **Verifier** [![verify-paths](https://img.shields.io/badge/verify--paths-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/verify-paths/SKILL.md) [![verify-docs](https://img.shields.io/badge/verify--docs-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/verify-docs/SKILL.md) | **verify-paths**: Compare work/paths.md to actual paths under work/. If mismatch, hand off to documenter (document-paths). Used in Save flow. **verify-docs**: Check all documents for proper h1/h2/h3 hierarchy, horizontal top nav, emojis at start of every headline. Used in Clean up studio flow. |
+| **Verification-documentor** [![document-verification](https://img.shields.io/badge/document--verification-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document-verification/SKILL.md) | After verify-docs, track all files processed, compare to README and paths.md, write `.tmp/verification-report.md` for user verification. Used in Clean up studio flow. |
+| **Cleaner** [![clean](https://img.shields.io/badge/clean-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/clean/SKILL.md) | Delete everything in `.tmp/`. "clean", "wipe .tmp", /clean. Use after verifying the report. |
+| **Updater** [![update-figma](https://img.shields.io/badge/update--figma-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/update-figma/SKILL.md) [![save](https://img.shields.io/badge/save-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/save/SKILL.md) [![sync-upstream](https://img.shields.io/badge/sync--upstream-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/sync-upstream/SKILL.md) | **update-figma**: Update the Figma token in figma-console MCP config. "update Figma token", /update-figma. **save**: Stage all and create a commit with derived message. "save", "stage", /save. Does not push. **sync-upstream**: Sync from upstream main, push to origin. "sync", "pull", /sync-upstream. |
+| **Researcher** [![research](https://img.shields.io/badge/research-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/research/SKILL.md) [![analyze-figma](https://img.shields.io/badge/analyze--figma-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/analyze-figma/SKILL.md) | **research**: Gather from any input (ticket, URL(s), text, file(s), image(s)) and follow links up to 5 levels deep; documenter then structures the output. "research", "learn about this", /research. **analyze-figma**: Analyze a Figma link and produce a structured report. "analyze Figma", "Figma audit", /analyze-figma. Give Figma design URL. |
+| **Strategist** [![strategize](https://img.shields.io/badge/strategize-SKILLS-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/strategize/SKILL.md) | Analyze findings with Five Whys, identify root causes and propose solutions. "why broken", "find cause", /strategize. |
 
-Orchestrates researcher, documenter, strategist, verifier, verification-documentor, cleaner, updater. Discover: research, document, strategize, audit, propose, update ticket. Clean up studio: say "clean up studio" or "verify docs"; verifier checks heading hierarchy, nav, emojis; report saved to .tmp; optionally run cleaner to wipe .tmp. No skill of its own. See [coordinator](.claude/agents/coordinator.md).
-
-### Customizer
-
-Runs `.claude/skills/install-custom/SKILL.md` after the installer (local overrides; that file is created from `SKILL.md.template` during install and is gitignored). See [customizer](.claude/agents/customizer.md).
-
-### Designer
-
-- **generate-figma**: Generate or update a Figma design by calling the Figma Console MCP with target file details. "generate Figma", "generate design", /generate-figma.
-
-### Documenter
-
-Documenter skills use the `document` prefix: **document**, **document-paths**, **document-ticket**.
-- **document**: Take research output and produce structured markdown with mermaid diagrams. "write up", "document", /document.
-- **document-paths**: Sync work/paths.md tree with actual paths under work/. Handoff from verifier (verify-paths).
-- **document-ticket**: Post a comment on a Jira ticket with link to project deliverables. "update ticket", "Jira", /document-ticket.
-
-### Installer
-
-- **install**: Run the standard Product Studio install steps: config (paths.md), repo link (from git or ask), show hidden files, MCPs, Figma bridge if chosen, handoff. "setup", "install", /install. Then quit terminal, relaunch, run /mcp and complete OAuth for Figma and Atlassian.
-
-### Uninstaller
-
-- **uninstall**: Remove Product Studio MCP entries from the user's global config. "uninstall", "remove MCP", /uninstall. See [uninstall skill](.claude/skills/uninstall/SKILL.md). Then restart terminal.
-
-### Verifier
-
-- **verify-paths**: Compare work/paths.md to actual paths under work/. If mismatch, hand off to documenter (document-paths). Used in Save flow.
-- **verify-docs**: Check all documents (paths.md + system + projects) for proper h1/h2/h3 hierarchy, horizontal top nav to sections, and emojis at start of every headline. Used in Clean up studio flow.
-
-### Verification-documentor
-
-- **document-verification**: After verify-docs, track all files processed, compare to README and paths.md, write `.tmp/verification-report.md` for user verification. Used in Clean up studio flow.
-
-### Cleaner
-
-- **clean**: Delete everything in `.tmp/`. "clean", "wipe .tmp", /clean. Use after verifying the report.
-
-### Updater
-
-- **update-figma**: Update the Figma token in figma-console MCP config. "update Figma token", "renew Figma token", /update-figma.
-- **save**: Stage all and create a commit with derived message. "save", "stage", or "commit", /save. Does not push.
-- **sync-upstream**: Sync from upstream main, push to origin. "sync", "pull", /sync-upstream.
-
-### Researcher
-
-- **research**: Gather from any input (ticket, URL(s), text, file(s), image(s)) and follow links up to 5 levels deep; documenter then structures the output. "research", "learn about this", "look at this", /research.
-- **analyze-figma**: Analyze a Figma link and produce a structured report. General link = full file; specific link (with node-id) = deep analysis from that node. "analyze Figma", "Figma audit", /analyze-figma. Give Figma design URL.
-
-### Strategist
-
-- **strategize**: Analyze findings with Five Whys, identify root causes and propose solutions. "why broken", "find cause", /strategize.
-
-</details>
-
+---
 <details>
 <summary>Using a working repo with this as upstream</summary>
 
@@ -150,12 +99,7 @@ Pull with `git pull upstream main` (or say "sync", "pull", or /sync-upstream).
 
 </details>
 
-</details>
-
 ---
-
-<details>
-<summary><strong>Repo structure</strong></summary>
 
 ## Repo structure
 
@@ -216,8 +160,6 @@ Product Studio/
 ### .tmp and cleanup
 
 **`.tmp/`** holds agent-generated reports and temp files. It is gitignored and never committed. The **Clean up studio** flow writes a verification report to `.tmp/verification-report.md` (after verify-docs and document-verification). After you verify the report, optionally run the **clean** skill ("clean", "wipe .tmp", /clean) to delete all contents of `.tmp/`. The clean skill only removes files inside `.tmp/`; it does not touch the rest of the repo.
-
-</details>
 
 ---
 
