@@ -38,10 +38,10 @@ Each row: what triggers it, optional input from the user, which subagent, and wh
 |-----------------|----------------|----------|--------|
 | refine, write, write up, document, update, make, /document | target (e.g. README, a file) or context | documenter | Updated docs; for README uses document-github, document-voice |
 | research, learn, look at this, read, /research | ticket, URL, text, files, images | researcher | Findings; documenter can structure next |
-| research Figma, analyze Figma, /research-figma | Figma URL | researcher | Figma audit report |
+| research Figma, analyze Figma, Figma audit, analyze this Figma link, /research-figma | Figma URL | researcher | Figma audit report |
 | install, setup, /install | none | installer | Config, MCP, handoff; then /mcp to sign in |
 | save, /save | none (or specific paths if user says "save just X") | Run **Save** workflow | Commits; no push |
-| clean, wipe .tmp, delete, del, /clean | none | cleaner | `.tmp/` emptied |
+| clean, wipe .tmp, /clean | none | cleaner | `.tmp/` emptied |
 | strategize, define, why broken, find cause, /strategize | none | strategist | Root cause analysis, suggestions |
 | uninstall, uninstall3, /uninstall | none | uninstaller | MCPs removed from config; restart terminal after |
 | design, /generate-figma | none | designer | Figma design created or updated |
