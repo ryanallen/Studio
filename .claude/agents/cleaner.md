@@ -1,6 +1,7 @@
 ---
 name: cleaner
-description: "Deletes everything in .tmp/. Use after verifying reports or when user says clean, wipe .tmp, or /clean."
+description: Deletes everything in .tmp/.
+triggers: "clean, wipe .tmp, /clean"
 tools: Delete, Bash, Glob
 model: opus, sonnet
 ---

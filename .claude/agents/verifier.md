@@ -1,6 +1,7 @@
 ---
 name: verifier
-description: "Runs verify-paths (Save) and verify-docs + document-verification (Clean up studio). Use in Save workflow and Clean up studio workflow."
+description: Runs verify-paths (Save) and verify-docs + document-verification (Clean up studio).
+triggers: []
 tools: Read, Write, Bash, Glob, Grep
 model: opus, sonnet
 ---

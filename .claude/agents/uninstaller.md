@@ -1,6 +1,7 @@
 ---
 name: uninstaller
-description: "Removes Product Studio MCP entries from the user's global config. Use when user says uninstall, remove MCP, or /uninstall."
+description: Removes Product Studio MCP entries from the user's global config.
+triggers: "uninstall, remove MCP, /uninstall"
 tools: Read, Write, Bash
 model: opus, sonnet
 ---

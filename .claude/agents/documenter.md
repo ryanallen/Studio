@@ -1,6 +1,7 @@
 ---
 name: documenter
-description: "Documents findings in enhanced markdown with mermaid diagrams. Use when user says write, refine, or update; when handed off from verifier (document-paths); or when using a subagent for documentation."
+description: Documents findings in enhanced markdown with mermaid diagrams. Keeps path tree in sync when handed off from verifier; documents skills and subagents.
+triggers: "write, refine, update; handed off from verifier (document-paths); document with subagent, use subagent for documentation"
 tools: Read, Write, Bash, Glob, Grep, TodoWrite, mcp__atlassian-rovo__*
 model: opus, sonnet
 ---
