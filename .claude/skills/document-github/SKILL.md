@@ -41,6 +41,22 @@ Apply these rules whenever output is a GitHub-hosted README or the user asks abo
 - **Linked badge:** wrap in `[![alt](url)](destination)`. Unlinked: `![alt](url)`.
 - **Where badges render on GitHub:** Markdown images render in normal flow and inside **table cells**. They do **not** render inside block HTML (e.g. `<div>`, `<p>`). So: hero badges inside a `<div align="center">` must use HTML `<img>` if you need centering; subagent and skill badges in **tables** use Markdown so they render.
 
+### Subagent/skill cards (one table per card)
+
+One table per card, single column. Goal: subagent badge centered in row 1; skill badges and body left-aligned.
+
+- Use one separator row: `|:--|` (left-aligns the column).
+- Center only the subagent badge by wrapping it in a `<div align="center">` **inside that cell**: row 1 cell content is `<div align="center">[![name](...)](link)</div>`. Do not wrap the whole table or multiple rows in a div.
+- Rows: (1) subagent badge in centered div, (2) skill badge(s), (3) body text. No extra columns, no split tables.
+
+Example:
+```markdown
+| <div align="center">[![coordinator](https://img.shields.io/badge/coordinator-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/coordinator.md)</div> |
+|:--|
+| ![skills](...) |
+| Orchestrates... |
+```
+
 ### Section anchors (TOC links)
 
 - GitHub auto-generates anchors from headings: lowercase, spaces to hyphens, punctuation removed. Use that format for table-of-contents links (e.g. `#features`, `#installation`).
