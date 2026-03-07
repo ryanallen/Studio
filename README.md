@@ -59,7 +59,7 @@ Product Studio connects specialist helpers (subagents) to jobs like install, res
 
 Say "setup", "install", or `/install`. The [install skill](.claude/skills/install/SKILL.md) walks through the usual steps: config, repo link, optional MCPs (tools that connect to Figma, Jira, etc.), and a short handoff. When it's done, quit the terminal and relaunch. Then in chat run `/mcp` and sign in to Figma and Atlassian when asked.
 
-**Add your own steps:** Put them in `.claude/skills/install-custom/SKILL.md.template`. On install, that file is copied to `SKILL.md` (gitignored). The installer runs it after the main steps if it's there.
+**Add your own steps:** On install, the template is copied to `.claude/skills/install-custom/SKILL.md` (gitignored). Put your custom setup in that `SKILL.md`. The installer runs it after the main steps when the file exists.
 
 ---
 
@@ -92,7 +92,7 @@ To run a skill, say its trigger phrase or type `/skill-name`. Each skill is a fo
 | <div align="center">[![installer](https://img.shields.io/badge/installer-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/installer.md)</div> |
 |:--|
 | [![install](https://img.shields.io/badge/install-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/install/SKILL.md) [![install-custom](https://img.shields.io/badge/install--custom-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/install-custom/) |
-| Runs the full install: config, choices, MCP setup, optional Figma bridge, handoff. If you added custom steps in the template, runs those after. Say "setup", "install", or /install. Then quit terminal, relaunch, and run /mcp to sign in to Figma and Atlassian. |
+| Runs the full install: config, choices, MCP setup, optional Figma bridge, handoff. If you added custom steps in `.claude/skills/install-custom/SKILL.md`, runs those after. Say "setup", "install", or /install. Then quit terminal, relaunch, and run /mcp to sign in to Figma and Atlassian. |
 
 | <div align="center">[![researcher](https://img.shields.io/badge/researcher-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/researcher.md)</div> |
 |:--|
