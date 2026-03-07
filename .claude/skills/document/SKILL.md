@@ -1,7 +1,7 @@
 ---
 name: document
 description: Take research output and produce structured, enhanced markdown documentation with mermaid diagrams.
-triggers: "write up, document, /document"
+triggers: "write up, document, make, update, /document"
 ---
 
 # Document

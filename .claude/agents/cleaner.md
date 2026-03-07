@@ -1,7 +1,7 @@
 ---
 name: cleaner
 description: Deletes everything in .tmp/.
-triggers: "clean, wipe .tmp, /clean"
+triggers: "clean, wipe .tmp, delete, del, /clean"
 tools: Delete, Bash, Glob
 model: opus, sonnet
 ---

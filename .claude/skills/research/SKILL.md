@@ -1,7 +1,7 @@
 ---
 name: research
 description: Gather from any source (ticket, URL(s), text, file(s), image(s)) and follow links up to 5 levels deep.
-triggers: "research, learn about this, look at this, /research"
+triggers: "research, learn, look at this, read, /research"
 disable-model-invocation: true
 argument-hint: "[ticket-id-or-url]"
 ---

@@ -1,7 +1,7 @@
 ---
 name: document-github
 description: GitHub README rules (GIFs, images, badges, anchors, alerts) and patterns for writing or enhancing a README. Ensures linkable things are linked.
-triggers: "writing or enhancing a GitHub README, enhance, refine, /document-github"
+triggers: "writing or enhancing a GitHub README, enhance, refine, make, /document-github"
 argument-hint: "[path or paste]"
 disable-model-invocation: false
 user-invocable: true

@@ -1,7 +1,7 @@
 ---
 name: generate-figma
 description: Generate or update a Figma design via the Figma Console MCP with target file details.
-triggers: "generate Figma, generate design, /generate-figma"
+triggers: "design, /generate-figma"
 disable-model-invocation: true
 argument-hint: "[file-url-or-key] [node-id]"
 ---

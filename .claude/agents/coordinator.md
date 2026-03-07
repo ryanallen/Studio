@@ -36,17 +36,17 @@ Each row: what triggers it, optional input from the user, which subagent, and wh
 
 | Trigger phrases | Optional input | Subagent | Output |
 |-----------------|----------------|----------|--------|
-| refine, write, write up, document, /document | target (e.g. README, a file) or context | documenter | Updated docs; for README uses document-github, document-voice |
-| research, learn about this, /research | ticket, URL, text, files, images | researcher | Findings; documenter can structure next |
+| refine, write, write up, document, update, make, /document | target (e.g. README, a file) or context | documenter | Updated docs; for README uses document-github, document-voice |
+| research, learn, look at this, read, /research | ticket, URL, text, files, images | researcher | Findings; documenter can structure next |
 | research Figma, analyze Figma, /research-figma | Figma URL | researcher | Figma audit report |
 | install, setup, /install | none | installer | Config, MCP, handoff; then /mcp to sign in |
-| save, stage, commit, /save | none (or specific paths if user says "save just X") | Run **Save** workflow | Commits; no push |
-| clean, wipe .tmp, /clean | none | cleaner | `.tmp/` emptied |
-| strategize, why broken, find cause, /strategize | none | strategist | Root cause analysis, suggestions |
-| uninstall, remove MCP, /uninstall | none | uninstaller | MCPs removed from config; restart terminal after |
-| generate Figma, generate design, /generate-figma | none | designer | Figma design created or updated |
-| update Figma token, /update-figma | none | updater | Figma token refreshed in config |
-| sync, pull, /sync-upstream | none | updater | Pull from upstream main, push to repo |
+| save, /save | none (or specific paths if user says "save just X") | Run **Save** workflow | Commits; no push |
+| clean, wipe .tmp, delete, del, /clean | none | cleaner | `.tmp/` emptied |
+| strategize, define, why broken, find cause, /strategize | none | strategist | Root cause analysis, suggestions |
+| uninstall, uninstall3, /uninstall | none | uninstaller | MCPs removed from config; restart terminal after |
+| design, /generate-figma | none | designer | Figma design created or updated |
+| update figma, /update-figma | none | updater | Figma token refreshed in config |
+| sync, sync upstream, /sync-upstream | none | updater | Pull from upstream main, push to repo |
 
 ## Workflows
 
@@ -73,7 +73,7 @@ Multi-step flows. Run steps in order; delegate each step to the listed subagent.
   2. documenter → [document](../skills/document/SKILL.md) (add problems to README).
 
 **Save**
-- **Input:** User says save, stage, commit, /save.
+- **Input:** User says save, /save.
 - **Output:** All changes committed (or only specified paths); no push.
 - **Steps:**  
   1. verifier → [verify-paths](../skills/verify-paths/SKILL.md) (compare paths.md to disk).  

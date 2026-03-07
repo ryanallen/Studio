@@ -1,7 +1,7 @@
 ---
 name: sync-upstream
 description: Sync from upstream remote main branch and push to origin main.
-triggers: "sync, pull, /sync-upstream"
+triggers: "sync, sync upstream, /sync-upstream"
 disable-model-invocation: true
 ---
 

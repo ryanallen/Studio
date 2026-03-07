@@ -1,7 +1,7 @@
 ---
 name: clean
 description: Delete everything in the .tmp folder. Use after verifying reports or to clear subagent-created temp files.
-triggers: "clean, wipe .tmp, /clean"
+triggers: "clean, wipe .tmp, delete, del, /clean"
 ---
 
 # Clean

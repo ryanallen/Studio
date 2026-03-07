@@ -1,7 +1,7 @@
 ---
 name: strategize
 description: Analyze documented findings to identify problems and trace them to root causes using the Five Whys technique.
-triggers: "why broken, find cause, /strategize"
+triggers: "strategize, define, why broken, find cause, /strategize"
 disable-model-invocation: true
 ---
 

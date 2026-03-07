@@ -1,7 +1,7 @@
 ---
 name: researcher
 description: Navigates URLs and gathers information up to 5 levels deep. Analyzes Figma links via research-figma.
-triggers: "research, learn about this, look at this, /research; Figma URL (research-figma)"
+triggers: "research, learn, look at this, read, /research; Figma URL (research-figma)"
 tools: mcp__cursor-ide-browser__*, mcp__figma-console__*, WebFetch, WebSearch, Read, Write, Bash, TodoWrite
 model: opus, sonnet
 ---
