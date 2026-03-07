@@ -20,6 +20,10 @@ Before generating, gather:
 
 Use `[BRACKETS]` for any value the user must fill in. Output one complete, downloadable `README.md`.
 
+## Output
+
+One complete `README.md` (write to file or output for download), using the patterns below and `[BRACKETS]` for user-supplied content.
+
 ## Process
 
 1. **Ask** – What is the project? What does it do? Who is it for? What assets exist (logo, banner, screenshots, GIFs)?
@@ -301,3 +305,7 @@ Order content so readers can quickly decide relevance (broad first, detail later
 - Prefer relative links for in-repo paths (e.g. `docs/guide.md`, `assets/logo.png`).
 - One code block per "minimal example"; add more in separate sections or details.
 - If user provides existing markdown, preserve factual content and upgrade structure/patterns to match this skill.
+
+## Reference
+
+[document](../document/SKILL.md) – Documenter skill. [Extend Claude with skills](https://code.claude.com/docs/en/skills.md).
