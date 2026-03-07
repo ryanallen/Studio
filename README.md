@@ -17,9 +17,9 @@
 
 </div>
 
-<p align="center">
+<div align="center">
   <img src="assets/hero.png" alt="Product Studio" width="800"/>
-</p>
+</div>
 
 <p align="center">Agent workflows for design capture, research, and strategic analysis.</p>
 
