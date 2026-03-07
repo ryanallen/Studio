@@ -76,7 +76,7 @@ If the repo is **not** a template, replace the "Use this template" link with a "
 - With logo: `&logo=github` (or other [simple-icons](https://simpleicons.org/) name)
 - URL-encode spaces as `%20`, hyphen as `-`
 
-**Badges inside raw HTML:** GitHub does not parse Markdown inside HTML (e.g. `<p align="center">`). If badges sit in a hero block, use HTML so they render:
+**Badges inside raw HTML:** See [document-github](../document-github/SKILL.md). Use HTML for badges in hero blocks (e.g. `<a href="..."><img src="..." alt="..."/></a>`).
 
 ```html
 <p align="center">
@@ -133,13 +133,13 @@ The key features are:
 
 ### Screenshot / GIF (immediate visual impact)
 
-Place early, after intro. Prefer one strong asset (screenshot or GIF).
+Place early, after intro. Prefer one strong asset (screenshot or GIF). Use Markdown image syntax. For in-repo files (especially animated GIFs), use raw URL so they load and animate correctly on GitHub. See [document-github](../document-github/SKILL.md) for rules.
 
 ```markdown
-![[Alt text]]([URL or path])
+![[Alt text]]([URL])
 ```
 
-Example: `![Features](https://github.com/[OWNER]/[REPO]/raw/[BRANCH]/[path]/screenshot.png)`
+Use raw URL for repo assets: `https://raw.githubusercontent.com/[OWNER]/[REPO]/[BRANCH]/[path]/file.gif` (or .png).
 
 ### Code block (quickstart)
 
@@ -244,7 +244,7 @@ With emoji:
 - [License](#license)
 ```
 
-Anchors: lowercase, spaces to hyphens, punctuation removed (GitHub auto-generates these from headings).
+Anchors: see [document-github](../document-github/SKILL.md) (lowercase, spaces to hyphens).
 
 ### Comparison / "why this" table
 
@@ -259,16 +259,7 @@ Emoji or check/cross for quick scan:
 
 ### Alerts (GitHub blockquotes)
 
-```markdown
-> [!NOTE]
-> Useful information.
-
-> [!TIP]
-> Helpful advice.
-
-> [!IMPORTANT]
-> Key information.
-```
+See [document-github](../document-github/SKILL.md). Supported: `[!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`, `[!CAUTION]`.
 
 ### Opinions / testimonials
 
@@ -299,13 +290,13 @@ Order content so readers can quickly decide relevance (broad first, detail later
 
 ## Quality rules
 
-- **Badges in hero:** If the hero uses `<p align="center">` (or any raw HTML), put badges inside it as HTML `<a href="..."><img src="..." alt="..."/></a>`. Do not use Markdown `[![...](...)](...)` inside HTML; GitHub does not parse it and badges show as raw text.
+- **GitHub README rules:** See [document-github](../document-github/SKILL.md) for badges in HTML, image/GIF raw URLs, anchors, alerts.
 - Use real badge URLs and image URLs; user fills `[OWNER]`, `[REPO]`, `[BRANCH]`, paths.
 - Do not invent repo names, links, or assets; use `[BRACKETS]` placeholders.
-- Prefer relative links for in-repo paths (e.g. `docs/guide.md`, `assets/logo.png`).
+- Prefer relative links for in-repo paths (e.g. `docs/guide.md`); for images/GIFs in README use raw URL per document-github.
 - One code block per "minimal example"; add more in separate sections or details.
 - If user provides existing markdown, preserve factual content and upgrade structure/patterns to match this skill.
 
 ## Reference
 
-[document](../document/SKILL.md) – Documenter skill. [Extend Claude with skills](https://code.claude.com/docs/en/skills.md).
+[document-github](../document-github/SKILL.md) – GitHub README rules (GIFs, raw URLs, badges, anchors). [document](../document/SKILL.md) – Documenter skill. [Extend Claude with skills](https://code.claude.com/docs/en/skills.md).

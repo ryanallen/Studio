@@ -130,4 +130,4 @@ Learnings. Recommendations. Links to new docs.
 
 ## Reference
 
-[work/paths.md](../../work/paths.md). [Coordinator](../../agents/coordinator.md). [document-skills](../document-skills/SKILL.md).
+[work/paths.md](../../work/paths.md). [Coordinator](../../agents/coordinator.md). [document-github](../document-github/SKILL.md) for GitHub-hosted READMEs (images, GIFs, raw URLs). [document-skills](../document-skills/SKILL.md).
