@@ -1,36 +1,29 @@
 ---
 name: verify-docs
-description: Check every document for heading hierarchy (h1 h2 h3), top navigation (horizontal, section links), and emojis at start of headlines. Scope is paths.md, system files, and project docs.
+description: Check doc scope and compare skill triggers to coordinator. Part of Clean up studio. Writes report via document-verification.
 triggers: "verify docs, /verify-docs"
 disable-model-invocation: true
 ---
 
 # Verify Docs
 
-Check each document for hierarchy, top nav, and emoji in headings. Collect issues and pass to document-verification for the report.
+Collect the doc set (from paths.md and system docs or user choice), compare each coordinator-referenced skill’s triggers to the coordinator table, then run [document-verification](../document-verification/SKILL.md) to write `.tmp/verification-report.md`.
 
 ## Inputs
 
-- **Scope** – If `work/paths.md` exists, read it and collect all doc paths from the tree (e.g. README.md per project). Also collect system docs: `.claude/**/*.md`, `README.md`, `AGENTS.md`, `CLAUDE.md`, root markdown. If user chose "pick and choose", use only the paths they selected.
+- **Scope** – If `work/paths.md` exists, read it and collect all doc paths from the tree (e.g. README per project). Also collect system docs: `.claude/**/*.md`, `README.md`, `AGENTS.md`, `CLAUDE.md`, root markdown. If user chose specific paths only, use those.
+- **Coordinator** – [.claude/agents/coordinator.md](../../agents/coordinator.md) Single flows table and Workflows (for trigger comparison).
 
 ## Output
 
-List of files processed and any issues (missing hierarchy, missing or non-horizontal nav, missing emoji, **trigger phrase mismatches with coordinator**). Then run [document-verification](../document-verification/SKILL.md) with this list and the full set of files (same subagent run; writes `.tmp/verification-report.md`).
+List of files in scope and any trigger phrase mismatches (skill vs coordinator). Pass to document-verification in the same run; it writes `.tmp/verification-report.md`.
 
 ## Process
 
-1. **Scope** – If `work/paths.md` exists, read it and collect all doc paths from the tree (e.g. README.md per project). Also collect system docs: `.claude/**/*.md`, `README.md`, `AGENTS.md`, `CLAUDE.md`, root markdown. If user chose "pick and choose", use only the paths they selected.
-
-2. **Heading hierarchy** – For each doc, ensure headings follow a proper hierarchy: at least one `#` (h1), then `##` (h2) under h1, then `###` (h3) under h2. No skipping levels (e.g. no h3 before an h2). Record any file that violates this.
-
-3. **Top navigation** – Each doc with more than one section (multiple h2 or h3) must have a navigation block near the top (above the fold) that links to all those sections. The nav must be horizontal and compact, e.g. `[Section A](..#a) | [Section B](..#b) | [Section C](..#c)` so it takes minimal vertical space.
-
-4. **Emojis in headlines** – Every heading line (`#`, `##`, `###`) must start with an emoji (at the very beginning of the heading text). Record any heading that does not.
-
-5. **Trigger phrases vs coordinator** – For each skill under `.claude/skills/` that is referenced in [.claude/agents/coordinator.md](../../agents/coordinator.md) (Single flows table or Workflows), read the skill's frontmatter. If `triggers` is set, use that list; else extract trigger phrases from `description` using the standard pattern ("Use when user says …" or "Use when …"). Compare to the coordinator's **Trigger phrases** column (Single flows) or **Input** line (Workflows) for that flow. Record mismatches: trigger in skill but missing in coordinator, or in coordinator but not in skill. Include these in the report so they can be synced (e.g. via document-skills step 5 or a manual coordinator edit).
-
-6. **Report** – Output the list of files and issues. Then run [document-verification](../document-verification/SKILL.md) with this list and the full set of files processed (same subagent run; write `.tmp/verification-report.md`).
+1. **Scope** – Build the file list from paths.md (if present) and system docs, or from user-selected paths.
+2. **Trigger phrases vs coordinator** – For each skill referenced in the coordinator (Single flows or Workflows), read the skill frontmatter `triggers`. Compare to the coordinator Trigger phrases column or Input line for that flow. Record: in skill but not coordinator, or in coordinator but not skill.
+3. **Report** – Run [document-verification](../document-verification/SKILL.md) with the files list and trigger mismatches (same run; creates `.tmp/verification-report.md`).
 
 ## Reference
 
-[document-verification](../document-verification/SKILL.md) – Writes the verification report. [document](../document/SKILL.md) – Nav and emoji standards. [Coordinator](../../agents/coordinator.md) – Clean up studio workflow.
+[document-verification](../document-verification/SKILL.md) – Writes the report. [Coordinator](../../agents/coordinator.md) – Clean up studio workflow.
