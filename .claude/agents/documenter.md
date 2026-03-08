@@ -16,4 +16,5 @@ When invoked:
 3. Documenting subagent (.claude/agents): [document-agent](../skills/document-agent/SKILL.md).
 4. Documenting skill (SKILL.md): [document-skills](../skills/document-skills/SKILL.md).
 5. README: also [document-github](../skills/document-github/SKILL.md) and document-voice (already in 1).
-6. **Rule 2:** After each skill, update current task section in `.tmp/task-checklist.md` (strikethrough that skill, add note). Do not run next skill until updated.
+6. **TypeScript:** If you need to read or reason about TypeScript/TS files (types, structure, behavior) to document them, delegate to the developer agent; do not document TS code yourself.
+7. **Rule 2:** After each skill, update current task section in `.tmp/task-checklist.md` (strikethrough that skill, add note). Do not run next skill until updated.
