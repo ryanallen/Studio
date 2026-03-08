@@ -22,9 +22,10 @@ Depends on the flow: install completes setup; save produces commits; documenter 
 ## Process
 
 1. Match the user's request to one **Single flow** or **Workflow** by checking trigger phrases. If unclear, prefer the flow that best fits the request.
-2. **Single flow:** Delegate once to the subagent listed for that flow. Pass the request (and any optional input) as context.
-3. **Workflow:** Run the steps in order. For each step, delegate to the listed subagent. Do not skip steps.
-4. Do not delegate to the coordinator. Delegate only to subagents listed in Team. Check a subagent's `triggers` (or description) in `.claude/agents/` when matching.
+2. **Task checklist (runs every time):** Delegate to **verifier** for [verify-task](../skills/verify-task/SKILL.md). Pass the request and the matched flow name (and steps if workflow) so the verifier can create or update `.tmp/task-checklist.md`. Then continue with step 3 or 4.
+3. **Single flow:** Delegate once to the subagent listed for that flow. Pass the request (and any optional input) as context.
+4. **Workflow:** Run the steps in order. For each step, delegate to the listed subagent. Do not skip steps.
+5. Do not delegate to the coordinator. Delegate only to subagents listed in Team. Check a subagent's `triggers` (or description) in `.claude/agents/` when matching.
 
 ## Team
 
