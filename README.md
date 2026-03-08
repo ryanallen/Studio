@@ -41,6 +41,8 @@ Subagents for design capture, research, and strategic analysis.
 
 Product Studio connects specialist helpers (subagents) to jobs like [install](.claude/skills/install/SKILL.md), [research](.claude/skills/research/SKILL.md), [document](.claude/skills/document/SKILL.md), and [save](.claude/skills/save/SKILL.md). Each helper has skills: small how-to guides that live in [.claude/skills/](.claude/skills/). You can run a skill by saying its phrase or typing `/skill-name`. In Claude Code and Cursor, `/skills` shows everything available.
 
+**Task checklist:** Before anything else, agents run `npm run checklist -- "<request or summary>"` (Step 1 of the [coordinator](.claude/agents/coordinator.md)). That appends the current task to [.tmp/task-checklist.md](.tmp/task-checklist.md) and lists the skills for the flow. See [verify-task](.claude/skills/verify-task/SKILL.md).
+
 ## Contents
 
 <details>
@@ -77,12 +79,17 @@ To run a skill, say its trigger phrase or type `/skill-name`. Each skill is a fo
 | coordinator |
 |:--|
 | [![coordinator](https://img.shields.io/badge/coordinator-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/coordinator.md) <br> ![skills](https://img.shields.io/badge/skills-%E2%80%94-0ea5e9?style=flat&labelColor=4b5563) |
-| Runs the other subagents for Discover and Clean up studio. No skill of its own. |
+| Runs the other subagents per flow. Step 1: run [checklist](.claude/skills/verify-task/SKILL.md) (`npm run checklist -- "<summary>"`). Flows in [ref/coordinator-flows.md](.claude/agents/ref/coordinator-flows.md). |
 
 | designer |
 |:--|
 | [![designer](https://img.shields.io/badge/designer-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/designer.md) <br> [![generate-figma](https://img.shields.io/badge/generate--figma-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/generate-figma/SKILL.md) |
 | Creates or updates Figma designs. |
+
+| developer |
+|:--|
+| [![developer](https://img.shields.io/badge/developer-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/developer.md) <br> [![developer-typescript](https://img.shields.io/badge/developer--typescript-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/developer-typescript/SKILL.md) [![developer-check-types](https://img.shields.io/badge/developer--check--types-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/developer-check-types/SKILL.md) |
+| TypeScript and code: types, narrowing, generics, strict mode, type checking. Plain language. |
 
 | documenter |
 |:--|
@@ -147,40 +154,51 @@ Product Studio/
 ├── .claude/
 │   ├── agents/
 │   │   ├── coordinator.md
+│   │   ├── ref/
+│   │   │   └── coordinator-flows.md
+│   │   ├── developer.md
 │   │   ├── designer.md
 │   │   ├── documenter.md
 │   │   ├── researcher.md
 │   │   ├── strategist.md
 │   │   ├── verifier.md
-│   │   ├── verification-documentor.md
 │   │   ├── cleaner.md
 │   │   ├── installer.md
+│   │   ├── customizer.md
 │   │   ├── uninstaller.md
-│   │   ├── updater.md
-│   │   └── customizer.md
+│   │   └── updater.md
 │   └── skills/
 │       ├── research/SKILL.md
 │       ├── document/SKILL.md
+│       ├── document-voice/SKILL.md
+│       ├── document-paths/SKILL.md
+│       ├── document-ticket/SKILL.md
+│       ├── document-github/SKILL.md
+│       ├── document-agent/SKILL.md
+│       ├── document-skills/SKILL.md
 │       ├── strategize/SKILL.md
 │       ├── research-figma/SKILL.md
+│       ├── verify-task/
+│       │   ├── SKILL.md
+│       │   └── scripts/checklist.ts
 │       ├── install/
 │       │   └── SKILL.md
 │       ├── install-custom/
 │       │   └── SKILL.md.template
+│       ├── developer-typescript/SKILL.md
+│       ├── developer-check-types/SKILL.md
 │       ├── save/
 │       │   ├── SKILL.md
 │       │   └── scripts/
-│       │       └── sync-codex-from-claude.mjs
 │       ├── sync-upstream/SKILL.md
 │       ├── verify-paths/SKILL.md
 │       ├── verify-docs/SKILL.md
 │       ├── document-verification/SKILL.md
-│       ├── clean/SKILL.md
+│       ├── clean/
+│       │   ├── SKILL.md
+│       │   └── scripts/clean.mjs
 │       ├── uninstall/SKILL.md
 │       ├── update-figma/SKILL.md
-│       ├── document-paths/SKILL.md
-│       ├── document-ticket/SKILL.md
-│       ├── document-github/SKILL.md
 │       ├── generate-figma/
 │       │   ├── SKILL.md
 │       │   └── scripts/
@@ -197,7 +215,7 @@ Product Studio/
 
 ### .tmp and cleanup
 
-**[\`.tmp/\`](.tmp/) is for reports and temp files from subagents. It's gitignored and never committed. The **Clean up studio** flow writes a verification report there. When you're done checking it, you can run the [**clean**](.claude/skills/clean/SKILL.md) skill ("clean", "wipe .tmp", \`/clean\`) to empty \`.tmp/\`. Clean only deletes what's inside \`.tmp/\`; the rest of the repo is untouched.
+**[\`.tmp/\`](.tmp/) is for reports and temp files from subagents.** It's gitignored and never committed. The **Clean up studio** flow writes a verification report there. When you're done checking it, run the [**clean**](.claude/skills/clean/SKILL.md) skill ("clean", "wipe .tmp", `/clean`, or `npm run clean`) to empty \`.tmp/\`. Clean only deletes what's inside \`.tmp/\`; the rest of the repo is untouched.
 
 ---
 
