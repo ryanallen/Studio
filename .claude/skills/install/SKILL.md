@@ -1,21 +1,21 @@
 ---
 name: install
-description: Run the standard Product Studio install steps.
+description: Run standard Product Studio install (config, choices, MCP, Figma bridge if chosen, handoff, customizer if present).
 triggers: "setup, install, /install"
 disable-model-invocation: true
 ---
 
 # Install
 
-Run the **Install** workflow in [Coordinator](../../agents/coordinator.md). The installer subagent runs the full flow (config, choices, MCP, Figma bridge if chosen, handoff, then customizer if present).
+Run the **Install** workflow in [Coordinator](../../agents/coordinator.md). The installer runs the full flow (config, choices, MCP, Figma bridge if chosen, handoff, then customizer if present).
 
 ## Inputs
 
-None required. User invokes with setup, install, or /install.
+None. User invokes with setup, install, or /install.
 
 ## Output
 
-Install flow complete. User may need to restart the app and run `/mcp` for OAuth (see handoff).
+Install complete. User may need to restart the app and run `/mcp` for OAuth (see handoff).
 
 ## Process
 

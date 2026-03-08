@@ -1,6 +1,6 @@
 ---
 name: document-skills
-description: Write or update a skill (SKILL.md and any extra files) to match Claude Code structure and best practices.
+description: Write or update a skill (SKILL.md and supporting files) to match Claude Code structure and best practices.
 triggers: "document a skill, write a skill, update skill docs, refine skill, /document-skills"
 disable-model-invocation: true
 argument-hint: "[skill-path] [source]"
@@ -90,7 +90,7 @@ For injecting shell output before the skill runs, see [Inject dynamic context](h
 1. Read the target skill path and any source.
 2. Apply the checklist and structure above. Don’t change behavior unless the user asked.
 3. Write or update SKILL.md (and supporting files if needed). Only document what the skill does; don't add capabilities that aren't there.
-4. **Coordinator sync:** If you changed `triggers`, update [.claude/agents/coordinator.md](../../agents/coordinator.md) so Single flows and Workflow Input lines use the same trigger phrases. Coordinator uses the skill's `triggers` list.
+4. **Coordinator sync:** If you changed `triggers`, update [.claude/agents/coordinator.md](../../agents/coordinator.md) so Single flows and Workflow Input lines match. Coordinator uses the skill's `triggers` list.
 
 ## Reference
 

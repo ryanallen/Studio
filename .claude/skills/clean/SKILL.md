@@ -1,6 +1,6 @@
 ---
 name: clean
-description: Delete everything in .tmp/. Use after verifying reports or to clear temp files.
+description: Empty .tmp/. Use after verifying reports or to clear temp files.
 triggers: "clean, wipe .tmp, /clean"
 ---
 
@@ -14,11 +14,11 @@ None.
 
 ## Output
 
-`.tmp/` empty or unchanged (if missing). Nothing outside `.tmp/` is modified.
+`.tmp/` empty. If missing, do nothing. Nothing outside `.tmp/` is modified.
 
 ## Process
 
-1. If `.tmp/` exists, delete all contents (files and subdirectories) inside it.
+1. If `.tmp/` exists, delete all contents (files and subdirectories).
 2. If `.tmp/` does not exist, do nothing.
 
 ## Reference

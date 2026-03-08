@@ -7,9 +7,7 @@ disable-model-invocation: true
 
 # Save
 
-**Never run `git add` (stage) or `git commit` unless the user has explicitly asked to save** (e.g. save, stage, commit, /save). That applies in every context: do not run this skill at the end of a task, do not assume they want a commit, do not run it because they asked in a previous turn, and do not run `git add` or `git commit` in a terminal or elsewhere (e.g. "I'll commit that for you") unless they explicitly said save, stage, commit, or /save in this turn. When they do ask, use this skill.
-
-When this skill is invoked, run the **Save** workflow in [Coordinator](../../agents/coordinator.md) (steps 1–3). Then perform the commit steps below.
+Run **Save** workflow (verify-paths, document-paths if mismatch, then commit). Never run `git add` or `git commit` unless the user explicitly asked to save in this turn (save, stage, commit, /save). Do not run at task end or assume they want a commit.
 
 ## Inputs
 
@@ -26,24 +24,14 @@ One or more commits; result reported. No push.
 
 ## Process
 
-### Command
+1. Run **Save** workflow in [Coordinator](../../agents/coordinator.md) (steps 1–3: verify-paths, document-paths if mismatch, then commit).
+2. Run `git status`; decide one or multiple commits. Stage per Inputs (all or specific paths).
+3. For each commit: `git add` then `git commit -m "<title>" -m "<description>"` (derive from staged changes). Repeat until done.
+4. Report result. Do not push.
 
-One commit: `git add -A && git commit -m "Title" -m "Description"`.
+**Single commit:** `git add -A && git commit -m "Title" -m "Description"`.
 
-For multiple commits, repeat with different staging and messages
-(e.g. `git add path1 && git commit -m "Title1" -m "Desc1"` then `git add path2 && git commit -m "Title2" -m "Desc2"`).
-
-### Steps
-
-1. Run `git status` and inspect what changed. Decide one commit or multiple (e.g. one per logical change). Stage per Inputs (all or specific paths).
-2. For each commit: stage the relevant changes, run `git commit -m "<title>" -m "<description>"` (derive from staged changes).
-   Repeat until all changes are committed.
-3. Report the result. Do not run `git push`.
-
-## Error Handling
-
-- **Nothing to commit (working tree clean):** Tell the user there are no changes to commit.
-- **Cannot infer message:** Only then ask the user for a title and description.
+**Nothing to commit:** Tell the user. **Cannot infer message:** Only then ask for title and description.
 
 ## Reference
 

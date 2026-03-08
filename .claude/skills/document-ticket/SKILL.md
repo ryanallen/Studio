@@ -1,6 +1,6 @@
 ---
 name: document-ticket
-description: Post a comment on the Jira ticket with the project deliverables link.
+description: Post a comment on the Jira ticket with the deliverables link.
 triggers: "update ticket, Jira, document ticket, /document-ticket"
 disable-model-invocation: true
 argument-hint: "[ticket-id]"
@@ -13,7 +13,7 @@ Post a comment on the Jira ticket with the deliverables link for the project.
 ## Inputs
 
 1. **Ticket ID** – Jira key (e.g. PROJ-123). From user or work/paths.md (ticket-id).
-2. **Deliverables URL** – From work/paths.md line "Deliverables base URL:". If missing or empty, ask the user.
+2. **Deliverables URL** – From work/paths.md "Deliverables base URL:". If missing, ask.
 
 ## Output
 

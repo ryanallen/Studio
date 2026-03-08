@@ -2,7 +2,7 @@
 
 ## Rules
 
-1. **Task checklist** - At the start of each workflow or delegated task, run verifier with [verify-task](.claude/skills/verify-task/SKILL.md) to create or update a .tmp task checklist (what needs done; mark done with strikethrough, notes). Agents performing steps update the checklist (strikethrough and notes) as they complete work.
+1. **Task checklist (required)** - Before running any workflow or delegated task, run verifier with [verify-task](.claude/skills/verify-task/SKILL.md) to create or update .tmp/task-checklist.md. Do not run any flow steps until this is done. Agents update the checklist (strikethrough and notes) as they complete work.
 2. **Missing inputs** - If a skill's required input is missing, ask the user before proceeding (unless the skill says otherwise).
 3. **No Bloat** - Provide only the specific information requested. No extra padding or commentary.
 4. **Extreme Brevity** - Minimize all verbal output; use one-word acknowledgments only when necessary.

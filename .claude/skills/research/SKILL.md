@@ -1,6 +1,6 @@
 ---
 name: research
-description: Gather from anything the user gives you (chat, tickets, links, text, files, images). Follow links up to 5 levels and write findings into the project README in four sections for the document skill.
+description: Gather from what the user gives (chat, tickets, links, text, files, images). Follow links up to 5 levels; write findings into project README in four sections for document skill.
 triggers: "research, learn, look at this, read, /research"
 disable-model-invocation: true
 argument-hint: "[ticket-id-or-url]"
@@ -8,13 +8,13 @@ argument-hint: "[ticket-id-or-url]"
 
 # Research
 
-You take whatever the user gives you (a ticket, some links, pasted text, files, images) and pull it into one place. Follow links up to 5 levels deep, grab the useful content, and write into the project README. Path from [work/paths.md](../../work/paths.md). Four sections so [document](../document/SKILL.md) can turn it into a clean doc.
+Take what the user gives (ticket, links, pasted text, files, images), pull it into one place. Follow links up to 5 levels deep; write into the project README. Path from [work/paths.md](../../work/paths.md). Four sections so [document](../document/SKILL.md) can turn it into a clean doc.
 
 ## Inputs
 
-- **What the user gives you** – One or more of: a ticket ID, URL(s), pasted text, image file(s), or other file(s). The table below says how each type is used.
-- **Where to write** – The project README path from work/paths.md.
-- **Focus** (optional) – Words or topics to care about most when you choose which links to follow.
+- **What the user gives** – One or more of: ticket ID, URL(s), pasted text, image file(s), or other file(s). Table below: how each is used.
+- **Where to write** – Project README path from work/paths.md.
+- **Focus** (optional) – Words or topics to prioritize when choosing which links to follow.
 
 | What they give you | What you use as starting links | What you keep as "level-0" (their raw input) |
 |--------------------|--------------------------------|----------------------------------------------|
@@ -35,15 +35,15 @@ One README with four parts. Output location: [document](../document/SKILL.md).
 
 ## Process
 
-1. **Get your starting point** – From what they gave you, figure out your starting URL(s) and the "level-0" content (the raw input). If there are no URLs (e.g. they only pasted text with no links), just write the level-0 section and stop. No crawl.
-2. **Open pages and pull out content** – For each page you open: get the title, main text, links, images, design stuff (colors, fonts, spacing if present), who wrote it and when, code bits, and any links out. If a page asks you to log in or says you don't have permission: ask the user to open that URL in their browser, log in, then tell you when they're done. Wait for them. Then try again. Don't skip the page without asking.
-3. **Follow links** – From your starting URLs, follow links up to 5 levels deep. Don't visit the same URL twice. Keep track of the link tree (which page led to which).
-4. **Write the README** – Fill in the four sections (Level-0 if you have it, then Sources, Findings, Link Tree).
+1. **Get starting point** – From what they gave, determine starting URL(s) and "level-0" content (raw input). If no URLs (e.g. only pasted text), write level-0 section and stop. No crawl.
+2. **Open pages and pull content** – For each page: title, main text, links, images, design (colors, fonts, spacing if present), author/date, code bits, links out. If a page requires login or denies permission: ask the user to open the URL, log in, then say when done. Wait; then try again. Don't skip without asking.
+3. **Follow links** – From starting URLs, follow up to 5 levels deep. Don't visit the same URL twice. Keep link tree (which page led to which).
+4. **Write the README** – Fill four sections (Level-0 if present, Sources, Findings, Link Tree).
 
 ## Rules
 
-- Keep a list of URLs you've already visited so you don't go in circles. When you have a focus area, go deep on those topics first; otherwise go wide.
-- Every URL you put in the output must be a clickable link: `[title](url)`. No plain URLs. Summarize when that's enough; copy word-for-word when the exact data matters.
+- Track URLs already visited to avoid circles. With a focus area, go deep on those topics first; otherwise go wide.
+- Every URL in the output must be a clickable link: `[title](url)`. Summarize when enough; copy verbatim when exact data matters.
 
 ## Reference
 

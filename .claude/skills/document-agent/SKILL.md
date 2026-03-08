@@ -1,6 +1,6 @@
 ---
 name: document-agent
-description: When to use subagents for docs; how to write or update subagent files (.claude/agents/).
+description: When to use subagents for docs; how to write or update .claude/agents/ files.
 triggers: "document with a subagent, use a subagent for documentation, write a subagent, update subagent, /document-agent"
 ---
 
@@ -15,15 +15,11 @@ When to use subagents for documentation, and how to write or update files in `.c
 
 ## Output
 
-Subagent file written or updated; or documentation produced via a subagent when delegated.
+Subagent file written or updated; or docs produced via a subagent when delegated.
 
 ## Process
 
-### Writing or updating a subagent file
-
-Subagents live in `.claude/agents/` (project) or `~/.claude/agents/` (user). See [Create custom subagents](https://code.claude.com/docs/en/sub-agents.md). Each file: YAML frontmatter (`name`, `description` required; `tools`, `model`, etc. optional) plus markdown body. Body = system prompt: role, scope, and "When invoked:" steps that reference skills. Match existing subagents (e.g. documenter, verifier).
-
-### When to use a subagent for documentation
+**Writing or updating a subagent file:** Files live in `.claude/agents/` (project) or `~/.claude/agents/` (user). Each file: YAML frontmatter (`name`, `description` required; `tools`, `model` optional) plus markdown body (role, scope, "When invoked:" steps that reference skills). Match existing subagents (e.g. documenter, verifier).
 
 | Subagent | Use when |
 |----------|----------|
@@ -31,7 +27,7 @@ Subagents live in `.claude/agents/` (project) or `~/.claude/agents/` (user). See
 | **general-purpose** | Multi-step docs (gather then write). Use when task needs discovery and writing in one pass. |
 | **Plan** | Read-only research before presenting a plan. |
 
-Subagents cannot spawn other subagents. Chain from main: e.g. Explore for discovery, then run document in main context. Delegate when the work is self-contained and can return a summary; use main when the task needs frequent back-and-forth or shared context.
+Subagents cannot spawn other subagents. Chain from main: e.g. Explore for discovery, then document in main context. Delegate when work is self-contained; use main when the task needs frequent back-and-forth.
 
 ## Reference
 

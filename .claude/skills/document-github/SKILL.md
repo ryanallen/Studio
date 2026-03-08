@@ -1,6 +1,6 @@
 ---
 name: document-github
-description: GitHub README rules: GIFs, images, badges, anchors, alerts, and link-everything when enhancing.
+description: GitHub README rules: GIFs, images, badges, anchors, alerts; link everything when enhancing.
 triggers: "writing or enhancing a GitHub README, enhance, refine, make, /document-github"
 argument-hint: "[path or paste]"
 disable-model-invocation: false
@@ -9,16 +9,16 @@ user-invocable: true
 
 # Document GitHub
 
-Rules for READMEs and docs that render correctly on GitHub. When enhancing a README, link everything linkable and use the patterns below.
+Rules for READMEs that render on GitHub. When enhancing a README, link everything linkable and use the patterns below.
 
 ## Inputs
 
 - **Context** – Producing or enhancing a GitHub README, or user asks how to make something render on GitHub.
-- **When enhancing** – Get project (what it is, who it's for), assets (logo, screenshots, GIFs), social share image, optional sections (contributors, roadmap, FAQ). Use `[BRACKETS]` for user-supplied content.
+- **When enhancing** – Get project (what it is, who it's for), assets (logo, screenshots, GIFs), social share image, optional sections. Use `[BRACKETS]` for user-supplied content.
 
 ## Output
 
-README or doc that follows these rules; assets render as intended. When enhancing, one complete `README.md` using the patterns below.
+README or doc following these rules. When enhancing, one complete `README.md`.
 
 ## Process
 
@@ -45,7 +45,7 @@ One table, one column. Row 1: subagent badge centered (`<div align="center">` in
 
 ### 5. When enhancing: link everything
 
-If the text mentions something with a URL or path, add the link. Link: slash commands → skill; skill/agent names → skill/agent file; paths (`.claude/agents/`, `work/paths.md`, `.tmp/`); section names → in-page anchors. Relative links for in-repo paths.
+If the text mentions something with a URL or path, add the link. Link: slash commands → skill; skill/agent names → skill/agent file; paths (`.claude/agents/`, `work/paths.md`, `.tmp/`); section names → in-page anchors. Relative links in-repo.
 
 ### 6. When enhancing: optional patterns
 
@@ -60,11 +60,6 @@ If the text mentions something with a URL or path, add the link. Link: slash com
 - Contributor grid: `https://contrib.rocks/image?repo=[OWNER]/[REPO]` with link to repo.
 
 **Order:** Hero + social share, doc/source links, description + tagline, one strong visual, feature list, installation, quickstart, optional TOC and sections, optional contributors/roadmap/FAQ, license + footer.
-
-### Rules
-
-- Link everything linkable when enhancing. Use real image URLs; user fills `[OWNER]`, `[REPO]`, `[BRANCH]`. `[BRACKETS]` for placeholders. Prefer relative links in-repo.
-- If user gives existing markdown, keep facts and upgrade structure to match this skill.
 
 ## Reference
 
