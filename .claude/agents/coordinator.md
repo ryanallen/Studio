@@ -25,8 +25,8 @@ Depends on the flow: install completes setup; save produces commits; documenter 
 
 1. **Task checklist (required; do not skip):** Delegate to **verifier** for [verify-task](../skills/verify-task/SKILL.md). Pass the user request and, once known, the matched flow name and steps. Verifier creates or updates `.tmp/task-checklist.md`. Do not proceed to step 2 until the checklist exists.
 2. Match the user's request to one **Single flow** or **Workflow** by checking trigger phrases. If unclear, prefer the flow that best fits the request.
-3. **Single flow:** Delegate once to the subagent listed for that flow. Pass the request (and any optional input) as context.
-4. **Workflow:** Run the steps in order. For each step, delegate to the listed subagent. Do not skip steps.
+3. **Single flow:** Delegate once to the subagent listed for that flow. Pass the request (and any optional input) as context. The subagent must update the checklist after each skill it runs (see rule 2).
+4. **Workflow:** Run the steps in order. For each step: delegate to the listed subagent; when that step is done, update the current task section in `.tmp/task-checklist.md` (strikethrough that skill, add note); then run the next step. Do not skip steps.
 5. Do not delegate to the coordinator. Delegate only to subagents listed in Team. Check a subagent's `triggers` (or description) in `.claude/agents/` when matching.
 
 ## Team
@@ -37,19 +37,19 @@ researcher, documenter, strategist, verifier, cleaner, updater, installer, unins
 
 Each row: what triggers it, optional input from the user, which subagent, and what they do.
 
-| Trigger phrases | Optional input | Subagent | Output |
-|-----------------|----------------|----------|--------|
-| refine, write, write up, document, update, make, /document | target (e.g. README, a file) or context | documenter | Updated docs; for README uses document-github, document-voice |
-| research, learn, look at this, read, /research | ticket, URL, text, files, images | researcher | Findings; documenter can structure next |
-| research Figma, analyze Figma, Figma audit, analyze this Figma link, /research-figma | Figma URL | researcher | Figma audit report |
-| install, setup, /install | none | installer | Config, MCP, handoff; then /mcp to sign in |
-| save, /save | none (or specific paths if user says "save just X") | Run **Save** workflow | Commits; no push |
-| clean, wipe .tmp, /clean | none | cleaner | `.tmp/` emptied |
-| strategize, define, figure out, find cause, /strategize | none | strategist | Root cause analysis, suggestions |
-| uninstall, uninstall3, /uninstall | none | uninstaller | MCPs removed from config; restart terminal after |
-| design, /generate-figma | none | designer | Figma design created or updated |
-| update figma, /update-figma | none | updater | Figma token refreshed in config |
-| sync, sync upstream, /sync-upstream | none | updater | Pull from upstream main, push to repo |
+| Trigger phrases | Optional input | Subagent | Skills (list each in checklist) | Output |
+|-----------------|----------------|----------|----------------------------------|--------|
+| refine, write, write up, document, update, make, /document | target (e.g. README, a file) or context | documenter | For README: document, document-github, document-voice. Else: document (and document-voice if applicable). | Updated docs |
+| research, learn, look at this, read, /research | ticket, URL, text, files, images | researcher | research | Findings; documenter can structure next |
+| research Figma, analyze Figma, Figma audit, analyze this Figma link, /research-figma | Figma URL | researcher | research-figma | Figma audit report |
+| install, setup, /install | none | installer | (Install workflow) | Config, MCP, handoff; then /mcp to sign in |
+| save, /save | none (or specific paths if user says "save just X") | Run **Save** workflow | (Save workflow) | Commits; no push |
+| clean, wipe .tmp, /clean | none | cleaner | clean | `.tmp/` emptied |
+| strategize, define, figure out, find cause, /strategize | none | strategist | strategize | Root cause analysis, suggestions |
+| uninstall, uninstall3, /uninstall | none | uninstaller | uninstall | MCPs removed from config; restart terminal after |
+| design, /generate-figma | none | designer | generate-figma | Figma design created or updated |
+| update figma, /update-figma | none | updater | update-figma | Figma token refreshed in config |
+| sync, sync upstream, /sync-upstream | none | updater | sync-upstream | Pull from upstream main, push to repo |
 
 ## Workflows
 

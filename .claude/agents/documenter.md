@@ -16,3 +16,4 @@ When invoked:
 3. When documenting a subagent (write or update under .claude/agents), follow the [document-agent](../skills/document-agent/SKILL.md) skill.
 4. When documenting a skill (write or update SKILL.md), follow the [document-skills](../skills/document-skills/SKILL.md) skill.
 5. When creating or updating a README, also follow [document-github](../skills/document-github/SKILL.md) and [document-voice](../skills/document-voice/SKILL.md).
+6. **Document every skill:** After running each skill (e.g. document, then document-github, then document-voice for README), update the current task section in `.tmp/task-checklist.md`: strikethrough that skill line and add a brief note. Do not run the next skill until the checklist is updated.

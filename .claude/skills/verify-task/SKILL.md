@@ -23,7 +23,9 @@ Append a **new section** to `.tmp/task-checklist.md` for each new task the user 
 ## Process
 
 1. Ensure `.tmp/` exists (create if missing).
-2. **Build the skill list for this task** from the flow (same as before: one line per skill; use coordinator skill names).
+2. **Build the skill list for this task** from the flow:
+   - **Workflows:** Use the coordinator step list; one line per step/skill (e.g. Save: verify-paths, document-paths if applicable, save).
+   - **Single flows:** Include every skill the subagent uses for that request. Example: refine/README → list `document`, `document-github`, `document-voice` (from coordinator Output and documenter scope) so all three must be marked done. If the coordinator or subagent says "uses X, Y, Z", list X, Y, Z. Do not collapse to one line (e.g. "documenter"); list each skill so the user can verify none are skipped.
 3. **Read existing file** if `.tmp/task-checklist.md` exists. Do not delete or overwrite its content.
 4. **Append a new section** at the bottom:
    - If the file was empty or new: start with a top-level title (e.g. `# Task checklist (running list)`), then add the new section.
@@ -37,4 +39,4 @@ Append a **new section** to `.tmp/task-checklist.md` for each new task the user 
 
 ## Reference
 
-[Coordinator](../../agents/coordinator.md) – Workflows list skills per step; use those names so the checklist matches what the user asked for.
+[Coordinator](../../agents/coordinator.md) – Workflows list skills per step. Single flows: use the Output column and subagent scope to list every skill (e.g. documenter for README → document, document-github, document-voice).
