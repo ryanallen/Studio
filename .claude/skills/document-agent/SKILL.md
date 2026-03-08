@@ -29,6 +29,8 @@ Subagent file written or updated; or docs produced via a subagent when delegated
 
 Subagents cannot spawn other subagents. Chain from main: e.g. Explore for discovery, then document in main context. Delegate when work is self-contained; use main when the task needs frequent back-and-forth.
 
+**Digital product designs:** When the documentation task involves creating or reviewing product designs (UI, screens, design specs, accessibility), use [designer-playbook](../designer-playbook/SKILL.md) so designs meet standards and you can review against them.
+
 ## Reference
 
 [Create custom subagents](https://code.claude.com/docs/en/sub-agents.md)

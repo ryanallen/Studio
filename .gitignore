@@ -19,7 +19,7 @@ work/paths.md
 .claude/skills/install/install-handoff.marker
 
 # Figma bridge (created by npm run setup:figma-bridge)
-.claude/skills/generate-figma/scripts/figma-desktop-bridge/
+.claude/skills/designer-figma/scripts/figma-desktop-bridge/
 
 # Verification and cleanup (agent-created reports)
 .tmp/

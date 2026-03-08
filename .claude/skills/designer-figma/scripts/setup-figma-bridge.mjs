@@ -8,7 +8,7 @@ const cwd = process.cwd();
 const packDir = "package";
 const bridgeInPack = path.join(packDir, "figma-desktop-bridge");
 const bridgeInTarball = "package/figma-desktop-bridge";
-const bridgeDest = ".claude/skills/generate-figma/scripts/figma-desktop-bridge";
+const bridgeDest = ".claude/skills/designer-figma/scripts/figma-desktop-bridge";
 
 // 1. Pack the package
 execSync("npm pack figma-console-mcp", { cwd, stdio: "inherit" });
@@ -23,7 +23,7 @@ const tgzPath = path.join(cwd, tgz);
 // 3. Extract only package/figma-desktop-bridge (use relative path for tar - Windows tar fails on absolute C:/ paths)
 execSync(`tar -xzf "${tgz}" ${bridgeInTarball}`, { cwd, stdio: "inherit" });
 
-// 4. Move to generate-figma skill scripts folder (ensure parent exists)
+// 4. Move to designer-figma skill scripts folder (ensure parent exists)
 const destPath = path.join(cwd, bridgeDest);
 const parent = path.dirname(destPath);
 if (!existsSync(parent)) mkdirSync(parent, { recursive: true });
@@ -34,4 +34,4 @@ renameSync(path.join(cwd, bridgeInPack), destPath);
 rmSync(path.join(cwd, packDir), { recursive: true });
 unlinkSync(tgzPath);
 
-console.log("Figma Desktop Bridge extracted to .claude/skills/generate-figma/scripts/figma-desktop-bridge");
+console.log("Figma Desktop Bridge extracted to .claude/skills/designer-figma/scripts/figma-desktop-bridge");

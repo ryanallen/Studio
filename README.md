@@ -83,8 +83,8 @@ To run a skill, say its trigger phrase or type `/skill-name`. Each skill is a fo
 
 | designer |
 |:--|
-| [![designer](https://img.shields.io/badge/designer-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/designer.md) <br> [![generate-figma](https://img.shields.io/badge/generate--figma-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/generate-figma/SKILL.md) |
-| Creates or updates Figma designs. |
+| [![designer](https://img.shields.io/badge/designer-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/designer.md) <br> [![designer-figma](https://img.shields.io/badge/designer--figma-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/designer-figma/SKILL.md) [![designer-playbook](https://img.shields.io/badge/designer--playbook-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/designer-playbook/SKILL.md) |
+| Creates or updates Figma designs; uses designer-playbook for product design standards. |
 
 | developer |
 |:--|
@@ -93,8 +93,8 @@ To run a skill, say its trigger phrase or type `/skill-name`. Each skill is a fo
 
 | documenter |
 |:--|
-| [![documenter](https://img.shields.io/badge/documenter-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/documenter.md) <br> [![document](https://img.shields.io/badge/document-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document/SKILL.md) [![document-paths](https://img.shields.io/badge/document--paths-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document-paths/SKILL.md) [![document-ticket](https://img.shields.io/badge/document--ticket-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document-ticket/SKILL.md) [![document-github](https://img.shields.io/badge/document--github-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document-github/SKILL.md) [![document-agent](https://img.shields.io/badge/document--agent-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document-agent/SKILL.md) [![document-skills](https://img.shields.io/badge/document--skills-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document-skills/SKILL.md) |
-| Writes and syncs docs (markdown, paths, tickets, READMEs, agents, skills). |
+| [![documenter](https://img.shields.io/badge/documenter-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/documenter.md) <br> [![document](https://img.shields.io/badge/document-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document/SKILL.md) [![document-paths](https://img.shields.io/badge/document--paths-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document-paths/SKILL.md) [![document-ticket](https://img.shields.io/badge/document--ticket-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document-ticket/SKILL.md) [![document-github](https://img.shields.io/badge/document--github-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document-github/SKILL.md) [![document-agent](https://img.shields.io/badge/document--agent-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document-agent/SKILL.md) [![document-skills](https://img.shields.io/badge/document--skills-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/document-skills/SKILL.md) [![designer-playbook](https://img.shields.io/badge/designer--playbook-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/designer-playbook/SKILL.md) |
+| Writes and syncs docs (markdown, paths, tickets, READMEs, agents, skills); uses designer-playbook when creating or reviewing product designs. |
 
 | installer |
 |:--|
@@ -175,6 +175,7 @@ Product Studio/
 │       ├── document-ticket/SKILL.md
 │       ├── document-github/SKILL.md
 │       ├── document-agent/SKILL.md
+│       ├── designer-playbook/SKILL.md
 │       ├── document-skills/SKILL.md
 │       ├── strategize/SKILL.md
 │       ├── research-figma/SKILL.md
@@ -199,7 +200,7 @@ Product Studio/
 │       │   └── scripts/clean.mjs
 │       ├── uninstall/SKILL.md
 │       ├── update-figma/SKILL.md
-│       ├── generate-figma/
+│       ├── designer-figma/
 │       │   ├── SKILL.md
 │       │   └── scripts/
 │       │       ├── setup-figma-bridge.mjs
