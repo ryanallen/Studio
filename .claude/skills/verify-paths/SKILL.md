@@ -1,6 +1,6 @@
 ---
 name: verify-paths
-description: Compare work/paths.md to actual paths under work/ and verify they match. If not, hand off to documenter for document-paths. If no paths.md and no work folders, skip. Part of Save workflow.
+description: Compare work/paths.md to actual paths under work/. If mismatch, hand off to documenter for document-paths; then Save step 3. If no paths.md and no work folders, skip.
 triggers: []
 disable-model-invocation: true
 ---

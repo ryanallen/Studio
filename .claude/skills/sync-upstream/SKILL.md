@@ -11,7 +11,7 @@ Sync from the upstream remote's main branch, then push to origin's main branch.
 
 ## Inputs
 
-None. Assumes upstream remote is configured (e.g. `git remote add upstream <url>`).
+None. Assumes upstream remote is configured.
 
 ## Output
 
@@ -19,20 +19,11 @@ Local main merged from upstream; origin main updated. Result reported.
 
 ## Process
 
-1. Run `git pull --no-rebase upstream main` to fetch and merge from upstream.
-2. If pull succeeds, run `git push origin main` to push the merged state to origin.
+1. Run `git pull --no-rebase upstream main`.
+2. If pull succeeds, run `git push origin main`.
 3. Report the result.
 
-**Command (reference):**
-```bash
-git pull --no-rebase upstream main && git push origin main
-```
-
-## Error Handling
-
-- **Merge conflicts:** Alert the user and list conflicting files. Do not auto-resolve.
-- **Authentication failures:** Remind user to check SSH keys or credentials for both remotes.
-- **Upstream not configured:** Run `git remote -v` and show current remotes so the user can fix it.
+**Merge conflicts:** Alert the user and list conflicting files. Do not auto-resolve. **Upstream not configured:** Run `git remote -v` and show remotes. **Auth failures:** Remind user to check SSH/credentials.
 
 ## Reference
 

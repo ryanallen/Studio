@@ -1,6 +1,6 @@
 ---
 name: document-verification
-description: Write a verification report to .tmp/ from verifier output (files checked, issues). Compare to README and paths.md.
+description: Write verification report to .tmp/ from verifier output; compare to README and paths.md.
 triggers: "verification report, verify docs report, /document-verification"
 disable-model-invocation: true
 ---
@@ -16,7 +16,7 @@ Turn verifier output into one report under `.tmp/` for the user to check.
 
 ## Output
 
-One file (e.g. `.tmp/verification-report.md`). Do not commit; `.tmp/` is gitignored. User can run [clean](../clean/SKILL.md) after verification to clear `.tmp/`.
+One file (e.g. `.tmp/verification-report.md`). Do not commit. User can run [clean](../clean/SKILL.md) after.
 
 ## Process
 

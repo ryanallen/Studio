@@ -1,6 +1,6 @@
 ---
 name: document-paths
-description: Sync work/paths.md tree with actual paths under work/. Add new paths, remove missing ones, then run Save step 3.
+description: Sync work/paths.md with actual paths under work/. Add or remove entries; then run Save step 3.
 triggers: "sync paths, update paths, document paths, /document-paths"
 disable-model-invocation: true
 ---
@@ -11,7 +11,7 @@ Sync the path tree in `work/paths.md` to match disk under `work/`, then run the 
 
 ## Inputs
 
-- **Scope** – Paths under `work/`. Paths file: `work/paths.md`. If paths.md is omitted, use repo root and existing paths file.
+- **Scope** – Paths under `work/`. Paths file: `work/paths.md`.
 
 ## Output
 

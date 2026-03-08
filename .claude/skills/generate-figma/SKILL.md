@@ -1,6 +1,6 @@
 ---
 name: generate-figma
-description: Generate or update a Figma design via the Figma Console MCP with target file details.
+description: Generate or update a Figma design via Figma Console MCP; or get capture ID/endpoint for capture flows.
 triggers: "design, /generate-figma"
 disable-model-invocation: true
 argument-hint: "[file-url-or-key] [node-id]"
@@ -12,11 +12,11 @@ Use the Figma Console MCP with target file details to generate or update a desig
 
 ## Inputs
 
-- **Figma file details** (required) – Target file, file key, or Figma file URL (e.g. `https://www.figma.com/file/abc123/...`). Optional parent node ID if the design should go under a specific node.
+- **Figma file details** – Target file, file key, or Figma file URL. Optional parent node ID if design should go under a specific node.
 
 ## Output
 
-Design generation or update in Figma, or capture ID/endpoint to report or hand off.
+Design generated or updated in Figma, or capture ID/endpoint to report or hand off.
 
 ## Process
 

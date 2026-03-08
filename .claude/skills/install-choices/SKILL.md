@@ -1,6 +1,6 @@
 ---
 name: install-choices
-description: Ask custom or express install. Custom walks through each choice; express runs install-express then workflow continues from install-mcp. Part of Install workflow.
+description: Custom or express install. Custom walks through each choice; express runs install-express then workflow continues at install-mcp.
 triggers: []
 disable-model-invocation: true
 ---

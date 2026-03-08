@@ -6,34 +6,34 @@ triggers: "refine, write, write up, document, update, make, /document"
 
 # Document
 
-Turn research into one README per project (path from [work/paths.md](../../work/paths.md)). Use clear headings, diagrams when they help, and link to your sources.
+Turn research into one README per project (path from [work/paths.md](../../work/paths.md)). Use clear headings, diagrams when they help, and link to sources.
 
 ## Inputs
 
 - **Project path** – Where the README lives. See [work/paths.md](../../work/paths.md).
-- **Source material** – The research, notes, or findings you're turning into the README.
-- **Document type** – What kind of doc: `research`, `analysis`, `solutions`, or `project-overview`.
+- **Source material** – Research, notes, or findings to turn into the README.
+- **Document type** – `research`, `analysis`, `solutions`, or `project-overview`.
 
 ## Output
 
-One README. Everything goes in it. No separate doc files. You may use .tmp as scratch or placeholder; anything written there must be moved into the README before you're done.
+One README. No separate doc files. Scratch in .tmp is allowed; move into README before done.
 
 ## Process
 
-1. **Read the source** – Go through all the material. Get the scope and main topics.
-2. **Group by sections** – Decide which bits go in which part of the README (by document type above).
-3. **Write the README** – Clear title and one-line summary. Short paragraphs (a few sentences). Add diagrams where they explain flows or relationships. Use tables for comparisons. Link to sources right where you mention them.
-4. **Use the structure below** – When the type is `project-overview`, follow the section outline. For images and other evidence, see work/paths.md.
+1. **Read the source** – Scope and main topics.
+2. **Group by sections** – By document type above.
+3. **Write the README** – Clear title and one-line summary. Short paragraphs. Diagrams for flows or relationships. Tables for comparisons. Link to sources inline.
+4. **project-overview** – Use the section outline below. For images and evidence paths see work/paths.md.
 
 ### How to write it
 
-**Diagrams (mermaid)** – Use when you have a process, a flow, or a chain of causes. Good for: flowcharts, sequence diagrams, mind maps (e.g. problem → why → why → root cause), Gantt-style timelines. Use when there are 3+ steps or a clear hierarchy.
+**Diagrams (mermaid)** – Process, flow, or cause chain. Flowcharts, sequence, mind maps (e.g. problem → why → root cause), Gantt-style timelines. Use for 3+ steps or clear hierarchy.
 
-**Tables** – Use for comparisons, lists of sources, or feature lists. Only include real data from your source. No filler rows, "TBD", or made-up names or dates.
+**Tables** – Comparisons, source lists, feature lists. Real data only; no filler, TBD, or invented names/dates.
 
-**Callouts** – For notes or warnings use: `> **Note:** ...` and `> **Warning:** ...`
+**Callouts** – `> **Note:** ...` and `> **Warning:** ...`
 
-**Links** – Link anything that has a URL or another place in the doc. Sections, sources, people (give each person an anchor in Team and link to it), tickets, artifacts. Use relative links (no full filesystem paths).
+**Links** – Link every URL or in-doc target. Sections, sources, people (anchor in Team), tickets, artifacts. Relative links only.
 
 ### README structure (project-overview)
 
@@ -80,11 +80,11 @@ Learnings. Recommendations. Links to new docs.
 
 ## Rules
 
-- Use relative links only. No full filesystem paths.
-- Only real content from the source. No invented rows, TBD, or fake names/dates. Skip a section if there's no data.
-- Team table: full name per person. Role must be one of Driver, Approver, Contributor, Informed.
-- If the research has a Link tree or Sources section, put it under Research and context > Reviews and sources.
-- Always say where content came from (attribute to the source).
+- Relative links only. No full filesystem paths.
+- Real content only. No invented rows, TBD, or fake names/dates. Skip a section if no data.
+- Team table: full name per person. Role: Driver, Approver, Contributor, or Informed.
+- Link tree or Sources from research go under Research and context > Reviews and sources.
+- Attribute content to the source.
 
 ## Reference
 

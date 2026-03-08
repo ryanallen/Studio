@@ -11,7 +11,7 @@ Remove the MCP servers that the Install skill adds (figma-console, atlassian-rov
 
 ## Inputs
 
-None. User invokes with uninstall, remove MCP, or /uninstall.
+None. User invokes with uninstall or /uninstall.
 
 ## Output
 

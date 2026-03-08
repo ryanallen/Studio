@@ -1,19 +1,16 @@
 ---
 name: research-figma
-description: Analyze a Figma design link and produce a structured report (research/audit).
+description: Analyze a Figma design link and produce a structured report (research/audit). General link = whole file; specific link (node-id) = that node and subtree.
 triggers: "research Figma, analyze Figma, Figma audit, analyze this Figma link, /research-figma"
 ---
 
 # Research Figma
 
-Analyze a Figma design link and produce a structured report. Branch behavior on link type: general (whole file) vs specific (one node and its subtree).
+Analyze a Figma design link and produce a structured report. General link = whole file; specific link (node-id) = one node and its subtree.
 
 ## Inputs
 
-**Figma link** (required): Any valid Figma design URL:
-
-- `https://www.figma.com/design/ABC123/MyFile`
-- `https://www.figma.com/design/ABC123/MyFile?node-id=1%3A2`
+**Figma link** (required): Any valid Figma design URL (e.g. `https://www.figma.com/design/ABC123/MyFile` or `...?node-id=1%3A2`).
 
 ## Output
 

@@ -5,13 +5,13 @@ triggers: "update figma, /update-figma"
 disable-model-invocation: true
 ---
 
-# Update Figma token
+# Update Figma
 
-Update `FIGMA_ACCESS_TOKEN` in the user's global Claude config so figma-console MCP keeps working after token expiry (e.g. every 90 days).
+Update `FIGMA_ACCESS_TOKEN` in the user's config so figma-console MCP works after expiry (~90 days). Use CLI only; do not edit config with Write/Edit.
 
 ## Inputs
 
-None. User invokes; then paste the new token when asked.
+None. User invokes; paste new token when asked.
 
 ## Output
 
