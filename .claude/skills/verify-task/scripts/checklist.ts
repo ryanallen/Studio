@@ -11,7 +11,7 @@ import * as path from "path";
 
 const STEP_0 = "verify-task" as const;
 
-const FLOWS: Record<string, readonly string[]> = {
+const FLOWS = {
   save: ["verify-paths", "document-paths", "save"],
   clean: ["clean"],
   strategize: ["strategize"],
@@ -24,9 +24,15 @@ const FLOWS: Record<string, readonly string[]> = {
   install: ["(Install workflow)"],
   refine: ["document", "document-github", "document-voice"],
   developer: ["developer-typescript", "developer-check-types"],
-} as const;
+} as const satisfies Record<string, readonly string[]>;
 
-const TRIGGERS: [RegExp | string, string][] = [
+type FlowKey = keyof typeof FLOWS;
+
+const DEFAULT_FLOW: FlowKey = "refine";
+
+type TriggerEntry = readonly [RegExp | string, FlowKey];
+
+const TRIGGERS: TriggerEntry[] = [
   [/save|\/save/i, "save"],
   [/clean|wipe\.tmp|\/clean/i, "clean"],
   [/strategize|define|figure out|find cause|\/strategize/i, "strategize"],
@@ -41,31 +47,30 @@ const TRIGGERS: [RegExp | string, string][] = [
   [/refine|write|write up|document|update|make|\/document/i, "refine"],
 ];
 
-function matchFlow(message: string): string {
+function matchFlow(message: string): FlowKey {
   const m = message.trim().toLowerCase();
   for (const [trigger, flow] of TRIGGERS) {
     if (typeof trigger === "string" ? m.includes(trigger) : trigger.test(message)) {
       return flow;
     }
   }
-  return "refine";
+  return DEFAULT_FLOW;
 }
 
 /** Deterministic: always [verify-task, ...flowSteps]. */
 export function getStepsForRequest(message: string): readonly [string, ...string[]] {
   const flow = matchFlow(message);
-  const flowSteps = FLOWS[flow] ?? FLOWS.refine;
+  const flowSteps = FLOWS[flow];
   return [STEP_0, ...flowSteps];
+}
+
+function pad2(n: number): string {
+  return String(n).padStart(2, "0");
 }
 
 function nowHeading(): string {
   const d = new Date();
-  const Y = d.getFullYear();
-  const M = String(d.getMonth() + 1).padStart(2, "0");
-  const D = String(d.getDate()).padStart(2, "0");
-  const h = String(d.getHours()).padStart(2, "0");
-  const min = String(d.getMinutes()).padStart(2, "0");
-  return `${Y}-${M}-${D} ${h}:${min}`;
+  return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())} ${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
 }
 
 const TMP = path.join(process.cwd(), ".tmp");
@@ -96,8 +101,8 @@ export function ensureChecklistSection(summary: string, steps?: readonly string[
 
 const args = process.argv.slice(2);
 if (args[0] === "--steps") {
-  const msg = args.slice(1).join(" ") || "refine";
-  const steps = getStepsForRequest(msg);
+  const msg = args.slice(1).join(" ").trim();
+  const steps = getStepsForRequest(msg || "");
   console.log(JSON.stringify([...steps]));
 } else if (args.length > 0) {
   const summary = args.join(" ").trim() || "task";

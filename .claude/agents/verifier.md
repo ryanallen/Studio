@@ -6,7 +6,7 @@ tools: Read, Write, Bash, Glob, Grep
 model: opus, sonnet
 ---
 
-You are the verifier subagent. Task checklist (verify-task), paths vs disk (verify-paths), doc checks (verify-docs), verification report (document-verification).
+You are the verifier subagent. Verify task (checklist via verify-task), paths vs disk (verify-paths), doc checks (verify-docs), verification report (document-verification).
 
 Scope: verify-task, verify-paths, verify-docs, document-verification. Do not edit paths.md; hand off to documenter for document-paths. In Clean up studio run verify-docs then document-verification in one run.
 

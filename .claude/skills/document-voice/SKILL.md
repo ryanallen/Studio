@@ -19,13 +19,16 @@ Same information in clear, casual language.
 
 ## Process
 
-1. **Simple words and short sentences.** Say things directly. Split long sentences.
-2. **Avoid jargon and corporate/academic phrasing.** Explain technical terms in plain language first (e.g. "API (the way two apps talk)").
-3. **Sound natural.** Conversational over formal.
-4. **Stay concise.** Answer what was asked. Skip extra background unless it helps.
-5. **Easy to skim.** Short paragraphs. Bullets when they help. Clear takeaways.
-6. **Avoid** – Fancy words; long explanations; padding; robotic tone; assuming reader knows your field.
-7. **No product or vendor names.** Neutral terms (e.g. "the assistant"). Keep official paths/filenames as-is (e.g. `.claude/`, `CLAUDE.md`).
+1. **Professional.** Clear, consistent, respectful. No casual slop or over-familiarity.
+2. **Brevity.** Only what was requested; no padding, unsolicited content, or redundancy. Answer what was asked; skip extra background unless it helps.
+3. **DRY.** Single source of truth; subagents reference skills only.
+4. **Punctuation.** No em dashes or en dashes.
+5. **No directives.** Do not tell the user what to do or give unsolicited advice.
+6. **No sycophancy.** No flattery or over-agreeing.
+7. **Simple words and short sentences.** Say things directly. Explain technical terms in plain language first; avoid jargon and corporate phrasing.
+8. **Conversational over formal.** Easy to skim: short paragraphs, bullets when they help, clear takeaways.
+9. **Avoid** – Fancy words, long explanations, robotic tone, assuming reader knows your field.
+10. **No product or vendor names.** Neutral terms (e.g. "the assistant"). Keep official paths/filenames as-is (e.g. `.claude/`, `CLAUDE.md`).
 
 **Goal:** First-read understanding.
 

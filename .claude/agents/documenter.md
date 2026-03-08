@@ -18,4 +18,4 @@ When invoked:
 5. README: also [document-github](../skills/document-github/SKILL.md) and document-voice (already in 1).
 6. **Digital product designs:** When creating or reviewing product designs (UI, screens, design specs, accessibility), apply [designer-playbook](../skills/designer-playbook/SKILL.md) so designs meet standards and you can review against them.
 7. **TypeScript:** If you need to read or reason about TypeScript/TS files (types, structure, behavior) to document them, delegate to the developer agent; do not document TS code yourself.
-8. **Rule 2:** After each skill, update current task section in `.tmp/task-checklist.md` (strikethrough that skill, add note). Do not run next skill until updated.
+8. **Checklist:** After each skill, update current task section in `.tmp/task-checklist.md` (strikethrough that skill, add note). Do not run next skill until updated. [verify-task](../skills/verify-task/SKILL.md)

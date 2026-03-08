@@ -7,7 +7,7 @@ disable-model-invocation: true
 
 # Save
 
-Run Save workflow (verify-paths, document-paths if mismatch, then commit). Never stage/commit unless user asked this turn (save, stage, commit, /save). Coordinator Step 1 (/checklist) already ran; do not run it again.
+Run Save workflow (verify-paths, document-paths if mismatch, then commit). Never stage/commit unless user asked this turn (save, stage, commit, /save). Coordinator Step 1 (verify task / checklist) already ran; do not run it again.
 
 ## Inputs
 

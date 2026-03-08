@@ -1,6 +1,6 @@
 ---
 name: verify-task
-description: Append a new task section to the running .tmp task checklist (one heading per task with date timestamp); list each skill in the flow so the user can verify every skill was run.
+description: Append a new task section to the running task checklist (.tmp/task-checklist.md); one heading per task with date timestamp; list each skill in the flow so the user can verify every skill was run.
 triggers: []
 disable-model-invocation: true
 ---
@@ -23,9 +23,11 @@ Append a **new section** to `.tmp/task-checklist.md` per task. Running list: do 
 1. Ensure `.tmp/` exists.
 2. **Skill list** from flow: Workflows = coordinator step list (one line per skill). Single flows = every skill the subagent uses (e.g. refine/README → document, document-github, document-voice). Do not collapse to one line.
 3. Read existing `.tmp/task-checklist.md` if present. Do not overwrite.
-4. Append new section at bottom: if file empty, add title `# Task checklist (running list)` then section. Section = heading `## YYYY-MM-DD HH:MM — {summary}`, blank line, skill lines `- skill-name` or `- ~~skill-name~~ — note`. Optional `## Notes`.
+4. Append new section at bottom: if file empty, add title `# Task checklist (running list)` then section. Section = heading `## YYYY-MM-DD HH:MM — {summary}`, blank line, skill lines `- skill-name` or `- ~~skill-name~~ — note`. Optional `## Notes`. (The checklist file keeps this heading so the list is recognizable.)
 5. Write existing content + new section.
 6. Confirm to Main: checklist updated; agents update current section only.
+
+**During the task:** After each skill you run, strikethrough that skill in the current task section and add a brief note. Do not run the next skill in the flow until the checklist is updated.
 
 ## Reference
 

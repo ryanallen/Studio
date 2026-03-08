@@ -1,6 +1,6 @@
 # Coordinator Flows
 
-Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator Step 1 (run `/checklist`) is done before picking a flow.
+Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator Step 1 is verify task (run `/checklist`) before picking a flow.
 
 **Real commands (run in shell):**
 - `/checklist` = `npm run checklist -- "<request or summary>"`
@@ -120,4 +120,4 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 
 ## Reference
 
-[Coordinator](../coordinator.md) – Step 1 run `/checklist`, Step 2 match request to flow above, Step 3 execute that flow's steps in order.
+[Coordinator](../coordinator.md) – Step 1 verify task (run `/checklist`), Step 2 match request to flow above, Step 3 execute that flow's steps in order.
