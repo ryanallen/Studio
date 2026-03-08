@@ -32,7 +32,7 @@ Follow this checklist. Do not skip steps.
 | uninstall, /uninstall | Uninstall |
 | dev, develop, /developer | Dev |
 | check types, typecheck, tsc, type errors | Dev |
-| design, /generate-figma | Design |
+| design, /designer-figma | Design |
 | update figma, /update-figma | Update Figma token |
 | sync, sync upstream, /sync-upstream | Sync upstream |
 | learn (with ticket/URLs) | Learn |

@@ -1,12 +1,12 @@
 ---
-name: generate-figma
+name: designer-figma
 description: Generate or update a Figma design via Figma Console MCP; or get capture ID/endpoint for capture flows.
-triggers: "design, /generate-figma"
+triggers: "design, /designer-figma"
 disable-model-invocation: true
 argument-hint: "[file-url-or-key] [node-id]"
 ---
 
-# Generate Figma
+# Designer Figma
 
 Use the Figma Console MCP with target file details to generate or update a design, or to get capture IDs or endpoints for capture flows.
 
@@ -27,7 +27,7 @@ Design generated or updated in Figma, or capture ID/endpoint to report or hand o
 ### Requirements
 
 - Figma Console MCP configured and authenticated.
-- Figma Desktop Bridge (for Prompt to Figma): run `npm run setup:figma-bridge` to extract to `.claude/skills/generate-figma/scripts/figma-desktop-bridge`. In Figma Desktop, Plugins → Development → Import plugin from manifest → select `.claude/skills/generate-figma/scripts/figma-desktop-bridge/manifest.json`. Keep the bridge running while using Prompt to Figma.
+- Figma Desktop Bridge (for Prompt to Figma): run `npm run setup:figma-bridge` to extract to `.claude/skills/designer-figma/scripts/figma-desktop-bridge`. In Figma Desktop, Plugins → Development → Import plugin from manifest → select `.claude/skills/designer-figma/scripts/figma-desktop-bridge/manifest.json`. Keep the bridge running while using Prompt to Figma.
 
 ## Reference
 

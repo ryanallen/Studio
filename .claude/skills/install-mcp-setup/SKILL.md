@@ -23,7 +23,7 @@ Bridge extracted; user has imported the plugin in Figma Desktop and can keep it 
 
 2. **Figma Desktop** – Show the user:
    - In a project: Plugins → Development → Import plugin from manifest.
-   - Select `.claude/skills/generate-figma/scripts/figma-desktop-bridge/manifest.json`.
+   - Select `.claude/skills/designer-figma/scripts/figma-desktop-bridge/manifest.json`.
    - Plugins → Development → Figma Desktop Bridge. Keep it running for Prompt to Figma.
    Whenever you use Figma with this system, this plugin must be running in the file you are working in.
    When it's time to renew (about every 90 days), run update-figma to set a new token, then restart the app.
@@ -32,4 +32,4 @@ Bridge extracted; user has imported the plugin in Figma Desktop and can keep it 
 
 ## Reference
 
-[generate-figma](../generate-figma/SKILL.md) – Bridge path. [update-figma](../update-figma/SKILL.md) – Token renewal.
+[designer-figma](../designer-figma/SKILL.md) – Bridge path. [update-figma](../update-figma/SKILL.md) – Token renewal.

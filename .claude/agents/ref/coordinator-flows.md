@@ -24,7 +24,7 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 
 ## Design / Figma
 
-1. designer → generate-figma. Update checklist.
+1. designer → designer-figma. Update checklist.
 
 ---
 

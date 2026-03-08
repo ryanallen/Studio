@@ -90,7 +90,7 @@ For injecting shell output before the skill runs, see [Inject dynamic context](h
 1. Read the target skill path and any source.
 2. Apply the checklist and structure above. Don’t change behavior unless the user asked.
 3. Write or update SKILL.md (and supporting files if needed). Only document what the skill does; don't add capabilities that aren't there.
-4. **Coordinator sync:** If you changed `triggers`, update [.claude/agents/coordinator.md](../../agents/coordinator.md) so Single flows and Workflow Input lines match. Coordinator uses the skill's `triggers` list.
+4. **Coordinator sync:** If you changed `triggers`, update [.claude/agents/coordinator.md](../../agents/coordinator.md) so Single flows and Workflow Input lines match. Coordinator uses the skill's `triggers` list. If a skill was **renamed or moved** (e.g. generate-figma → designer-figma), update all references: coordinator, agents, README, package.json, other skills that link to it, [verify-task checklist script](verify-task/scripts/checklist.ts), and .gitignore.
 
 ## Reference
 
