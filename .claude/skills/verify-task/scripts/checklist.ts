@@ -10,6 +10,7 @@ import * as fs from "fs";
 import * as path from "path";
 
 const STEP_0 = "verify-task" as const;
+const STEP_1 = "document-voice" as const;
 
 const FLOWS = {
   save: ["verify-paths", "document-paths", "save"],
@@ -22,7 +23,7 @@ const FLOWS = {
   research: ["research"],
   "research-figma": ["research-figma"],
   install: ["(Install workflow)"],
-  refine: ["document", "document-github", "document-voice"],
+  refine: ["document", "document-github"],
   developer: ["developer-typescript", "developer-check-types"],
 } as const satisfies Record<string, readonly string[]>;
 
@@ -57,11 +58,11 @@ function matchFlow(message: string): FlowKey {
   return DEFAULT_FLOW;
 }
 
-/** Deterministic: always [verify-task, ...flowSteps]. */
+/** Deterministic: always [verify-task, document-voice, ...flowSteps]. Rule 2 (AGENTS) = document-voice in checklist. */
 export function getStepsForRequest(message: string): readonly [string, ...string[]] {
   const flow = matchFlow(message);
   const flowSteps = FLOWS[flow];
-  return [STEP_0, ...flowSteps];
+  return [STEP_0, STEP_1, ...flowSteps];
 }
 
 function pad2(n: number): string {

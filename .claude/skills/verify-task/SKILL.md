@@ -7,12 +7,12 @@ disable-model-invocation: true
 
 # Verify Task
 
-Append a **new section** to `.tmp/task-checklist.md` per task. Running list: do not delete or overwrite. Section = heading (date + time + summary), then one line per skill. Completed = strikethrough + note. Agents update only the **current task section** (last heading).
+Append a **new section** to `.tmp/task-checklist.md` per task. Running list: do not delete or overwrite. Section = heading (date + time + summary), then one line per skill. **First two steps are always** verify-task (Step 1) and document-voice (Step 2, Rule 2 in AGENTS); then flow-specific steps. Completed = strikethrough + note. Agents update only the **current task section** (last heading).
 
 ## Inputs
 
 - **Task context** – User request and, when known, flow name (e.g. Learn, Save) or list of steps.
-- **Steps/skills** – From Main or coordinator: the ordered list of skills (or subagent→skill steps) for this flow. Each step in the flow must become one checklist item so the user can confirm it ran. Example: Save → `verify-paths`, `document-paths` (if mismatch), `save`. Learn → `research`, `document`.
+- **Steps/skills** – From Main or coordinator: first two steps are always verify-task, document-voice (Rule 2); then the flow's steps. Each step = one checklist item. Example: Save → `verify-task`, `document-voice`, `verify-paths`, `document-paths` (if mismatch), `save`.
 
 ## Output
 
@@ -21,7 +21,7 @@ Append a **new section** to `.tmp/task-checklist.md` per task. Running list: do 
 ## Process
 
 1. Ensure `.tmp/` exists.
-2. **Skill list** from flow: Workflows = coordinator step list (one line per skill). Single flows = every skill the subagent uses (e.g. refine/README → document, document-github, document-voice). Do not collapse to one line.
+2. **Skill list** from flow: Always start with `verify-task`, `document-voice` (Rule 2; emitted by [scripts/checklist.ts](scripts/checklist.ts)). Then append the flow's steps from coordinator-flows (one line per skill). Do not collapse to one line.
 3. Read existing `.tmp/task-checklist.md` if present. Do not overwrite.
 4. Append new section at bottom: if file empty, add title `# Task checklist (running list)` then section. Section = heading `## YYYY-MM-DD HH:MM — {summary}`, blank line, skill lines `- skill-name` or `- ~~skill-name~~ — note`. Optional `## Notes`. (The checklist file keeps this heading so the list is recognizable.)
 5. Write existing content + new section.
