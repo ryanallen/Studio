@@ -41,7 +41,7 @@ Subagents for design capture, research, and strategic analysis.
 
 Product Studio connects specialist helpers (subagents) to jobs like [install](.claude/skills/install/SKILL.md), [research](.claude/skills/research/SKILL.md), [document](.claude/skills/document/SKILL.md), and [save](.claude/skills/save/SKILL.md). Each helper has skills: small how-to guides that live in [.claude/skills/](.claude/skills/). You can run a skill by saying its phrase or typing `/skill-name`. In Claude Code and Cursor, `/skills` shows everything available.
 
-**Task checklist:** Before anything else, agents run `npm run checklist -- "<request or summary>"` (Step 1 of the [coordinator](.claude/agents/coordinator.md)). That appends the current task to [.tmp/task-checklist.md](.tmp/task-checklist.md) and lists the skills for the flow. See [verify-task](.claude/skills/verify-task/SKILL.md).
+**Verify task:** Before anything else, agents run `npm run checklist -- "<request or summary>"` (Step 1 of the [coordinator](.claude/agents/coordinator.md)). That appends the current task to the running checklist at [.tmp/task-checklist.md](.tmp/task-checklist.md) and lists the skills for the flow. See [verify-task](.claude/skills/verify-task/SKILL.md).
 
 ## Contents
 
@@ -79,7 +79,7 @@ To run a skill, say its trigger phrase or type `/skill-name`. Each skill is a fo
 | coordinator |
 |:--|
 | [![coordinator](https://img.shields.io/badge/coordinator-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/coordinator.md) <br> ![skills](https://img.shields.io/badge/skills-%E2%80%94-0ea5e9?style=flat&labelColor=4b5563) |
-| Runs the other subagents per flow. Step 1: run [checklist](.claude/skills/verify-task/SKILL.md) (`npm run checklist -- "<summary>"`). Flows in [ref/coordinator-flows.md](.claude/agents/ref/coordinator-flows.md). |
+| Runs the other subagents per flow. Step 1: verify task ([checklist](.claude/skills/verify-task/SKILL.md), `npm run checklist -- "<summary>"`). Flows in [ref/coordinator-flows.md](.claude/agents/ref/coordinator-flows.md). |
 
 | designer |
 |:--|

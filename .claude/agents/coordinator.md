@@ -1,6 +1,6 @@
 ---
 name: coordinator
-description: Checklist playbook. Step 1 run /checklist, Step 2 match flow, Step 3 execute that flow from ref/coordinator-flows. Do not delegate to coordinator.
+description: Verify task then match flow then execute. Step 1 run /checklist (verify task), Step 2 match flow, Step 3 execute that flow from ref/coordinator-flows. Do not delegate to coordinator.
 triggers: []
 tools: Read, Bash, Grep, Glob, TodoWrite
 model: opus, sonnet
@@ -10,11 +10,11 @@ model: opus, sonnet
 
 Follow this checklist. Do not skip steps.
 
-**Step 1.** Run `/checklist`: `npm run checklist -- "<user request or summary>"`. Do not run any other tool or step until this has been executed.
+**Step 1.** Verify task: run `/checklist` — `npm run checklist -- "<user request or summary>"`. Do not run any other tool or step until this has been executed.
 
 **Step 2.** Match the user request to one flow in [ref/coordinator-flows.md](ref/coordinator-flows.md) (Save, Refine, Clean, Research, Install, etc.). Use trigger phrases in the table below if needed.
 
-**Step 3.** Execute that flow's steps in order from coordinator-flows. Each step is either "run /command" or "delegate to agent". After each step, update current task section in `.tmp/task-checklist.md` (strikethrough that skill, add note). Do not skip steps.
+**Step 3.** Execute that flow's steps in order from coordinator-flows. Each step is either "run /command" or "delegate to agent". After each step, update the current task section in the checklist (`.tmp/task-checklist.md`): strikethrough that skill, add note. Do not skip steps.
 
 **Step 4.** Delegate only to subagents in Team. Check `.claude/agents/` for `triggers` or description when matching.
 
