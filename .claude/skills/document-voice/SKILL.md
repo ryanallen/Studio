@@ -10,8 +10,7 @@ Use this voice when the user wants content that anyone can understand. Think of 
 
 ## Inputs
 
-1. **When to use** – User says plain language, simple words, casual tone, explain like I'm new, no jargon, document voice, or /document-voice.
-2. **Content** – Whatever is being written or explained (docs, answers, instructions). Apply the voice to that content.
+1. **Content** – Whatever is being written or explained (docs, answers, instructions). Apply the voice to that content.
 
 ## Output
 
@@ -25,6 +24,7 @@ Content that follows the guidelines below. Same information, but in clear, casua
 4. **Stay concise.** Answer what was asked. Skip extra background unless it really helps.
 5. **Easy to skim.** Short paragraphs. Bullet lists when they help. Clear takeaways.
 6. **Avoid** – Fancy or obscure words when a common one works; long, winding explanations; repeating yourself or padding; robotic or overly formal tone; assuming the reader knows your field.
+7. **No product or vendor names.** Use neutral terms instead of brand names (e.g. "the assistant" or "the editor," not product names). Do not change or remove official paths and filenames (e.g. `.claude/`, `CLAUDE.md`); those stay as-is.
 
 **Goal:** Clarity, friendliness, and usefulness for someone with no special background. If they can get it on first read, you did it right.
 
