@@ -100,8 +100,8 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 
 ## Save
 
-1. verifier → verify-paths (compare paths.md to disk).
-2. If mismatch: documenter → document-paths (sync tree).
+1. verifier → verify-paths (compare paths.md Editable section Tree to disk; flag both directions).
+2. If disk has paths not in tree: documenter → document-paths (add to tree only).
 3. updater → save (stage and commit). No push.
 
 ---
@@ -127,6 +127,12 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 ## Update Figma token
 
 1. updater → update-figma. Update checklist.
+
+---
+
+## Update gitignore
+
+1. updater → update-gitignore (explain in plain language what's ignored, or update .gitignore / .git/info/exclude). Update checklist.
 
 ---
 

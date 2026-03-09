@@ -119,8 +119,8 @@ To run a skill, say its trigger phrase or type `/skill-name`. Each skill is a fo
 
 | updater |
 |:--|
-| [![updater](https://img.shields.io/badge/updater-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/updater.md) <br> [![update-figma](https://img.shields.io/badge/update--figma-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/update-figma/SKILL.md) [![save](https://img.shields.io/badge/save-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/save/SKILL.md) [![sync-upstream](https://img.shields.io/badge/sync--upstream-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/sync-upstream/SKILL.md) |
-| Figma token, commit, or sync with upstream. |
+| [![updater](https://img.shields.io/badge/updater-subagents-7D70DB?style=flat&labelColor=4b5563)](.claude/agents/updater.md) <br> [![update-figma](https://img.shields.io/badge/update--figma-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/update-figma/SKILL.md) [![save](https://img.shields.io/badge/save-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/save/SKILL.md) [![sync-upstream](https://img.shields.io/badge/sync--upstream-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/sync-upstream/SKILL.md) [![update-gitignore](https://img.shields.io/badge/update--gitignore-skills-0ea5e9?style=flat&labelColor=4b5563)](.claude/skills/update-gitignore/SKILL.md) |
+| Figma token, commit, sync upstream, or explain/update ignore rules. |
 
 ---
 
@@ -182,7 +182,9 @@ git fetch upstream
 
 Then pull with `git pull upstream main` (or say "sync" or [/sync-upstream](.claude/skills/sync-upstream/SKILL.md)).
 
-**Paths:** [work/paths.md](work/paths.md) is gitignored. Copy from [work/paths.md.template](work/paths.md.template), edit your tree, and keep it. Sync does not overwrite it. Per paths.md: one README per project as the main doc; supplementary docs go in that project's `assets/docs/` folder with kebab-case filenames.
+**Paths:** [work/paths.md](work/paths.md) is synced with the work folder: if you commit work/, paths.md is committed too; if you ignore work/ (e.g. via `.git/info/exclude`), paths.md is ignored with it. The repo does not ignore work/, so you can stage and push the work folder and paths. In paths.md the **Path pattern** section is reference only; the **Editable section** (Deliverables base URL and Tree) is what you edit and what verify-paths/document-paths compare and update. Per paths.md: one README per project as the main doc; supplementary docs go in that project's `assets/docs/` folder with kebab-case filenames.
+
+**Work folder and Git:** Right now work/ is not ignored; stage and push as needed. To ignore work/ again later (e.g. after moving work back from a safe place), add `work/*` and `!work/paths.md.template` to `.gitignore` or `.git/info/exclude`. To see in plain language what's ignored or to add/remove ignore rules, use the [update-gitignore](.claude/skills/update-gitignore/SKILL.md) skill (updater agent; say "gitignore", "what's ignored", or "update ignore").
 
 </details>
 
@@ -247,6 +249,7 @@ Product Studio/
 │       ├── developer-virtualization/SKILL.md
 │       ├── uninstall/SKILL.md
 │       ├── update-figma/SKILL.md
+│       ├── update-gitignore/SKILL.md
 │       ├── designer-figma/
 │       │   ├── SKILL.md
 │       │   └── scripts/
@@ -254,6 +257,7 @@ Product Studio/
 │       │       └── figma-desktop-bridge/
 ├── .tmp/
 ├── work/
+│   ├── paths.md
 │   ├── paths.md.template
 │   └── {team}/{space}/{ticket-id}/{project}/
 │       ├── README.md

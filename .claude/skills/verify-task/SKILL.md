@@ -11,7 +11,7 @@ Append a **new section** to `.tmp/task-checklist.md` per task. Running list: do 
 ## Inputs
 
 - **Task context** – User request and, when known, flow name (e.g. Learn, Save) or list of steps.
-- **Steps/skills** – From Main or coordinator: first two steps are always verify-task, document-voice (Rule 2); then the flow's steps. Each step = one checklist item. Example: Save → `verify-task`, `document-voice`, `verify-paths`, `document-paths` (if mismatch), `save`.
+- **Steps/skills** – From Main or coordinator: first two steps are always verify-task, document-voice (Rule 2); then the flow's steps. Each step = one checklist item. Example: Save → `verify-task`, `document-voice`, `verify-paths`, `document-paths` (if disk has paths not in tree), `save`.
 
 ## Output
 

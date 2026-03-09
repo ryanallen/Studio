@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Save
 
-Run Save workflow (verify-paths, document-paths if mismatch, then commit). Never stage/commit unless user asked this turn (save, stage, commit, /save). Coordinator Step 1 (verify task / checklist) already ran; do not run it again.
+Run Save workflow (verify-paths, then document-paths only when disk has paths not in tree, then commit). Never stage/commit unless user asked this turn (save, stage, commit, /save). Coordinator Step 1 (verify task / checklist) already ran; do not run it again.
 
 ## Inputs
 
@@ -23,7 +23,7 @@ One or more commits; result reported. No push.
 
 ## Process
 
-1. Run Save workflow: verify-paths, document-paths if mismatch, then commit ([coordinator-flows](../../agents/assets/docs/coordinator-flows.md)).
+1. Run Save workflow: verify-paths, then document-paths only when disk has paths not in tree, then commit ([coordinator-flows](../../agents/assets/docs/coordinator-flows.md)).
 2. `git status`; stage per Inputs (all or specific paths).
 3. For each commit: `git add` then `git commit -m "<title>" -m "<description>"` (derive from changes). Repeat until done.
 4. Report result. No push.

@@ -11,5 +11,5 @@ Scope: verify-task, verify-paths, verify-docs, document-verification. Do not edi
 
 When invoked:
 1. **Task start (verify-task):** Follow [verify-task](../skills/verify-task/SKILL.md). Tell Main: agents update current section only (strikethrough + note).
-2. **Save:** Follow [verify-paths](../skills/verify-paths/SKILL.md) (compare paths.md to disk; if mismatch hand off to documenter; then Save step 3).
+2. **Save:** Follow [verify-paths](../skills/verify-paths/SKILL.md) (compare paths.md Editable section Tree to disk; flag both mismatch directions; hand off to documenter only when disk has paths not in tree; then Save step 3).
 3. **Clean up studio:** (a) [verify-docs](../skills/verify-docs/SKILL.md) (heading hierarchy, top nav, emojis; list files and issues); (b) [document-verification](../skills/document-verification/SKILL.md) (compare to README/paths.md, write `.tmp/verification-report.md`). Run both; do not hand off.

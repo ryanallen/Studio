@@ -1,31 +1,33 @@
 ---
 name: verify-paths
-description: Compare work/paths.md to actual paths under work/. If mismatch, hand off to documenter for document-paths; then Save step 3. If no paths.md and no work folders, skip.
+description: Compare the Tree in the Editable section of work/paths.md to actual paths under work/. Flag both directions (disk not in tree, tree not on disk). Only hand off to document-paths when disk has paths not in tree (additions). If no paths.md, skip.
 disable-model-invocation: true
 ---
 
 # Verify Paths
 
-Compare `work/paths.md` to actual folders under `work/`. If mismatch: documenter runs [document-paths](../document-paths/SKILL.md); then Save step 3 (commit).
+Compare the **Tree in the Editable section** of `work/paths.md` (the block under "### Tree" after the horizontal rule) to actual folders under `work/`. Do not use the example tree under "Path pattern"; that is reference only.
 
 ## Inputs
 
-- **paths.md** – `work/paths.md` if it exists.
-- **work/ folder** – Actual directory structure under `work/`.
+- **paths.md** – `work/paths.md` if it exists. Only the Tree inside the **Editable section** is compared.
+- **work/ folder** – Actual directory structure under `work/` (excluding `paths.md` and `paths.md.template`).
 
 ## Output
 
-Match; or documenter runs document-paths, then Save step 3.
+Match; or report mismatch and, when disk has paths not in tree, hand off to documenter for document-paths; then Save step 3.
 
 ## Process
 
-1. If `work/paths.md` does not exist and `work/paths.md.template` exists and there are no team/space/ticket-id/project folders under `work/`: do not create paths.md; skip (coordinator proceeds to updater).
+1. If `work/paths.md` does not exist: skip (coordinator proceeds to updater).
 
-2. If `work/paths.md` exists: read it, list actual folders under `work/`, verify tree matches.
+2. If `work/paths.md` exists: read the **Editable section** Tree only (under "### Tree"). List actual folders under `work/`. Compare:
+   - **Disk has paths not in tree** – New folders on disk that are not in the Tree. Flag and hand off to **documenter** for [document-paths](../document-paths/SKILL.md) to add them; then Save step 3.
+   - **Tree has paths not on disk** – Tree lists folders that do not exist on disk. Flag only; do not run document-paths (so the tree is not auto-stripped). Report something like "paths.md Tree lists … but those folders are not on disk; update paths.md manually if you removed them."
+   - If both: flag both; hand off to document-paths only for the "disk not in tree" part.
 
-3. If mismatch: hand off to **documenter** for [document-paths](../document-paths/SKILL.md).
-4. Then Save step 3: updater runs [save](../save/SKILL.md).
+3. If no mismatch: coordinator proceeds to Save step 3 (updater runs [save](../save/SKILL.md)).
 
 ## Reference
 
-[Coordinator](../../agents/coordinator.md). [document-paths](../document-paths/SKILL.md).
+[Coordinator](../../agents/coordinator.md). [document-paths](../document-paths/SKILL.md). paths.md: Path pattern = reference; Editable section Tree = compared and updated.

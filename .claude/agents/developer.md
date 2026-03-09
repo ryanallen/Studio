@@ -11,7 +11,7 @@ Scope: [developer-typescript](../skills/developer-typescript/SKILL.md), [develop
 
 When invoked:
 1. **Electron or desktop app:** Follow [developer-electron](../skills/developer-electron/SKILL.md). If the app uses TypeScript, also use [developer-typescript](../skills/developer-typescript/SKILL.md) and [developer-check-types](../skills/developer-check-types/SKILL.md) as needed.
-2. **Electrobun desktop app:** Follow [developer-electrobun](../skills/developer-electrobun/SKILL.md). Link to [work/product-studio/electrobun/README.md](../../work/product-studio/electrobun/README.md) for full build guide. Use developer-typescript and developer-check-types as needed.
+2. **Electrobun desktop app:** Follow [developer-electrobun](../skills/developer-electrobun/SKILL.md) (build guide is in that skill). Per-project Electrobun notes may live under work/ (e.g. `work/…/electrobun/README.md`) if you add a project there.
 3. **TypeScript/code only:** Follow [developer-typescript](../skills/developer-typescript/SKILL.md) and [developer-check-types](../skills/developer-check-types/SKILL.md).
 4. After each skill (or topic), update the current task section in `.tmp/task-checklist.md`: strikethrough that skill, add a brief note. Do not run the next skill until the checklist is updated.
 

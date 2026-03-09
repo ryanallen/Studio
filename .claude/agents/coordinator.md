@@ -36,6 +36,7 @@ Follow this checklist. Do not skip steps.
 | design, /designer-figma | Design |
 | update figma, /update-figma | Update Figma token |
 | sync, sync upstream, /sync-upstream | Sync upstream |
+| gitignore, what's ignored, update ignore, /update-gitignore | Update gitignore |
 | learn (with ticket/URLs) | Learn |
 | propose solutions | Propose solutions |
 | discover | Discover |
