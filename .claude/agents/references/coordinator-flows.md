@@ -2,6 +2,8 @@
 
 Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator Step 1 is verify task (run `/checklist`) before picking a flow.
 
+**Verify task** — Before any Read, Write, Grep, or Shell: run `npm run checklist -- "<user request or summary>"`. The checklist step list is fixed by [scripts/checklist.ts](../../../skills/verify-task/scripts/checklist.ts). After each skill you run, strikethrough it in the current task section and add a note. [verify-task](../../../skills/verify-task/SKILL.md)
+
 **Real commands (run in shell):**
 - `/checklist` = `npm run checklist -- "<request or summary>"`
 - `/clean` = `npm run clean` (empties `.tmp/`)
@@ -10,11 +12,15 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 
 ## Clean
 
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
 1. Run `/clean` (or delegate cleaner → clean skill).
 
 ---
 
 ## Clean up studio
+
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
 
 1. Ask user: clean everything or pick paths to verify.
 2. verifier → verify-docs then document-verification (report to `.tmp/verification-report.md`).
@@ -24,11 +30,15 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 
 ## Design / Figma
 
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
 1. designer → designer-figma. Update checklist.
 
 ---
 
 ## Dev / TypeScript
+
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
 
 1. developer → developer-typescript (and developer-check-types when the user wants type checking run). Developer may use developer-electrobun for Electrobun apps, developer-virtualization when it needs VM context (e.g. document flow). Update checklist after each skill.
 
@@ -36,17 +46,23 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 
 ## Electron
 
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
 1. developer → developer-electron. Update checklist.
 
 ---
 
 ## Electrobun
 
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
 1. developer → developer-electrobun. Update checklist.
 
 ---
 
 ## Discover
+
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
 
 1. researcher → research.
 2. documenter → document.
@@ -62,11 +78,15 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 
 ## Install
 
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
 1. installer → full install (config, choices, MCP, handoff, customizer if present).
 
 ---
 
 ## Learn
+
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
 
 1. researcher → research.
 2. documenter → document (structure findings).
@@ -74,6 +94,8 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 ---
 
 ## Propose solutions
+
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
 
 1. analyst → analyst-diagnostics.
 2. documenter → document (add problems to README).
@@ -89,17 +111,23 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 
 ## Research
 
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
 1. researcher → research. Update checklist.
 
 ---
 
 ## Research Figma
 
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
 1. researcher → research-figma. Update checklist.
 
 ---
 
 ## Save
+
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
 
 1. verifier → verify-paths (compare paths.md Editable section Tree to disk; flag both directions).
 2. If disk has paths not in tree: documenter → document-paths (add to tree only).
@@ -109,11 +137,15 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 
 ## Analyst
 
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
 1. analyst → analyst-diagnostics. Update checklist.
 
 ---
 
 ## Sync upstream
+
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
 
 1. updater → sync-upstream. Update checklist.
 
@@ -121,17 +153,23 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 
 ## Uninstall
 
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
 1. uninstaller → uninstall. Update checklist.
 
 ---
 
 ## Update Figma token
 
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
 1. updater → update-figma. Update checklist.
 
 ---
 
 ## Update gitignore
+
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
 
 1. updater → update-gitignore (explain in plain language what's ignored, or update .gitignore / .git/info/exclude). Update checklist.
 
