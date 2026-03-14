@@ -8,6 +8,39 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 - `/checklist` = `npm run checklist -- "<request or summary>"`
 - `/clean` = `npm run clean` (empties `.tmp/`)
 
+## Contents
+
+Flows are listed alphabetically; Reference is last. Click a link to jump to that section.
+
+- [Analyst](#analyst)
+- [Clean](#clean)
+- [Clean up studio](#clean-up-studio)
+- [Design / Figma](#design--figma)
+- [Dev / TypeScript](#dev--typescript)
+- [Discover](#discover)
+- [Electron](#electron)
+- [Electrobun](#electrobun)
+- [Install](#install)
+- [Learn](#learn)
+- [Propose solutions](#propose-solutions)
+- [Refine / document](#refine--document)
+- [Research](#research)
+- [Research Figma](#research-figma)
+- [Save](#save)
+- [Sync upstream](#sync-upstream)
+- [Uninstall](#uninstall)
+- [Update Figma token](#update-figma-token)
+- [Update gitignore](#update-gitignore)
+- [Reference](#reference)
+
+---
+
+## Analyst
+
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
+1. analyst → analyst-diagnostics. Update checklist.
+
 ---
 
 ## Clean
@@ -44,22 +77,6 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 
 ---
 
-## Electron
-
-**Before each step:** Verify task. **After each step:** Strikethrough + note.
-
-1. developer → developer-electron. Update checklist.
-
----
-
-## Electrobun
-
-**Before each step:** Verify task. **After each step:** Strikethrough + note.
-
-1. developer → developer-electrobun. Update checklist.
-
----
-
 ## Discover
 
 **Before each step:** Verify task. **After each step:** Strikethrough + note.
@@ -73,6 +90,22 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 7. analyst → analyst-diagnostics (propose solutions).
 8. documenter → document (final pass).
 9. documenter → document-ticket (comment on ticket).
+
+---
+
+## Electron
+
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
+1. developer → developer-electron. Update checklist.
+
+---
+
+## Electrobun
+
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
+1. developer → developer-electrobun. Update checklist.
 
 ---
 
@@ -104,6 +137,8 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 
 ## Refine / document
 
+**Before each step:** Verify task. **After each step:** Strikethrough + note.
+
 1. **When the user shared links or context that needs learning:** researcher → research (learn those links/context). Update checklist. Otherwise skip to step 2.
 2. documenter → document. The documenter is the document subagent; it follows [document-agents](../../../skills/document-agents/SKILL.md) for when to use which skills. It uses [document](../../../skills/document/SKILL.md), [document-github](../../../skills/document-github/SKILL.md) when the deliverable is a README, and [document-voice](../../../skills/document-voice/SKILL.md). Update checklist after each skill. When doc work is done, documenter runs its end-of-job file review: research files in scope, add **Files in scope** to the checklist (name, location, content summary), review each file for needed updates, check off with notes.
 
@@ -129,17 +164,9 @@ Fixed sequences. Each step is "run /command" or "delegate to agent". Coordinator
 
 **Before each step:** Verify task. **After each step:** Strikethrough + note.
 
-1. verifier → verify-paths (compare paths.md Editable section Tree to disk; flag both directions).
+1. verifier → verify-paths (compare work/paths.md Editable section Tree to disk; flag both directions).
 2. If disk has paths not in tree: documenter → document-paths (add to tree only).
 3. updater → save (stage and commit). No push.
-
----
-
-## Analyst
-
-**Before each step:** Verify task. **After each step:** Strikethrough + note.
-
-1. analyst → analyst-diagnostics. Update checklist.
 
 ---
 
