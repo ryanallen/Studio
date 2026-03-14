@@ -187,6 +187,8 @@ Then pull with `git pull upstream main` (or say "sync" or [/sync-upstream](.clau
 
 ## Repo structure
 
+**Where documentation lives:** This README is the single overview; agents and skills are described here and in their own `.md` and `SKILL.md` files. When you add or change flows, agents, or skills, update this README so it stays accurate.
+
 ```
 Product Studio/
 ├── AGENTS.md
