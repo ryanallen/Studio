@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Verify Task
 
-Run the checklist **before** any Read, Write, Grep, or Shell. That writes a new section to `.tmp/task-checklist.md` with the steps for this task. After you run each skill in the flow, strikethrough that step in the current task section and add a short note. Do not run the next skill until the checklist is updated.
+**AGENTS gate:** Run the checklist before any Read, Write, Grep, or Shell. Do not skip any step in the flow: run every **verifier → verify-task** when the flow says so, not only the first. If you have not run `npm run checklist -- "<request summary>"` for this request, run it now; then execute every step of the flow in order. That writes a new section to `.tmp/task-checklist.md` with the steps for this task. After you run each skill in the flow, strikethrough that step in the current task section and add a short note. Do not run the next skill until the checklist is updated.
 
 ## Inputs
 
