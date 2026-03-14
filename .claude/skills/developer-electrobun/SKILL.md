@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Developer Electrobun
 
-Best practices for Electrobun: config, views, RPC, security, distribution. [document-voice](../document-voice/SKILL.md).
+Best practices for Electrobun: config, views, RPC, security, distribution. [document-voice](.claude/skills/document-voice/SKILL.md).
 
 ## Inputs
 
@@ -19,7 +19,7 @@ Guidance applied (config, views, RPC, security, bundling). No new repo unless th
 
 ## When to use Electrobun vs Electron
 
-Electrobun fits when you want **smaller bundles** (~14 MB), **tiny updates** (~14 KB patches), **fast startup** (&lt;50 ms), and **one TypeScript stack** (no preload bridge). Use [developer-electron](../developer-electron/SKILL.md) when you need the mature Electron ecosystem or existing native addons. Same security ideas: sandbox untrusted content, minimal exposed API, validate cross-boundary data.
+Electrobun fits when you want **smaller bundles** (~14 MB), **tiny updates** (~14 KB patches), **fast startup** (&lt;50 ms), and **one TypeScript stack** (no preload bridge). Use [developer-electron](.claude/skills/developer-electron/SKILL.md) when you need the mature Electron ecosystem or existing native addons. Same security ideas: sandbox untrusted content, minimal exposed API, validate cross-boundary data.
 
 ## Process
 
@@ -32,7 +32,7 @@ Electrobun fits when you want **smaller bundles** (~14 MB), **tiny updates** (~1
 ### 2. Security and sandbox
 
 - For **untrusted or third-party content** (arbitrary URLs, user-provided links), set **sandbox: true** on the window or `<electrobun-webview>`. Sandbox disables RPC and allows only events.
-- Use **typed RPC** with a shared schema; do not expose a generic "run anything" API (same idea as Electron's whitelisted preload; see [developer-electron](../developer-electron/SKILL.md)).
+- Use **typed RPC** with a shared schema; do not expose a generic "run anything" API (same idea as Electron's whitelisted preload; see [developer-electron](.claude/skills/developer-electron/SKILL.md)).
 - Validate RPC params and responses; treat the webview as untrusted when it can load external content.
 
 ### 3. RPC and IPC
@@ -66,4 +66,4 @@ All from [Blackboard Open Source](https://blackboard.sh/opensource/).
 
 ## Reference
 
-[document-voice](../document-voice/SKILL.md). [developer-electron](../developer-electron/SKILL.md) for security and preload-style API design. [developer-typescript](../developer-typescript/SKILL.md) for TypeScript. [Electrobun docs](https://blackboard.sh/electrobun/docs/).
+[document-voice](.claude/skills/document-voice/SKILL.md). [developer-electron](.claude/skills/developer-electron/SKILL.md) for security and preload-style API design. [developer-typescript](.claude/skills/developer-typescript/SKILL.md) for TypeScript. [Electrobun docs](https://blackboard.sh/electrobun/docs/).

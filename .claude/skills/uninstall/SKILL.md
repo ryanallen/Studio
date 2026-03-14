@@ -1,6 +1,6 @@
 ---
 name: uninstall
-description: Remove Product Studio MCP entries from the user's Claude config and Cursor's project MCP config.
+description: Remove Product Studio MCP entries from the user's Claude config and Cursor's project MCP config. Use when user says uninstall, /uninstall.
 disable-model-invocation: true
 ---
 
@@ -36,4 +36,4 @@ Tell user to fully restart Claude Code.
 
 ## Reference
 
-[install-mcp](../install-mcp/SKILL.md) – Adds these MCPs. [Coordinator](../../agents/coordinator.md) – Uninstaller subagent.
+[install-mcp](.claude/skills/install-mcp/SKILL.md) adds these MCPs. [coordinator](.claude/agents/coordinator.md) runs the uninstaller.

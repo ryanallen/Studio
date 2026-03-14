@@ -1,6 +1,6 @@
 ---
 name: sync-upstream
-description: Sync from upstream remote main branch and push to origin main.
+description: Sync from upstream remote main branch and push to origin main. Use when user says sync, sync upstream, /sync-upstream.
 disable-model-invocation: true
 ---
 
@@ -26,4 +26,4 @@ Local main merged from upstream; origin main updated. Result reported.
 
 ## Reference
 
-[Coordinator](../../agents/coordinator.md) – Updater runs this. See README for adding upstream to a working repo.
+[coordinator](.claude/agents/coordinator.md) runs the updater for this. See README for adding upstream to a working repo.

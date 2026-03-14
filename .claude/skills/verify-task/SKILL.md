@@ -11,7 +11,7 @@ disable-model-invocation: true
 ## Inputs
 
 - **Task summary** – The user request or a short summary. Passed to the checklist script so it can pick the flow and steps.
-- **Steps** – The script always emits `verify-task` first, then `document-voice`, then the flow’s steps (from [scripts/checklist.ts](scripts/checklist.ts), matching [coordinator-flows](../../agents/references/coordinator-flows.md)). One line per skill. Example for Save: `verify-task`, `document-voice`, `verify-paths`, `document-paths` (if needed), `save`. Example for Refine: `verify-task`, `document-voice`, `research`, `document`, `document-github`.
+- **Steps** – The script always emits `verify-task` first, then `document-voice`, then the flow’s steps (from [checklist script](.claude/skills/verify-task/scripts/checklist.ts), the single source of truth for phrase to flow; coordinator flow table mirrors it). One line per skill. Example for Save: `verify-task`, `document-voice`, `verify-paths`, `document-paths` (if needed), `save`. Example for Refine: `verify-task`, `document-voice`, `research`, `document`, `document-github`.
 
 ## Output
 
@@ -29,4 +29,4 @@ disable-model-invocation: true
 
 ## Reference
 
-Coordinator flows run this before each step (except Save). **Command:** `npm run checklist -- "<summary>"` or `/checklist`. [scripts/checklist.ts](scripts/checklist.ts). [coordinator-flows](../../agents/references/coordinator-flows.md). [deterministic-workflows](../../agents/references/deterministic-workflows.md).
+Coordinator flows run this before each step (except Save). **Command:** `npm run checklist -- "<summary>"` or `/checklist`. [checklist script](.claude/skills/verify-task/scripts/checklist.ts) [coordinator-flows](.claude/agents/references/coordinator-flows.md) [deterministic-workflows](.claude/agents/references/deterministic-workflows.md)

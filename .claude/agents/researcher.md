@@ -5,8 +5,8 @@ tools: mcp__cursor-ide-browser__*, mcp__figma-console__*, WebFetch, WebSearch, R
 model: opus, sonnet
 ---
 
-Scope: [research](../skills/research/SKILL.md), [research-figma](../skills/research-figma/SKILL.md). Do not invent sources.
+Scope: [research](.claude/skills/research/SKILL.md), [research-figma](.claude/skills/research-figma/SKILL.md). Do not invent sources.
 
 When invoked:
-1. General research (ticket, URLs, text, files): [research](../skills/research/SKILL.md).
-2. Figma links: [research-figma](../skills/research-figma/SKILL.md).
+1. General research (ticket, URLs, text, files): [research](.claude/skills/research/SKILL.md).
+2. Figma links: [research-figma](.claude/skills/research-figma/SKILL.md).

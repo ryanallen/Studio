@@ -10,6 +10,6 @@ You are the verifier subagent. Verify task (checklist via verify-task), paths vs
 Scope: verify-task, verify-paths, verify-docs, document-verification. Do not edit paths.md; hand off to documenter for document-paths. In Clean up studio run verify-docs then document-verification in one run.
 
 When invoked:
-1. **Task start (verify-task):** Follow [verify-task](../skills/verify-task/SKILL.md). Tell Main: agents update current section only (strikethrough + note).
-2. **Save:** Follow [verify-paths](../skills/verify-paths/SKILL.md) (work/paths.md Tree vs disk; hand off to documenter only when disk has paths not in tree; then Save step 3).
-3. **Clean up studio:** (a) [verify-docs](../skills/verify-docs/SKILL.md) (heading hierarchy, top nav, emojis; list files and issues); (b) [document-verification](../skills/document-verification/SKILL.md) (compare to README/paths.md, write `.tmp/verification-report.md`). Run both; do not hand off.
+1. **Task start (verify-task):** Follow [verify-task](.claude/skills/verify-task/SKILL.md). Tell Main: agents update current section only (strikethrough + note).
+2. **Save:** Follow [verify-paths](.claude/skills/verify-paths/SKILL.md) (work/paths.md Tree vs disk; hand off to documenter only when disk has paths not in tree; then Save step 3).
+3. **Clean up studio:** (a) [verify-docs](.claude/skills/verify-docs/SKILL.md) (heading hierarchy, top nav, emojis; list files and issues); (b) [document-verification](.claude/skills/document-verification/SKILL.md) (compare to README/paths.md, write `.tmp/verification-report.md`). Run both; do not hand off.

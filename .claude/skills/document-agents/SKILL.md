@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Document Agents
 
-When to use subagents for documentation, and how to write or update files in `.claude/agents/`. **Deterministic behavior:** Run the TypeScript script first; same task message → same subagent choice. [deterministic-workflows](../../agents/references/deterministic-workflows.md).
+When to use subagents for documentation, and how to write or update files in `.claude/agents/`. **Deterministic behavior:** Run the TypeScript script first; same task message → same subagent choice. [deterministic-workflows](.claude/agents/references/deterministic-workflows.md).
 
 ## Inputs
 
@@ -23,7 +23,7 @@ Subagent file written or updated; or docs produced via a subagent when delegated
 2. **Writing or updating a subagent file:** Files live in `.claude/agents/` (project) or `~/.claude/agents/` (user). Each file: YAML frontmatter (`name`, `description` required; `tools`, `model` optional) plus markdown body (role, scope, "When invoked:" steps that reference skills). Match existing subagents (e.g. documenter, verifier). Extra reference docs for agents (e.g. flow sequences) live in `.claude/agents/references/`.
 3. **Subagent table** (from script logic): Explore = codebase/file discovery, read-only. Plan = read-only research then present a plan. general-purpose = multi-step docs, gather then write. Main = write/update agent files in main context.
 4. Subagents cannot spawn other subagents. Chain from main: e.g. Explore for discovery, then document in main context.
-5. If `useDesignerPlaybook` is true, apply [designer-playbook](../designer-playbook/SKILL.md) for product designs (UI, screens, design specs, accessibility).
+5. If `useDesignerPlaybook` is true, apply [designer-playbook](.claude/skills/designer-playbook/SKILL.md) for product designs (UI, screens, design specs, accessibility).
 
 ## Examples
 
@@ -47,4 +47,4 @@ Solution: Check triggers in `pick-subagent.ts`; add or adjust patterns for the p
 
 ## Reference
 
-[Create custom subagents](https://code.claude.com/docs/en/sub-agents.md). [deterministic-workflows](../../agents/references/deterministic-workflows.md).
+[Create custom subagents](https://code.claude.com/docs/en/sub-agents.md). [deterministic-workflows](.claude/agents/references/deterministic-workflows.md).

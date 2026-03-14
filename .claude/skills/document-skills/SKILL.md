@@ -116,7 +116,7 @@ For injecting shell output before the skill runs, see [Inject dynamic context](h
 
 **User says:** "Update the save skill to mention update-gitignore."
 
-**Actions:** Open the save skill's SKILL.md (e.g. `skills/save/SKILL.md`). Add the new step or reference in Process. Update description if trigger phrases change. Sync coordinator and [references/coordinator-flows.md](../../agents/references/coordinator-flows.md) if the Save flow changes.
+**Actions:** Open the save skill's SKILL.md (e.g. `skills/save/SKILL.md`). Add the new step or reference in Process. Update description if trigger phrases change. Sync coordinator and [coordinator-flows](.claude/agents/references/coordinator-flows.md) if the Save flow changes.
 
 ## Troubleshooting
 
@@ -134,15 +134,15 @@ Solution: Add negative triggers (e.g. "Do NOT use for simple data exploration; u
 
 **Wrong folder name.**  
 Cause: Folder has spaces, underscores, or capitals.  
-Solution: Rename to kebab-case. Update `name` in SKILL.md to match. Update all references (coordinator, agents, README, package.json, checklist script, [agents/references/](../../agents/references/)).
+Solution: Rename to kebab-case. Update `name` in SKILL.md to match. Update all references (coordinator, agents, README, package.json, checklist script, [agents references](.claude/agents/references/)).
 
 ## After writing
 
-- **Coordinator sync:** If description or flow role changed, update [coordinator-flows.md](../../agents/references/coordinator-flows.md) and coordinator agent so flow table and descriptions stay in sync.
-- **Rename/move:** Update all references: coordinator, agents, README, package.json, [checklist script](verify-task/scripts/checklist.ts), coordinator-flows.md, .gitignore.
+- **Coordinator sync:** Phrase → flow is defined in [checklist script](.claude/skills/verify-task/scripts/checklist.ts) (single source of truth). If description or flow role changed, update the checklist script first, then [coordinator-flows](.claude/agents/references/coordinator-flows.md) and coordinator agent flow lookup table so descriptions and table stay in sync with the script.
+- **Rename/move:** Update all references: coordinator, agents, README, package.json, [checklist script](.claude/skills/verify-task/scripts/checklist.ts), coordinator-flows.md, .gitignore.
 
 ## Reference
 
-[Official skills reference](https://code.claude.com/docs/en/skills.md) – frontmatter, control who invokes a skill, run in subagent, substitutions. [Coordinator](../../agents/coordinator.md) – Flow table and agent descriptions should follow **`[What it does] + [When to use it] + [Key capabilities]`** and match the phrases users say.
+[Official skills reference](https://code.claude.com/docs/en/skills.md) – frontmatter, control who invokes a skill, run in subagent, substitutions. [Coordinator](.claude/agents/coordinator.md) – Flow lookup table mirrors [checklist script](.claude/skills/verify-task/scripts/checklist.ts) TRIGGERS. Skill descriptions should follow **`[What it does] + [When to use it] + [Key capabilities]`** and "Use when user says …" phrases should align with the checklist script.
 
 [Complete guide to building skills](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf) – progressive disclosure, description formula, good/bad examples, optional frontmatter, triggering and troubleshooting, instructions best practices.

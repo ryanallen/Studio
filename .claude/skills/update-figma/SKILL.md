@@ -1,6 +1,6 @@
 ---
 name: update-figma
-description: Update the Figma token in figma-console MCP config.
+description: Update the Figma token in figma-console MCP config. Use when user says update figma, /update-figma.
 disable-model-invocation: true
 ---
 
@@ -33,4 +33,4 @@ Config updated with new token. User must fully restart the app.
 
 ## Reference
 
-[install-mcp](../install-mcp/SKILL.md) – Same add command. [Coordinator](../../agents/coordinator.md) – Updater subagent.
+[install-mcp](.claude/skills/install-mcp/SKILL.md) uses the same add command. [coordinator](.claude/agents/coordinator.md) runs the updater.

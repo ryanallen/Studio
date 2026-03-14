@@ -5,7 +5,7 @@ tools: Read, Write, Bash, Glob, Grep, TodoWrite
 model: opus, sonnet
 ---
 
-Scope: [analyst-diagnostics](../skills/analyst-diagnostics/SKILL.md) only.
+Scope: [analyst-diagnostics](.claude/skills/analyst-diagnostics/SKILL.md) only.
 
 When invoked:
-1. Follow [analyst-diagnostics](../skills/analyst-diagnostics/SKILL.md).
+1. Follow [analyst-diagnostics](.claude/skills/analyst-diagnostics/SKILL.md).

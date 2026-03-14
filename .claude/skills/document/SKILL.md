@@ -6,11 +6,11 @@ disable-model-invocation: true
 
 # Document
 
-One README per project (path from [work/paths.md](../../work/paths.md)) as the main doc. Supplementary docs go in the project's `assets/docs/` folder with kebab-case filenames (e.g. `architecture-notes.md`). Clear headings, diagrams when they help, link to sources. **Deterministic behavior:** Run the TypeScript script for the chosen document type to get the section outline; same document type → same section order. [deterministic-workflows](../../agents/references/deterministic-workflows.md).
+One README per project (path from [work/paths.md](work/paths.md)) as the main doc. Supplementary docs go in the project's `assets/docs/` folder with kebab-case filenames (e.g. `architecture-notes.md`). Clear headings, diagrams when they help, link to sources. **Deterministic behavior:** Run the TypeScript script for the chosen document type to get the section outline; same document type → same section order. [deterministic-workflows](.claude/agents/references/deterministic-workflows.md).
 
 ## Inputs
 
-- **Project path** – [work/paths.md](../../work/paths.md).
+- **Project path** – [work/paths.md](work/paths.md).
 - **Source material** – Research, notes, or findings.
 - **Document type** – `research`, `analysis`, `solutions`, or `project-overview`.
 
@@ -38,7 +38,7 @@ One README (main doc). When needed, supplementary docs in the project's `assets/
 
 ### README structure (project-overview)
 
-Section order and headings come from [scripts/doc-structure.ts](scripts/doc-structure.ts) for document type `project-overview`. Only add a section if you have real content. If the source doesn't have it, skip it. Link back to the source where it makes sense.
+Section order and headings come from [doc-structure script](.claude/skills/document/scripts/doc-structure.ts) for document type `project-overview`. Only add a section if you have real content. If the source doesn't have it, skip it. Link back to the source where it makes sense.
 
 ```markdown
 # {Project Name}
@@ -90,4 +90,4 @@ Learnings. Recommendations. Links to new docs.
 
 ## Reference
 
-[work/paths.md](../../work/paths.md). [Coordinator](../../agents/coordinator.md). [document-github](../document-github/SKILL.md). [document-skills](../document-skills/SKILL.md). Refine flow may run researcher first when the user shared links or context; then documenter. [deterministic-workflows](../../agents/references/deterministic-workflows.md).
+[work/paths.md](work/paths.md). [coordinator](.claude/agents/coordinator.md). [document-github](.claude/skills/document-github/SKILL.md). [document-skills](.claude/skills/document-skills/SKILL.md). Refine flow may run researcher first when the user shared links or context; then documenter. [deterministic-workflows](.claude/agents/references/deterministic-workflows.md).

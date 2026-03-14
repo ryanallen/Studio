@@ -65,4 +65,4 @@ Why: least privilege; the user explicitly decides what the VM can see.
 
 ## Reference
 
-[developer](../../agents/developer.md) – Invoked by document flow; developer uses this skill when it needs VM context.
+[developer](.claude/agents/developer.md) – Invoked by document flow; developer uses this skill when it needs VM context.

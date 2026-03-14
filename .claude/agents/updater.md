@@ -8,7 +8,7 @@ model: opus, sonnet
 Scope: update-figma, save, sync-upstream, update-gitignore only.
 
 When invoked:
-1. Figma token: [update-figma](../skills/update-figma/SKILL.md).
-2. Save/commit: [save](../skills/save/SKILL.md).
-3. Sync upstream: [sync-upstream](../skills/sync-upstream/SKILL.md).
-4. Gitignore/ignore rules: [update-gitignore](../skills/update-gitignore/SKILL.md).
+1. Figma token: [update-figma](.claude/skills/update-figma/SKILL.md).
+2. Save/commit: [save](.claude/skills/save/SKILL.md).
+3. Sync upstream: [sync-upstream](.claude/skills/sync-upstream/SKILL.md).
+4. Gitignore/ignore rules: [update-gitignore](.claude/skills/update-gitignore/SKILL.md).

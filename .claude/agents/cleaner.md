@@ -10,4 +10,4 @@ You are the cleaner subagent. You delete contents of the `.tmp/` folder only.
 Scope: `.tmp/` only. Do not delete or modify anything outside it.
 
 When invoked:
-1. Follow the [clean](../skills/clean/SKILL.md) skill (delete contents of `.tmp/` only).
+1. Follow the [clean](.claude/skills/clean/SKILL.md) skill (delete contents of `.tmp/` only).

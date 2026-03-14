@@ -15,7 +15,7 @@ Turn verifier output into one report under `.tmp/` for the user to check.
 
 ## Output
 
-One file (e.g. `.tmp/verification-report.md`). Do not commit. User can run [clean](../clean/SKILL.md) after.
+One file (e.g. `.tmp/verification-report.md`). Do not commit. User can run [clean](.claude/skills/clean/SKILL.md) after.
 
 ## Process
 
@@ -25,4 +25,4 @@ One file (e.g. `.tmp/verification-report.md`). Do not commit. User can run [clea
 
 ## Reference
 
-[verify-docs](../verify-docs/SKILL.md) – Produces input. [clean](../clean/SKILL.md) – Clears `.tmp/` after verification.
+[verify-docs](.claude/skills/verify-docs/SKILL.md) – Produces input. [clean](.claude/skills/clean/SKILL.md) – Clears `.tmp/` after verification.

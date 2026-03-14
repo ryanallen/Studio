@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Developer Check Types
 
-Run the project's type checker (e.g. `tsc --noEmit` or the script in package.json). Use after changing TypeScript code. Explain any errors in simple words; use [document-voice](../document-voice/SKILL.md) when talking to the user.
+Run the project's type checker (e.g. `tsc --noEmit` or the script in package.json). Use after changing TypeScript code. Explain any errors in simple words; use [document-voice](.claude/skills/document-voice/SKILL.md) when talking to the user.
 
 ## When to use
 
@@ -17,7 +17,7 @@ Run the project's type checker (e.g. `tsc --noEmit` or the script in package.jso
 ## Process
 
 1. Find how the project runs type checking (e.g. `npm run check:types`, `pnpm exec tsc --noEmit`, or `npx tsc --noEmit`). Run it from the right directory (package or repo root, per project).
-2. If there are errors: read file and line, fix the type issue (use [developer-typescript](../developer-typescript/SKILL.md) for patterns). Re-run until clean.
+2. If there are errors: read file and line, fix the type issue (use [developer-typescript](.claude/skills/developer-typescript/SKILL.md) for patterns). Re-run until clean.
 3. When explaining to the user: use plain language, explain terms the first time, no jargon.
 
 ## Output
@@ -27,4 +27,4 @@ Run the project's type checker (e.g. `tsc --noEmit` or the script in package.jso
 
 ## Reference
 
-[developer-typescript](../developer-typescript/SKILL.md) – type patterns. [document-voice](../document-voice/SKILL.md) – how to explain.
+[developer-typescript](.claude/skills/developer-typescript/SKILL.md) – type patterns. [document-voice](.claude/skills/document-voice/SKILL.md) – how to explain.

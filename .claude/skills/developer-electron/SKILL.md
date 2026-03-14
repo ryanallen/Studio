@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Developer Electron
 
-When you build an Electron app, follow these practices: security, preload, process model, packaging, common traps. [document-voice](../document-voice/SKILL.md).
+When you build an Electron app, follow these practices: security, preload, process model, packaging, common traps. [document-voice](.claude/skills/document-voice/SKILL.md).
 
 ## Inputs
 
@@ -75,8 +75,8 @@ Guidance applied (secure config, preload, architecture, packaging). No new repo 
 
 ## Alternative: Electrobun
 
-For **smaller bundles** (~14 MB), **tiny updates** (~14 KB patches), **faster startup** (&lt;50 ms), and a **single TypeScript stack** (no preload bridge), use [developer-electrobun](../developer-electrobun/SKILL.md). Stay with Electron when you need the mature ecosystem or existing native addons.
+For **smaller bundles** (~14 MB), **tiny updates** (~14 KB patches), **faster startup** (&lt;50 ms), and a **single TypeScript stack** (no preload bridge), use [developer-electrobun](.claude/skills/developer-electrobun/SKILL.md). Stay with Electron when you need the mature ecosystem or existing native addons.
 
 ## Reference
 
-[document-voice](../document-voice/SKILL.md). [developer-typescript](../developer-typescript/SKILL.md) for TypeScript. [developer-electrobun](../developer-electrobun/SKILL.md) for a lighter option (smaller bundles, tiny updates, TypeScript-only).
+[document-voice](.claude/skills/document-voice/SKILL.md). [developer-typescript](.claude/skills/developer-typescript/SKILL.md) for TypeScript. [developer-electrobun](.claude/skills/developer-electrobun/SKILL.md) for a lighter option (smaller bundles, tiny updates, TypeScript-only).

@@ -62,4 +62,4 @@ If the text mentions something with a URL or path, add the link. Link: slash com
 
 ## Reference
 
-[GitHub: Embedding animated GIF (81359)](https://github.com/orgs/community/discussions/81359). [document](../document/SKILL.md). [Extend Claude with skills](https://code.claude.com/docs/en/skills.md).
+[GitHub: Embedding animated GIF (81359)](https://github.com/orgs/community/discussions/81359). [document](.claude/skills/document/SKILL.md). [Extend Claude with skills](https://code.claude.com/docs/en/skills.md).

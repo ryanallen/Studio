@@ -31,4 +31,4 @@ Bridge extracted; user has imported the plugin in Figma Desktop and can keep it 
 
 ## Reference
 
-[designer-figma](../designer-figma/SKILL.md) – Bridge path. [update-figma](../update-figma/SKILL.md) – Token renewal.
+[designer-figma](.claude/skills/designer-figma/SKILL.md) (bridge path). [update-figma](.claude/skills/update-figma/SKILL.md) – Token renewal.

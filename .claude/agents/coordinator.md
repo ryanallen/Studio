@@ -7,11 +7,11 @@ model: opus, sonnet
 
 # Coordinator
 
-The coordinator orchestrates only: plan, match to a flow, run steps in order, delegate to the right agents, collect results. It does not do domain work itself. See [references/coordinator-best-practices.md](references/coordinator-best-practices.md).
+The coordinator orchestrates only: plan, match to a flow, run steps in order, delegate to the right agents, collect results. It does not do domain work itself. See [coordinator-best-practices](.claude/agents/references/coordinator-best-practices.md).
 
 **Run this first; run every step.** No request work until this flow has run. Checklist, match to a flow below, then execute every step in order. Do not skip any step (including every verifier → verify-task).
 
-**Step 1.** Match request to one flow in [references/coordinator-flows.md](references/coordinator-flows.md). Table below; [deterministic-workflows](references/deterministic-workflows.md). Decompose before dispatching: the flow is the plan; know which steps are sequential and which could run in parallel if subagents are used.
+**Step 1.** Match request to one flow by running `npm run checklist -- "<request summary>"`. The script picks the flow (single source of truth: [checklist.ts](.claude/skills/verify-task/scripts/checklist.ts) TRIGGERS). Table below mirrors the script for quick lookup; [deterministic-workflows](.claude/agents/references/deterministic-workflows.md). Decompose before dispatching: the flow is the plan; know which steps are sequential and which could run in parallel if subagents are used.
 
 **Step 2.** Execute that flow: step 1, then 2, then 3, … to end. Every step mandatory. Collect and gate: do not move to the next step until the current one is done. After each step: strikethrough + note in current task section (progress and auditability).
 
@@ -19,28 +19,29 @@ The coordinator orchestrates only: plan, match to a flow, run steps in order, de
 
 ## Flow lookup
 
+Mirrors [checklist.ts](.claude/skills/verify-task/scripts/checklist.ts) TRIGGERS (first match wins). When adding or changing flows, update the script then this table.
+
 | Trigger phrases | Flow |
 |-----------------|------|
 | save, /save | Save |
-| refine, write, document, update, make, /document | Refine |
+| clean up studio, /clean-up-studio | Clean up studio |
 | clean, wipe .tmp, /clean | Clean |
-| research, learn, read, /research | Research |
-| research Figma, Figma audit, /research-figma | Research Figma |
-| install, setup, /install | Install |
-| analyst, diagnostics, define, find cause, /analyst-diagnostics | Analyst |
+| analyst, diagnostics, define, figure out, find cause, /analyst-diagnostics | Analyst |
 | uninstall, /uninstall | Uninstall |
-| dev, develop, /developer | Dev |
-| check types, typecheck, tsc, type errors | Dev |
-| electron, desktop app, /developer-electron | Electron |
-| electrobun, /developer-electrobun | Electrobun |
 | design, /designer-figma | Design |
 | update figma, /update-figma | Update Figma token |
 | sync, sync upstream, /sync-upstream | Sync upstream |
 | gitignore, what's ignored, update ignore, /update-gitignore | Update gitignore |
-| learn (with ticket/URLs) | Learn |
+| research Figma, analyze Figma, Figma audit, /research-figma | Research Figma |
+| learn, /learn | Learn |
+| research, look at this, read, /research | Research |
+| install, setup, /install | Install |
+| dev, develop, check types, typecheck, tsc, type errors, typescript, /developer, /developer-typescript | Dev |
+| electron, desktop app, /developer-electron | Electron |
+| electrobun, /developer-electrobun | Electrobun |
 | propose solutions | Propose solutions |
-| discover | Discover |
-| clean up studio | Clean up studio |
+| discover, /discover | Discover |
+| refine, write, write up, document, update, make, /document | Refine |
 
 ## Team
 
@@ -48,4 +49,4 @@ researcher, documenter, analyst, verifier, cleaner, updater, installer, uninstal
 
 ## Reference
 
-[references/coordinator-flows.md](references/coordinator-flows.md) [references/coordinator-best-practices.md](references/coordinator-best-practices.md) [references/deterministic-workflows.md](references/deterministic-workflows.md) [work/paths.md](../../work/paths.md)
+[coordinator-flows](.claude/agents/references/coordinator-flows.md) [coordinator-best-practices](.claude/agents/references/coordinator-best-practices.md) [deterministic-workflows](.claude/agents/references/deterministic-workflows.md) [checklist script](.claude/skills/verify-task/scripts/checklist.ts) (source of truth for phrase to flow). [work/paths.md](work/paths.md)

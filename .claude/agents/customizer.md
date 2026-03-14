@@ -5,7 +5,7 @@ tools: Read, Bash
 model: opus, sonnet
 ---
 
-Scope: [install-custom](../skills/install-custom/SKILL.md) when it exists. Do not edit the skill unless the user asks.
+Scope: [install-custom](.claude/skills/install-custom/SKILL.md) when it exists. Do not edit the skill unless the user asks.
 
 When invoked:
 1. If install-custom exists, follow it; else nothing.

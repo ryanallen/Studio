@@ -25,10 +25,10 @@ Same request or doc type → same flow, outline, subagent. Model fills content.
 
 ## Where the logic lives
 
-- [checklist.ts](../../../skills/verify-task/scripts/checklist.ts) – FLOWS and TRIGGERS; flow and steps per request.
-- [doc-structure.ts](../../../skills/document/scripts/doc-structure.ts) – Section outlines per document type.
-- [pick-subagent.ts](../../../skills/document-agents/scripts/pick-subagent.ts) – Subagent and designer-playbook flag per message.
+- [checklist script](.claude/skills/verify-task/scripts/checklist.ts) – **Single source of truth** for phrase → flow. FLOWS and TRIGGERS; flow and steps per request. Coordinator flow lookup table mirrors TRIGGERS; update script first, then the table.
+- [doc-structure script](.claude/skills/document/scripts/doc-structure.ts) – Section outlines per document type.
+- [pick-subagent script](.claude/skills/document-agents/scripts/pick-subagent.ts) – Subagent and designer-playbook flag per message.
 
 ## Reference
 
-[Coordinator](.claude/agents/coordinator.md) [verify-task](.claude/skills/verify-task/SKILL.md) [document](.claude/skills/document/SKILL.md) [document-agents](.claude/skills/document-agents/SKILL.md) [how-it-works.md](how-it-works.md)
+[Coordinator](.claude/agents/coordinator.md) [verify-task](.claude/skills/verify-task/SKILL.md) [document](.claude/skills/document/SKILL.md) [document-agents](.claude/skills/document-agents/SKILL.md) [how-it-works](.claude/agents/references/how-it-works.md)

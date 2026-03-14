@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Document Paths
 
-Add new paths under `work/` to the **Tree in the Editable section** of `work/paths.md` (the block under "### Tree" after the horizontal rule). Do not edit the example under "Path pattern"; that is reference only. Then Save step 3 (updater runs [save](../save/SKILL.md)).
+Add new paths under `work/` to the **Tree in the Editable section** of `work/paths.md` (the block under "### Tree" after the horizontal rule). Do not edit the example under "Path pattern"; that is reference only. Then Save step 3 (updater runs [save](.claude/skills/save/SKILL.md)).
 
 ## Inputs
 
@@ -25,4 +25,4 @@ Add new paths under `work/` to the **Tree in the Editable section** of `work/pat
 
 ## Reference
 
-[Coordinator](../../agents/coordinator.md). paths.md: Path pattern = reference; Editable section Tree = compared and updated.
+[coordinator](.claude/agents/coordinator.md). paths.md: Path pattern = reference; Editable section Tree = compared and updated.

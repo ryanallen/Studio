@@ -18,7 +18,7 @@ Tell the user in plain English what is being ignored and by which file. Update `
 - **Explain:** A short plain-language summary: which file ignores what, and what that means for their repo and for this clone only.
 - **Update:** The chosen file edited, plus one sentence stating what was added or removed.
 
-Use [document-voice](../document-voice/SKILL.md): clear, casual, no jargon. No groveling or filler.
+Use [document-voice](.claude/skills/document-voice/SKILL.md): clear, casual, no jargon. No groveling or filler.
 
 ## Process
 
@@ -34,4 +34,4 @@ Use [document-voice](../document-voice/SKILL.md): clear, casual, no jargon. No g
 
 ## Reference
 
-[document-voice](../document-voice/SKILL.md). [work/paths.md](../../work/paths.md) for work folder layout. [README Paths and Work folder](../../README.md) for how work folder and Git interact.
+[document-voice](.claude/skills/document-voice/SKILL.md). [work/paths.md](work/paths.md) for work folder layout. [README Paths and Work folder](README.md) for how work folder and Git interact.

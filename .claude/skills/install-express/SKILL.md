@@ -30,8 +30,8 @@ Hidden files shown (or instructions given), all MCPs recorded, Figma token colle
    - **How to get it** – GitHub → Settings → Developer settings → Personal access tokens. Create (e.g. "GitHub MCP", scopes: repo; for Projects add read:project, project), copy.
    - **Ask** – Paste your GitHub token.
 
-Then resume at step 3 (install-mcp) of the **Install** workflow in [Coordinator](../../agents/coordinator.md).
+Then resume at step 3 (install-mcp) of the **Install** workflow in [coordinator](.claude/agents/coordinator.md).
 
 ## Reference
 
-[Coordinator](../../agents/coordinator.md) – Install workflow. [install-choices](../install-choices/SKILL.md) – Where express is chosen.
+[coordinator](.claude/agents/coordinator.md) – Install workflow. [install-choices](.claude/skills/install-choices/SKILL.md) – Where express is chosen.

@@ -24,4 +24,4 @@ None. Reads repo (git remote) and optional user input if git fails.
 
 ## Reference
 
-[Coordinator](../../agents/coordinator.md) – Install workflow.
+[coordinator](.claude/agents/coordinator.md) – Install workflow.

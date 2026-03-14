@@ -14,7 +14,7 @@ None. User answers the prompt.
 
 ## Output
 
-Choice recorded. If express, run [install-express](../install-express/SKILL.md) then installer continues at install-mcp. If custom, continue with the steps below.
+Choice recorded. If express, run [install-express](.claude/skills/install-express/SKILL.md) then installer continues at install-mcp. If custom, continue with the steps below.
 
 ## Process
 
@@ -39,4 +39,4 @@ Custom path (when user did not choose express).
 
 ## Reference
 
-[Coordinator](../../agents/coordinator.md) – Install workflow. [install-express](../install-express/SKILL.md) – Express path.
+[coordinator](.claude/agents/coordinator.md) – Install workflow. [install-express](.claude/skills/install-express/SKILL.md) – Express path.

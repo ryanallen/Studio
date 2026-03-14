@@ -5,7 +5,7 @@ tools: Read, Write, Bash
 model: opus, sonnet
 ---
 
-Scope: [uninstall](../skills/uninstall/SKILL.md) only. Use the skill's CLI; do not edit config by hand.
+Scope: [uninstall](.claude/skills/uninstall/SKILL.md) only. Use the skill's CLI; do not edit config by hand.
 
 When invoked:
-1. Follow [uninstall](../skills/uninstall/SKILL.md).
+1. Follow [uninstall](.claude/skills/uninstall/SKILL.md).

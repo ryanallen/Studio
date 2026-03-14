@@ -20,10 +20,10 @@ One comment on the ticket: `Deliverables: {full URL}`.
 
 ## Process
 
-1. **Base URL** – Read "Deliverables base URL:" from [work/paths.md](../../work/paths.md). If absent, ask the user.
+1. **Base URL** – Read "Deliverables base URL:" from [work/paths.md](work/paths.md). If absent, ask the user.
 2. **Full URL** – Append the project path (from paths.md) to the base URL.
 3. **Post** – Use atlassian-rovo MCP to add a comment on the ticket with that link.
 
 ## Reference
 
-[work/paths.md](../../work/paths.md) – Project path and Deliverables base URL.
+[work/paths.md](work/paths.md) – Project path and Deliverables base URL.

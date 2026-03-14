@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Designer Playbook
 
-Use when the documenter or designer is creating, documenting, or reviewing digital product designs. Apply as the baseline to design to and review against. [document-voice](../document-voice/SKILL.md).
+Use when the documenter or designer is creating, documenting, or reviewing digital product designs. Apply as the baseline to design to and review against. [document-voice](.claude/skills/document-voice/SKILL.md).
 
 ## Inputs
 
@@ -92,4 +92,4 @@ Accessibility is a legal requirement (ADA, Section 508) and ethical baseline. Te
 
 ## Reference
 
-[document](../document/SKILL.md). [document-agents](../document-agents/SKILL.md). [designer-figma](../designer-figma/SKILL.md). [document-voice](../document-voice/SKILL.md).
+[document](.claude/skills/document/SKILL.md). [document-agents](.claude/skills/document-agents/SKILL.md). [designer-figma](.claude/skills/designer-figma/SKILL.md). [document-voice](.claude/skills/document-voice/SKILL.md).

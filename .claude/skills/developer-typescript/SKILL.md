@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Developer TypeScript
 
-Use when the user needs TypeScript help: typing, narrowing, generics, strict mode, declaration files, or moving from JavaScript. Plain language; explain terms the first time. [document-voice](../document-voice/SKILL.md).
+Use when the user needs TypeScript help: typing, narrowing, generics, strict mode, declaration files, or moving from JavaScript. Plain language; explain terms the first time. [document-voice](.claude/skills/document-voice/SKILL.md).
 
 ## Inputs
 
@@ -84,4 +84,4 @@ Use a literal field (`type` or `kind`) on each variant so TypeScript can discrim
 
 ## Reference
 
-[document-voice](../document-voice/SKILL.md). [developer-electron](../developer-electron/SKILL.md) for Electron/desktop apps.
+[document-voice](.claude/skills/document-voice/SKILL.md). [developer-electron](.claude/skills/developer-electron/SKILL.md) for Electron/desktop apps.

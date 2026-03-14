@@ -3,6 +3,9 @@
  * AGENTS Rule 1: first action every turn run `npm run checklist -- "<summary>"`.
  * Steps: [verify-task, document-voice, ...flowSteps] from FLOWS + TRIGGERS.
  *
+ * Single source of truth for "phrase → flow". Coordinator flow lookup table
+ * mirrors TRIGGERS; keep them in sync when adding or changing flows.
+ *
  * npx tsx .claude/skills/verify-task/scripts/checklist.ts "<task summary>"
  * npx tsx .claude/skills/verify-task/scripts/checklist.ts --steps "<message>"
  */
@@ -20,6 +23,7 @@ const TITLE = "# Task checklist (running list)\n\n";
 
 const FLOWS = {
   save: ["verify-paths", "document-paths", "save"],
+  "clean-up-studio": ["verify-docs", "document-verification"],
   clean: ["clean"],
   "analyst-diagnostics": ["analyst-diagnostics"],
   uninstall: ["uninstall"],
@@ -29,6 +33,19 @@ const FLOWS = {
   "update-gitignore": ["update-gitignore"],
   research: ["research"],
   "research-figma": ["research-figma"],
+  learn: ["research", "document"],
+  "propose-solutions": ["analyst-diagnostics", "document"],
+  discover: [
+    "research",
+    "document",
+    "analyst-diagnostics",
+    "document",
+    "research",
+    "document",
+    "analyst-diagnostics",
+    "document",
+    "document-ticket",
+  ],
   install: ["(Install workflow)"],
   refine: ["research", "document", "document-github"],
   developer: ["developer-typescript", "developer-check-types"],
@@ -40,8 +57,10 @@ type FlowKey = keyof typeof FLOWS;
 
 type TriggerEntry = readonly [RegExp | string, FlowKey];
 
+/** First match wins. More specific phrases before broader (e.g. "clean up studio" before "clean"). */
 const TRIGGERS: TriggerEntry[] = [
   [/save|\/save/i, "save"],
+  [/clean up studio|\/clean-up-studio/i, "clean-up-studio"],
   [/clean|wipe\.tmp|\/clean/i, "clean"],
   [/analyst|diagnostics|define|figure out|find cause|\/analyst-diagnostics/i, "analyst-diagnostics"],
   [/uninstall|\/uninstall/i, "uninstall"],
@@ -50,11 +69,14 @@ const TRIGGERS: TriggerEntry[] = [
   [/sync|sync upstream|\/sync-upstream/i, "sync-upstream"],
   [/gitignore|what'?s ignored|update ignore|\/update-gitignore/i, "update-gitignore"],
   [/research figma|analyze figma|figma audit|\/research-figma/i, "research-figma"],
-  [/research|learn|look at this|read|\/research/i, "research"],
+  [/\blearn\b|\/learn/i, "learn"],
+  [/research|look at this|read|\/research/i, "research"],
   [/install|setup|\/install/i, "install"],
   [/\bdev\b|develop|\/developer|check types|typecheck|tsc|type errors|typescript|\/developer-typescript/i, "developer"],
   [/electron|desktop app|\/developer-electron/i, "developer-electron"],
   [/electrobun|\/developer-electrobun/i, "developer-electrobun"],
+  [/propose solutions/i, "propose-solutions"],
+  [/\bdiscover\b|\/discover/i, "discover"],
   [/refine|write|write up|document|update|make|\/document/i, "refine"],
 ];
 
